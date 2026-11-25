@@ -13,7 +13,8 @@ const step = async (name, f) => {
   try { await f(); log('OK  ', name); } catch (e) { problems.push(name + ' : ' + e.message.split('\n')[0]); log('ÉCHEC', name, e.message.split('\n')[0]); await shot('echec-' + name.replace(/\W+/g, '-')); }
 };
 const browser = await puppeteer.launch({ executablePath: '/usr/bin/chromium-browser', headless: true, protocolTimeout: 300000,
-  args: ['--no-sandbox', '--ignore-certificate-errors', '--disable-dev-shm-usage', '--lang=fr-FR'] });
+  userDataDir: '/tmp/vigie-chrome',
+  args: ['--no-sandbox', '--ignore-certificate-errors', '--disable-dev-shm-usage', '--disable-crash-reporter', '--disable-breakpad', '--lang=fr-FR'] });
 const page = await browser.newPage();
 await page.setViewport({ width: 1280, height: 900 });
 page.on('console', (m) => { if (m.type() === 'error' && !/401|409|Failed to load resource/.test(m.text())) problems.push('console : ' + m.text()); });
