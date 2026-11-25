@@ -424,7 +424,7 @@ func (s *Server) schedulePut(w http.ResponseWriter, r *http.Request) {
 
 // reconnect rétablit la session vCenter si le mot de passe est mémorisé.
 func (s *Server) reconnect(ctx context.Context) error {
-	if s.settings == nil || s.vs.Status().Connected {
+	if s.settings == nil || (s.vs.Status().Connected && s.vs.Alive(ctx)) {
 		return nil
 	}
 	p, ok := s.settings.RememberedVSphere()
@@ -485,7 +485,7 @@ func (s *Server) scheduleTick(ctx context.Context) {
 // background : reconstruction de l'historique, rétention, reconnexion vCenter et planificateur.
 func (s *Server) background(ctx context.Context) {
 	s.backfillResults()
-	var lastPrune, lastReconnect time.Time
+	var lastPrune, lastReconnect, lastAlive time.Time
 	tick := time.NewTicker(20 * time.Second)
 	defer tick.Stop()
 	for {
@@ -497,6 +497,11 @@ func (s *Server) background(ctx context.Context) {
 			} else if n > 0 {
 				log.Printf("results: %d mesure(s) de plus de %d jours retirée(s)", n, s.schedule.get().RetentionDays)
 			}
+		}
+		// session expirée côté serveur (vCenter redémarré…) : vérifiée toutes les 5 minutes, hors job
+		if s.vs.Status().Connected && s.jobs.Current() == nil && now.Sub(lastAlive) > 5*time.Minute {
+			lastAlive = now
+			s.vs.Alive(ctx)
 		}
 		// reconnexion automatique (démarrage, session perdue) : au plus toutes les 5 minutes
 		if s.settings != nil && !s.vs.Status().Connected && now.Sub(lastReconnect) > 5*time.Minute {

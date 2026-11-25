@@ -161,6 +161,30 @@ func (m *Manager) Session() (*Session, error) {
 	return m.cur, nil
 }
 
+// Alive vérifie que le serveur reconnaît encore la session courante. Une session que le serveur ne
+// reconnaît plus (vCenter redémarré, session expirée ou fermée par un administrateur) est oubliée :
+// Status redevient « non connecté » et la reconnexion automatique peut prendre le relais. Une erreur
+// réseau ne permet pas de conclure : la session est gardée.
+func (m *Manager) Alive(ctx context.Context) bool {
+	s, err := m.Session()
+	if err != nil {
+		return false
+	}
+	ctx, cancel := context.WithTimeout(ctx, 30*time.Second)
+	defer cancel()
+	us, err := s.mgr.UserSession(ctx) // nil, nil : NotAuthenticated
+	if err != nil || us != nil {
+		return true
+	}
+	m.mu.Lock()
+	if m.cur == s {
+		m.cur = nil
+	}
+	m.mu.Unlock()
+	m.Logf("vsphere: session expirée sur %s (non reconnue par le serveur)", s.URL.Host)
+	return false
+}
+
 // Status décrit l'état courant sans secret.
 func (m *Manager) Status() Status {
 	s, err := m.Session()

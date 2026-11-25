@@ -177,3 +177,27 @@ func TestVCSimConnectIdentifyInventory(t *testing.T) {
 		t.Fatal("après déconnexion, Session doit échouer")
 	}
 }
+
+// Une session que le serveur ne reconnaît plus (vCenter redémarré) est détectée et oubliée, pour que
+// la reconnexion automatique prenne le relais ; une session valide est gardée.
+func TestVCSimSessionExpired(t *testing.T) {
+	m, s, cleanup := startVCSim(t)
+	defer cleanup()
+	ctx := context.Background()
+	if !m.Alive(ctx) || !m.Status().Connected {
+		t.Fatal("une session valide doit être gardée")
+	}
+	// le serveur oublie la session (comme après un redémarrage de vCenter)
+	if err := s.mgr.Logout(ctx); err != nil {
+		t.Fatal(err)
+	}
+	if m.Alive(ctx) {
+		t.Fatal("session expirée non détectée")
+	}
+	if m.Status().Connected {
+		t.Fatal("une session expirée doit apparaître déconnectée")
+	}
+	if m.Alive(ctx) {
+		t.Fatal("sans session, Alive doit renvoyer false")
+	}
+}
