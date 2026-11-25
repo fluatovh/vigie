@@ -1,6 +1,19 @@
 # Notes de version
 
-## v1.0.0 — 25/11/2026
+## v1.0.2 — à venir
+
+- Notes de version : titres alignés sur les tags publiés.
+
+## v1.0.1 — 25/11/2026
+
+Première version publiée sur GitHub (le tag v1.0.0 n'a pas produit de release : la CI échouait sur
+les runners GitHub).
+
+- CI : Chromium démarre sur les runners GitHub (répertoire personnel dans /tmp).
+- README en anglais.
+- Contenu identique à v1.0.0 pour l'appliance, détaillé ci-dessous.
+
+## v1.0.0 — 25/11/2026 (non publiée)
 
 Première version complète de Vigie, appliance de diagnostic datastore et réseau pour vSphere.
 Livrée en trois formats construits depuis le même média : OVA (45,1 Mo), qcow2 (≈ 45 Mo) et ISO live
