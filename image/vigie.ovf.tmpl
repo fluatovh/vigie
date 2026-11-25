@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Envelope xmlns="http://schemas.dmtf.org/ovf/envelope/1"
+          xmlns:ovf="http://schemas.dmtf.org/ovf/envelope/1"
+          xmlns:rasd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_ResourceAllocationSettingData"
+          xmlns:vssd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_VirtualSystemSettingData"
+          xmlns:vmw="http://www.vmware.com/schema/ovf"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <References>
+    <File ovf:href="vigie-disk1.vmdk" ovf:id="file1" ovf:size="@VMDK_SIZE@"/>
+  </References>
+  <DiskSection>
+    <Info>Disque système de l'appliance (512 Mio, thin)</Info>
+    <Disk ovf:capacity="512" ovf:capacityAllocationUnits="byte * 2^20" ovf:diskId="vmdisk1" ovf:fileRef="file1"
+          ovf:format="http://www.vmware.com/interfaces/specifications/vmdk.html#streamOptimized" ovf:populatedSize="@POPULATED@"/>
+  </DiskSection>
+  <NetworkSection>
+    <Info>Réseaux</Info>
+    <Network ovf:name="VM Network">
+      <Description>Réseau de l'appliance (interface web, SSH admin, accès au vCenter)</Description>
+    </Network>
+  </NetworkSection>
+  <VirtualSystem ovf:id="vigie">
+    <Info>vigie, appliance de diagnostic réseau et de performance datastore pour vSphere</Info>
+    <Name>vigie</Name>
+    <OperatingSystemSection ovf:id="101" vmw:osType="otherLinux64Guest">
+      <Info>Système invité</Info>
+      <Description>Other Linux (64-bit), Alpine Linux</Description>
+    </OperatingSystemSection>
+    <VirtualHardwareSection ovf:transport="iso">
+      <Info>Matériel virtuel</Info>
+      <System>
+        <vssd:ElementName>Virtual Hardware Family</vssd:ElementName>
+        <vssd:InstanceID>0</vssd:InstanceID>
+        <vssd:VirtualSystemIdentifier>vigie</vssd:VirtualSystemIdentifier>
+        <vssd:VirtualSystemType>vmx-14</vssd:VirtualSystemType>
+      </System>
+      <Item>
+        <rasd:AllocationUnits>hertz * 10^6</rasd:AllocationUnits>
+        <rasd:Description>Number of Virtual CPUs</rasd:Description>
+        <rasd:ElementName>2 virtual CPU(s)</rasd:ElementName>
+        <rasd:InstanceID>1</rasd:InstanceID>
+        <rasd:ResourceType>3</rasd:ResourceType>
+        <rasd:VirtualQuantity>2</rasd:VirtualQuantity>
+      </Item>
+      <Item>
+        <rasd:AllocationUnits>byte * 2^20</rasd:AllocationUnits>
+        <rasd:Description>Memory Size</rasd:Description>
+        <rasd:ElementName>1024MB of memory</rasd:ElementName>
+        <rasd:InstanceID>2</rasd:InstanceID>
+        <rasd:ResourceType>4</rasd:ResourceType>
+        <rasd:VirtualQuantity>1024</rasd:VirtualQuantity>
+      </Item>
+      <Item>
+        <rasd:Address>0</rasd:Address>
+        <rasd:Description>SATA Controller</rasd:Description>
+        <rasd:ElementName>SATA Controller 0</rasd:ElementName>
+        <rasd:InstanceID>3</rasd:InstanceID>
+        <rasd:ResourceSubType>vmware.sata.ahci</rasd:ResourceSubType>
+        <rasd:ResourceType>20</rasd:ResourceType>
+      </Item>
+      <Item>
+        <rasd:Address>0</rasd:Address>
+        <rasd:Description>SCSI Controller (VMware Paravirtual)</rasd:Description>
+        <rasd:ElementName>SCSI Controller 0</rasd:ElementName>
+        <rasd:InstanceID>7</rasd:InstanceID>
+        <rasd:ResourceSubType>VirtualSCSI</rasd:ResourceSubType>
+        <rasd:ResourceType>6</rasd:ResourceType>
+      </Item>
+      <Item>
+        <rasd:AddressOnParent>0</rasd:AddressOnParent>
+        <rasd:ElementName>Hard Disk 1</rasd:ElementName>
+        <rasd:HostResource>ovf:/disk/vmdisk1</rasd:HostResource>
+        <rasd:InstanceID>4</rasd:InstanceID>
+        <rasd:Parent>7</rasd:Parent>
+        <rasd:ResourceType>17</rasd:ResourceType>
+      </Item>
+      <Item ovf:required="false">
+        <rasd:AddressOnParent>0</rasd:AddressOnParent>
+        <rasd:AutomaticAllocation>false</rasd:AutomaticAllocation>
+        <rasd:ElementName>CD/DVD Drive 1</rasd:ElementName>
+        <rasd:InstanceID>5</rasd:InstanceID>
+        <rasd:Parent>3</rasd:Parent>
+        <rasd:ResourceSubType>vmware.cdrom.atapi</rasd:ResourceSubType>
+        <rasd:ResourceType>15</rasd:ResourceType>
+      </Item>
+      <Item>
+        <rasd:AddressOnParent>7</rasd:AddressOnParent>
+        <rasd:AutomaticAllocation>true</rasd:AutomaticAllocation>
+        <rasd:Connection>VM Network</rasd:Connection>
+        <rasd:Description>VmxNet3 ethernet adapter</rasd:Description>
+        <rasd:ElementName>Network adapter 1</rasd:ElementName>
+        <rasd:InstanceID>6</rasd:InstanceID>
+        <rasd:ResourceSubType>VmxNet3</rasd:ResourceSubType>
+        <rasd:ResourceType>10</rasd:ResourceType>
+      </Item>
+      <vmw:Config ovf:required="false" vmw:key="tools.syncTimeWithHost" vmw:value="false"/>
+      <vmw:ExtraConfig ovf:required="false" vmw:key="disk.EnableUUID" vmw:value="TRUE"/>
+    </VirtualHardwareSection>
+    <ProductSection ovf:required="false">
+      <Info>Configuration initiale de l'appliance (lue au boot sur le CD virtuel ovf-env.xml)</Info>
+      <Product>vigie</Product>
+      <Vendor>vigie</Vendor>
+      <Version>@VERSION@</Version>
+      <Category>Réseau (vide = DHCP)</Category>
+      <Property ovf:key="hostname" ovf:type="string" ovf:userConfigurable="true" ovf:value="vigie">
+        <Label>Nom d'hôte</Label>
+        <Description>Nom d'hôte de l'appliance.</Description>
+      </Property>
+      <Property ovf:key="ip" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+        <Label>Adresse IP</Label>
+        <Description>Adresse IPv4 statique. Laisser vide pour DHCP (l'adresse obtenue s'affiche sur la console).</Description>
+      </Property>
+      <Property ovf:key="netmask" ovf:type="string" ovf:userConfigurable="true" ovf:value="255.255.255.0">
+        <Label>Masque</Label>
+        <Description>Masque de sous-réseau (si IP statique).</Description>
+      </Property>
+      <Property ovf:key="gateway" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+        <Label>Passerelle</Label>
+        <Description>Passerelle par défaut (si IP statique).</Description>
+      </Property>
+      <Property ovf:key="dns" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+        <Label>DNS</Label>
+        <Description>Serveurs DNS, séparés par des virgules (si IP statique).</Description>
+      </Property>
+      <Property ovf:key="ntp" ovf:type="string" ovf:userConfigurable="true" ovf:value="">
+        <Label>NTP</Label>
+        <Description>Serveurs NTP, séparés par des virgules. Vide : pool.ntp.org.</Description>
+      </Property>
+      <Category>Accès</Category>
+      <Property ovf:key="ui_password" ovf:type="string" ovf:password="true" ovf:userConfigurable="true" ovf:value="">
+        <Label>Mot de passe initial</Label>
+        <Description>Mot de passe root (SSH) et de l'interface web. Vide : un mot de passe est généré et affiché sur la console.</Description>
+      </Property>
+    </ProductSection>
+    <AnnotationSection ovf:required="false">
+      <Info>Annotation</Info>
+      <Annotation>vigie @VERSION@ : appliance de diagnostic pour vSphere. Network : ping, surveillance smokeping, traceroute, ARP, débit iperf3 entre appliances. Datastore performance : test standard et avancé. Interface web HTTPS (https://IP/), API par jetons, SSH root. Mot de passe et empreinte du certificat sur la console.</Annotation>
+    </AnnotationSection>
+  </VirtualSystem>
+</Envelope>

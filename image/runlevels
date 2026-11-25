@@ -1,0 +1,4 @@
+sysinit devfs dmesg mdev hwdrivers modloop
+boot modules sysctl hostname bootmisc syslog seedrng vigie-live localmount vigie-init networking
+default acpid ntpd dropbear open-vm-tools qemu-guest-agent vigie vigie-cloud vigie-issue
+shutdown killprocs mount-ro savecache

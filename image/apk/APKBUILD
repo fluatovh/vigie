@@ -1,0 +1,28 @@
+# Paquet apk local de vigie. Construit par image/build-apk.sh (abuild, clé image/keys/).
+# pkgver est injecté par l'environnement (VIGIE_PKGVER), la version complète est dans le binaire.
+pkgname=vigie
+pkgver=${VIGIE_PKGVER:-0.0.0}
+pkgrel=0
+pkgdesc="vigie - appliance de bench datastore NFS pour vSphere"
+url="https://localhost/vigie"
+arch="x86_64"
+license="proprietary"
+depends="openrc busybox"
+options="!check !strip"
+source=""
+
+package() {
+	install -Dm755 "$startdir"/vigie "$pkgdir"/usr/bin/vigie
+	install -Dm755 "$startdir"/init.sh "$pkgdir"/usr/lib/vigie/init
+	install -Dm755 "$startdir"/update-issue.sh "$pkgdir"/usr/lib/vigie/update-issue
+	install -Dm755 "$startdir"/console-login.sh "$pkgdir"/usr/lib/vigie/console-login
+	install -Dm644 "$startdir"/fonts/lat2-terminus16.psfu "$pkgdir"/usr/share/vigie/fonts/lat2-terminus16.psfu
+	install -Dm644 "$startdir"/fonts/default8x16.psfu "$pkgdir"/usr/share/vigie/fonts/default8x16.psfu
+	install -Dm755 "$startdir"/vigie.initd "$pkgdir"/etc/init.d/vigie
+	install -Dm755 "$startdir"/vigie-init.initd "$pkgdir"/etc/init.d/vigie-init
+	install -Dm755 "$startdir"/vigie-issue.initd "$pkgdir"/etc/init.d/vigie-issue
+	install -Dm755 "$startdir"/vigie-live.initd "$pkgdir"/etc/init.d/vigie-live
+	install -Dm755 "$startdir"/vigie-cloud.initd "$pkgdir"/etc/init.d/vigie-cloud
+	install -Dm755 "$startdir"/udhcpc-hook.sh "$pkgdir"/etc/udhcpc/post-bound.d/vigie
+	install -Dm755 "$startdir"/udhcpc-hook.sh "$pkgdir"/etc/udhcpc/post-renew.d/vigie
+}

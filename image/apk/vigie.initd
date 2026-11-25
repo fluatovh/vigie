@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+description="vigie : serveur web et collecteur"
+
+supervisor=supervise-daemon
+command=/usr/bin/vigie
+command_args="serve -listen ${VIGIE_LISTEN:-:80} -listen-tls ${VIGIE_LISTEN_TLS:-:443}"
+output_log=/var/log/vigie.log
+error_log=/var/log/vigie.log
+respawn_delay=2
+respawn_max=0
+
+depend() {
+	need net localmount
+	after vigie-init
+}

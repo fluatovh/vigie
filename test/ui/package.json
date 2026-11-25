@@ -1,0 +1,7 @@
+{
+  "name": "vigie-ui-qa",
+  "private": true,
+  "type": "module",
+  "description": "QA de l'interface web vigie dans un Chromium headless (hors appliance, outil de dev)",
+  "dependencies": { "puppeteer-core": "25.16.0" }
+}

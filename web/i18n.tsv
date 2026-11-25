@@ -1,0 +1,929 @@
+# Catalogue de la console vigie : une ligne par texte source (français), colonnes fr en es it pl de.
+# Gabarits : mêmes variables (%s, %d…) dans chaque colonne. Généré puis maintenu à la main.
+Network	Network	Red	Rete	Sieć	Netzwerk
+Storage	Storage	Almacenamiento	Storage	Dyski	Speicher
+Système	System	Sistema	Sistema	System	System
+Ping	Ping	Ping	Ping	Ping	Ping
+Traceroute	Traceroute	Traceroute	Traceroute	Traceroute	Traceroute
+Surveillance	Monitoring	Monitorización	Monitoraggio	Monitorowanie	Überwachung
+Table ARP	ARP table	Tabla ARP	Tabella ARP	Tablica ARP	ARP-Tabelle
+Débit iperf3	iperf3 bandwidth	Caudal iperf3	Banda iperf3	Przepływ iperf3	iperf3-Durchsatz
+Pairs (iperf3)	Peers (iperf3)	Pares (iperf3)	Peer (iperf3)	Peery (iperf3)	Peers (iperf3)
+Interfaces	Interfaces	Interfaces	Interfacce	Interfejsy	Schnittstellen
+État du disque	Disk status	Estado del disco	Stato del disco	Stan dysku	Disk-Status
+Ajouter disque	Add disk	Añadir disco	Aggiungi disco	Dodaj dysk	Disk hinzufügen
+Test standard	Standard test	Prueba estándar	Test standard	Test standardowy	Standardtest
+Test avancé	Advanced test	Prueba avanzada	Test avanzato	Test rozszerzony	Erweiterter Test
+Résultats	Results	Resultados	Risultati	Wyniki	Ergebnisse
+Libérer disque	Release disk	Liberar disco	Rilascia disco	Zwolnij dysk	Disk freigeben
+Accès et état	Access & status	Acceso y estado	Accesso e stato	Dostęp i stan	Zugang & Status
+Réseau (IP)	Network (IP)	Red (IP)	Rete (IP)	Sieć (IP)	Netzwerk (IP)
+Tester le réseau	Test network	Probar la red	Test della rete	Testuj sieć	Netzwerk testen
+Mot de passe	Password	Contraseña	Password	Hasło	Passwort
+Shell root	Root shell	Shell root	Shell root	Powłoka root	Root-Shell
+Alimentation	Power	Energía	Alimentazione	Zasilanie	Energie
+Langue	Language	Idioma	Lingua	Język	Sprache
+haut/bas menu  Entrée ouvrir  Échap accueil	up/down menu  Enter open  Esc home	arriba/abajo menú  Intro abrir  Esc inicio	su/giù menu  Invio apri  Esc home	góra/dół menu  Enter otwórz  Esc start	auf/ab Menü  Enter öffnen  Esc Start
+F1-F3 onglets  F12	F1-F3 tabs  F12	F1-F3 pestañas  F12	F1-F3 schede  F12	F1-F3 karty  F12	F1-F3 Reiter  F12
+Échap menu	Esc menu	Esc menú	Esc menu	Esc menu	Esc Menü
+%s  Échap menu	%s  Esc menu	%s  Esc menú	%s  Esc menu	%s  Esc menu	%s  Esc Menü
+Tab champ  flèches choix  Entrée lancer	Tab field  arrows choice  Enter run	Tab campo  flechas opción  Intro lanzar	Tab campo  frecce scelta  Invio avvia	Tab pole  strzałki wybór  Enter uruchom	Tab Feld  Pfeile Auswahl  Enter starten
+Tab champ  flèches choix  Entrée appliquer	Tab field  arrows choice  Enter apply	Tab campo  flechas opción  Intro aplicar	Tab campo  frecce scelta  Invio applica	Tab pole  strzałki wybór  Enter zastosuj	Tab Feld  Pfeile Auswahl  Enter anwenden
+Tab champ  Entrée tester	Tab field  Enter test	Tab campo  Intro probar	Tab campo  Invio prova	Tab pole  Enter testuj	Tab Feld  Enter testen
+Tab champ  Entrée valider	Tab field  Enter confirm	Tab campo  Intro validar	Tab campo  Invio conferma	Tab pole  Enter zatwierdź	Tab Feld  Enter bestätigen
+Entrée lancer  s arrêter	Enter run  s stop	Intro lanzar  s parar	Invio avvia  s ferma	Enter uruchom  s zatrzymaj	Enter starten  s stoppen
+s arrêter	s stop	s parar	s ferma	s zatrzymaj	s stoppen
+a ajouter  Entrée graph  Suppr retirer	a add  Enter graph  Del remove	a añadir  Intro gráfico  Supr quitar	a aggiungi  Invio grafico  Canc rimuovi	a dodaj  Enter wykres  Del usuń	a hinzufügen  Enter Grafik  Entf entfernen
+gauche/droite période  Échap liste	left/right period  Esc list	izq./der. periodo  Esc lista	sx/dx periodo  Esc elenco	lewo/prawo okres  Esc lista	links/rechts Zeitraum  Esc Liste
+Entrée ajouter  Échap annuler	Enter add  Esc cancel	Intro añadir  Esc cancelar	Invio aggiungi  Esc annulla	Enter dodaj  Esc anuluj	Enter hinzufügen  Esc abbrechen
+Suppr supprimer  v vider  r rafraîchir	Del delete  v flush  r refresh	Supr borrar  v vaciar  r refrescar	Canc elimina  v svuota  r aggiorna	Del usuń  v wyczyść  r odśwież	Entf löschen  v leeren  r aktualisieren
+x annuler	x cancel	x cancelar	x annulla	x anuluj	x abbrechen
+x annuler le test	x cancel test	x cancelar prueba	x annulla il test	x anuluj test	x Test abbrechen
+a ajouter  Suppr retirer  s serveur iperf3	a add  Del remove  s iperf3 server	a añadir  Supr quitar  s servidor iperf3	a aggiungi  Canc rimuovi  s server iperf3	a dodaj  Del usuń  s serwer iperf3	a hinzufügen  Entf entfernen  s iperf3-Server
+Entrée vérifier l'empreinte  Échap annuler	Enter check fingerprint  Esc cancel	Intro comprobar huella  Esc cancelar	Invio verifica impronta  Esc annulla	Enter sprawdź odcisk  Esc anuluj	Enter Fingerabdruck prüfen  Esc abbrechen
+r rafraîchir  ↑↓ défiler	r refresh  ↑↓ scroll	r refrescar  ↑↓ desplazar	r aggiorna  ↑↓ scorri	r odśwież  ↑↓ przewiń	r aktualisieren  ↑↓ blättern
+haut/bas défiler  Entrée préparer l'ajout	up/down scroll  Enter prepare	arriba/abajo desplazar  Intro preparar	su/giù scorri  Invio prepara	góra/dół przewiń  Enter przygotuj	auf/ab blättern  Enter vorbereiten
+Entrée c'est fait  Suppr abandonner	Enter done  Del abort	Intro hecho  Supr abandonar	Invio fatto  Canc abbandona	Enter gotowe  Del przerwij	Enter erledigt  Entf abbrechen
+haut/bas disque  Entrée choisir  r relancer	up/down disk  Enter choose  r rescan	arriba/abajo disco  Intro elegir  r reescanear	su/giù disco  Invio scegli  r ripeti	góra/dół dysk  Enter wybierz  r ponów	auf/ab Disk  Enter wählen  r erneut
+Entrée adopter  Suppr annuler	Enter adopt  Del cancel	Intro adoptar  Supr cancelar	Invio adotta  Canc annulla	Enter przejmij  Del anuluj	Enter übernehmen  Entf abbrechen
+haut/bas défiler  Entrée relancer	up/down scroll  Enter run again	arriba/abajo desplazar  Intro relanzar	su/giù scorri  Invio rilancia	góra/dół przewiń  Enter ponów	auf/ab blättern  Enter erneut
+haut/bas choisir  Entrée détail	up/down choose  Enter details	arriba/abajo elegir  Intro detalle	su/giù scegli  Invio dettagli	góra/dół wybierz  Enter szczegóły	auf/ab wählen  Enter Details
+haut/bas défiler  Échap liste	up/down scroll  Esc list	arriba/abajo desplazar  Esc lista	su/giù scorri  Esc elenco	góra/dół przewiń  Esc lista	auf/ab blättern  Esc Liste
+Entrée libérer	Enter release	Intro liberar	Invio rilascia	Enter zwolnij	Enter freigeben
+Entrée ouvrir le shell	Enter open shell	Intro abrir shell	Invio apri shell	Enter otwórz powłokę	Enter Shell öffnen
+r redémarrer  a arrêter	r restart  a shut down	r reiniciar  a apagar	r riavvia  a spegni	r restart  a wyłącz	r Neustart  a Herunterfahren
+Entrée : %s	Enter: %s	Intro: %s	Invio: %s	Enter: %s	Enter: %s
+[o] oui    [Échap] non	[o] yes    [Esc] no	[o] sí    [Esc] no	[o] sì    [Esc] no	[o] tak    [Esc] nie	[o] ja    [Esc] nein
+une touche pour fermer	any key to close	una tecla para cerrar	un tasto per chiudere	dowolny klawisz zamyka	beliebige Taste schließt
+[Échap] annuler	[Esc] cancel	[Esc] cancelar	[Esc] annulla	[Esc] anuluj	[Esc] abbrechen
+lancer le ping	start ping	lanzar el ping	avvia il ping	uruchom ping	Ping starten
+lancer le traceroute	start traceroute	lanzar el traceroute	avvia il traceroute	uruchom traceroute	Traceroute starten
+ajouter à la surveillance	add to monitoring	añadir a la monitorización	aggiungi al monitoraggio	dodaj do monitorowania	zur Überwachung hinzufügen
+lancer le test de débit	start bandwidth test	lanzar la prueba de caudal	avvia il test di banda	uruchom test przepływności	Durchsatztest starten
+vérifier l'empreinte puis ajouter	check fingerprint, then add	comprobar la huella y añadir	verifica l'impronta e aggiungi	sprawdź odcisk i dodaj	Fingerabdruck prüfen, dann hinzufügen
+adopter ce disque	adopt this disk	adoptar este disco	adotta questo disco	przejmij ten dysk	diesen Disk übernehmen
+lancer le test	start test	lanzar la prueba	avvia il test	uruchom test	Test starten
+appliquer la configuration	apply configuration	aplicar la configuración	applica la configurazione	zastosuj konfigurację	Konfiguration anwenden
+changer le mot de passe	change password	cambiar la contraseña	cambia la password	zmień hasło	Passwort ändern
+Cible	Target	Destino	Destinazione	Cel	Ziel
+Nombre	Count	Número	Numero	Liczba	Anzahl
+Intervalle	Interval	Intervalo	Intervallo	Interwał	Intervall
+continu	continuous	continuo	continuo	ciągły	dauerhaft
+IP ou nom	IP or name	IP o nombre	IP o nome	IP lub nazwa	IP oder Name
+Libellé	Label	Etiqueta	Etichetta	Etykieta	Bezeichnung
+Vers	To	Hacia	Verso	Do	Ziel
+Hôte	Host	Host	Host	Host	Host
+si « autre serveur »	if “other server”	si «otro servidor»	se «altro server»	dla „innego serwera”	bei „anderer Server“
+Protocole	Protocol	Protocolo	Protocollo	Protokół	Protokoll
+Durée	Duration	Duración	Durata	Czas	Dauer
+Flux	Streams	Flujos	Flussi	Strumienie	Streams
+Sens	Direction	Sentido	Direzione	Kierunek	Richtung
+l'appliance émet	appliance sends	el appliance envía	l'appliance invia	appliance wysyła	Appliance sendet
+le pair émet (-R)	peer sends (-R)	el par envía (-R)	il peer invia (-R)	peer wysyła (-R)	Peer sendet (-R)
+Débit UDP	UDP rate	Caudal UDP	Banda UDP	Przepływ UDP	UDP-Rate
+(aucun pair)	(no peer)	(ningún par)	(nessun peer)	(brak peerów)	(kein Peer)
+autre serveur iperf3	other iperf3 server	otro servidor iperf3	altro server iperf3	inny serwer iperf3	anderer iperf3-Server
+Nom	Name	Nombre	Nome	Nazwa	Name
+Adresse	Address	Dirección	Indirizzo	Adres	Adresse
+Jeton	Token	Token	Token	Token	Token
+https://IP du pair	https://peer IP	https://IP del par	https://IP del peer	https://IP peera	https://Peer-IP
+vg_… créé sur le pair	vg_… created on the peer	vg_… creado en el par	vg_… creato sul peer	vg_… utworzony na peerze	vg_… auf dem Peer erstellt
+Écriture séq.	Seq. write	Escritura sec.	Scrittura seq.	Zapis sekw.	Seq. Schreiben
+Lecture séq.	Seq. read	Lectura sec.	Lettura seq.	Odczyt sekw.	Seq. Lesen
+Seuils	Thresholds	Umbrales	Soglie	Progi	Schwellen
+Mode	Mode	Modo	Modalità	Tryb	Modus
+DHCP	DHCP	DHCP	DHCP	DHCP	DHCP
+Statique	Static	Estática	Statico	Statyczny	Statisch
+Adresse IP	IP address	Dirección IP	Indirizzo IP	Adres IP	IP-Adresse
+Masque	Netmask	Máscara	Maschera	Maska	Netzmaske
+255.255.255.0 ou 24	255.255.255.0 or 24	255.255.255.0 o 24	255.255.255.0 o 24	255.255.255.0 lub 24	255.255.255.0 oder 24
+Passerelle	Gateway	Pasarela	Gateway	Brama	Gateway
+séparés par des virgules	comma separated	separados por comas	separati da virgole	oddzielone przecinkami	durch Kommas getrennt
+Nom d'hôte	Hostname	Nombre de host	Nome host	Nazwa hosta	Hostname
+Adresses	Addresses	Direcciones	Indirizzi	Adresy	Adressen
+passerelle et DNS par défaut	gateway and DNS by default	puerta de enlace y DNS por defecto	gateway e DNS predefiniti	brama i DNS domyślnie	Gateway und DNS standardmäßig
+Nom à résoudre	Name to resolve	Nombre (DNS)	Nome (DNS)	Nazwa (DNS)	Name auflösen
+facultatif	optional	opcional	facoltativo	opcjonalnie	optional
+Nouveau mot de passe	New password	Nueva contraseña	Nuova password	Nowe hasło	Neues Passwort
+Confirmation	Confirm	Confirmación	Conferma	Potwierdzenie	Bestätigung
+Retapez le nom (%s)	Retype the name (%s)	Escriba el nombre (%s)	Ridigita il nome (%s)	Wpisz nazwę (%s)	Namen eingeben (%s)
+Datastore (pour mémoire)	Datastore (note)	Datastore (nota)	Datastore (nota)	Datastore (notatka)	Datastore (Notiz)
+Appliance de diagnostic réseau et de performance des datastores vSphere	Network diagnostics and vSphere datastore performance appliance	Appliance de diagnóstico de red y rendimiento de datastores vSphere	Appliance di diagnostica di rete e prestazioni dei datastore vSphere	Appliance do diagnostyki sieci i wydajności datastore'ów vSphere	Appliance für Netzwerkdiagnose und vSphere-Datastore-Leistung
+%s Gio de mémoire	%s GiB of memory	%s GiB de memoria	%s GiB di memoria	%s GiB pamięci	%s GiB Arbeitsspeicher
+vCenter : non connecté (stockage : tests locaux, onglet Storage)	vCenter: not connected (storage: local tests, Storage tab)	vCenter: no conectado (almacenamiento: pruebas locales, pestaña Storage)	vCenter: non connesso (storage: test locali, scheda Storage)	vCenter: niepołączony (dyski: testy lokalne, karta Storage)	vCenter: nicht verbunden (Speicher: lokale Tests, Reiter Storage)
+vCenter : connecté à %s	vCenter: connected to %s	vCenter: conectado a %s	vCenter: connesso a %s	vCenter: połączony z %s	vCenter: verbunden mit %s
+Service vigie injoignable : %s	vigie service unreachable: %s	Servicio vigie inaccesible: %s	Servizio vigie non raggiungibile: %s	Usługa vigie nieosiągalna: %s	vigie-Dienst nicht erreichbar: %s
+Pour gérer cette appliance, ouvrir :	To manage this appliance, open:	Para gestionar este appliance, abra:	Per gestire questa appliance, aprire:	Aby zarządzać tym appliance, otwórz:	Zur Verwaltung dieser Appliance öffnen:
+adresse IP en attente (DHCP)…	waiting for an IP address (DHCP)…	esperando dirección IP (DHCP)…	in attesa di indirizzo IP (DHCP)…	oczekiwanie na adres IP (DHCP)…	warte auf IP-Adresse (DHCP)…
+(DHCP)	(DHCP)	(DHCP)	(DHCP)	(DHCP)	(DHCP)
+(statique (OVF))	(static, OVF)	(estática, OVF)	(statico, OVF)	(statyczny, OVF)	(statisch, OVF)
+(statique, configuré en console)	(static, set in console)	(estática, configurada en consola)	(statico, impostato in console)	(statyczny, ustawiony w konsoli)	(statisch, in Konsole gesetzt)
+(DHCP, configuré en console)	(DHCP, set in console)	(DHCP, configurado en consola)	(DHCP, impostato in console)	(DHCP, ustawiony w konsoli)	(DHCP, in Konsole gesetzt)
+Mot de passe (root et interface web) :	Password (root and web UI):	Contraseña (root e interfaz web):	Password (root e interfaccia web):	Hasło (root i interfejs web):	Passwort (root und Weboberfläche):
+Certificat HTTPS (SHA-256) :	HTTPS certificate (SHA-256):	Certificado HTTPS (SHA-256):	Certificato HTTPS (SHA-256):	Certyfikat HTTPS (SHA-256):	HTTPS-Zertifikat (SHA-256):
+SSH : ssh root@%s   (mot de passe demandé)	SSH: ssh root@%s   (password required)	SSH: ssh root@%s   (se pide contraseña)	SSH: ssh root@%s   (password richiesta)	SSH: ssh root@%s   (wymagane hasło)	SSH: ssh root@%s   (Passwort erforderlich)
+<Entrée> Console vigie	<Enter> vigie console	<Intro> Consola vigie	<Invio> Console vigie	<Enter> Konsola vigie	<Enter> vigie-Konsole
+<Alt+F2> Shell root	<Alt+F2> Root shell	<Alt+F2> Shell root	<Alt+F2> Shell root	<Alt+F2> Powłoka root	<Alt+F2> Root-Shell
+<F12> Arrêt/redémarrage	<F12> Shut down/Restart	<F12> Apagar/Reiniciar	<F12> Spegni/Riavvia	<F12> Wyłącz/Restart	<F12> Aus/Neustart
+IP en attente	waiting for IP	IP pendiente	IP in attesa	oczekiwanie na IP	warte auf IP
+│ mot de passe	│ password	│ contraseña	│ password	│ hasło	│ Passwort
+│ mdp	│ pwd	│ clave	│ pwd	│ hasło	│ PW
+│ service vigie injoignable	│ vigie service unreachable	│ servicio vigie inaccesible	│ servizio vigie irraggiungibile	│ usługa vigie nieosiągalna	│ vigie-Dienst nicht erreichbar
+job %s %s %%	job %s %s %%	job %s %s %%	job %s %s %%	zadanie %s %s %%	Job %s %s %%
+vCenter connecté	vCenter connected	vCenter conectado	vCenter connesso	vCenter połączony	vCenter verbunden
+Arrêt / redémarrage	Shut down / restart	Apagar / reiniciar	Spegnimento / riavvio	Wyłączenie / restart	Herunterfahren / Neustart
+[r] redémarrer l'appliance	[r] restart the appliance	[r] reiniciar el appliance	[r] riavvia l'appliance	[r] uruchom ponownie appliance	[r] Appliance neu starten
+[a] arrêter l'appliance	[a] shut down the appliance	[a] apagar el appliance	[a] spegni l'appliance	[a] wyłącz appliance	[a] Appliance herunterfahren
+Redémarrer l'appliance	Restart the appliance	Reiniciar el appliance	Riavvia l'appliance	Restart appliance	Appliance neu starten
+Arrêter l'appliance	Shut down the appliance	Apagar el appliance	Spegni l'appliance	Wyłącz appliance	Appliance herunterfahren
+Redémarrer maintenant ?	Restart now?	¿Reiniciar ahora?	Riavviare ora?	Uruchomić ponownie teraz?	Jetzt neu starten?
+Arrêter maintenant ?	Shut down now?	¿Apagar ahora?	Spegnere ora?	Wyłączyć teraz?	Jetzt herunterfahren?
+Redémarrer en cours…	Restarting…	Reiniciando…	Riavvio in corso…	Ponowne uruchamianie…	Neustart läuft…
+Arrêter en cours…	Shutting down…	Apagando…	Spegnimento in corso…	Wyłączanie…	Herunterfahren läuft…
+Arrêt et redémarrage de l'appliance (aussi par F12)	Shut down and restart the appliance (also with F12)	Apagar y reiniciar el appliance (también con F12)	Spegnimento e riavvio dell'appliance (anche con F12)	Wyłączenie i restart appliance (także F12)	Herunterfahren und Neustart der Appliance (auch mit F12)
+redémarrer	restart	reiniciar	riavvia	uruchom ponownie	neu starten
+arrêter (la VM s'éteint ; la rallumer depuis vSphere)	shut down (the VM powers off; power it on from vSphere)	apagar (la VM se apaga; enciéndala desde vSphere)	spegni (la VM si spegne; riaccenderla da vSphere)	wyłącz (VM się wyłączy; włącz ją w vSphere)	herunterfahren (VM schaltet ab; in vSphere wieder einschalten)
+Un test en cours doit d'abord être annulé. La surveillance réseau est enregistrée avant l'arrêt.	A running test must be cancelled first. Network monitoring is saved before shutdown.	Primero hay que cancelar una prueba en curso. La monitorización de red se guarda antes de apagar.	Un test in corso va prima annullato. Il monitoraggio di rete viene salvato prima dello spegnimento.	Trwający test trzeba najpierw anulować. Monitorowanie sieci jest zapisywane przed wyłączeniem.	Ein laufender Test muss zuerst abgebrochen werden. Die Netzwerküberwachung wird vor dem Herunterfahren gespeichert.
+Annuler le test	Cancel test	Cancelar prueba	Annulla test	Anuluj test	Test abbrechen
+Arrêter le job %s en cours ?	Stop the running %s job?	¿Detener el job %s en curso?	Fermare il job %s in corso?	Zatrzymać trwające zadanie %s?	Laufenden Job %s stoppen?
+Le disque de test est conservé.	The test disk is kept.	Se conserva el disco de prueba.	Il disco di test viene conservato.	Dysk testowy zostaje zachowany.	Der Testdisk bleibt erhalten.
+Erreur : %s	Error: %s	Error: %s	Errore: %s	Błąd: %s	Fehler: %s
+job %s lancé (%s)	job %s started (%s)	job %s lanzado (%s)	job %s avviato (%s)	zadanie %s uruchomione (%s)	Job %s gestartet (%s)
+Résultat	Result	Resultado	Risultato	Wynik	Ergebnis
+Ce test n'a pas de résultat complet.	This test has no complete result.	Esta prueba no tiene resultado completo.	Questo test non ha un risultato completo.	Ten test nie ma pełnego wyniku.	Dieser Test hat kein vollständiges Ergebnis.
+terminé	finished	terminado	terminato	zakończony	beendet
+en échec	failed	fallido	fallito	nieudany	fehlgeschlagen
+annulé	cancelled	cancelado	annullato	anulowany	abgebrochen
+en attente	pending	pendiente	in attesa	oczekuje	wartend
+en cours	running	en curso	in corso	w toku	läuft
+OK	OK	OK	OK	OK	OK
+ATTENTION	WARNING	AVISO	ATTENZIONE	UWAGA	WARNUNG
+ALERTE	ALERT	ALERTA	ALLARME	ALARM	ALARM
+INCONNU	UNKNOWN	DESCONOCIDO	SCONOSCIUTO	NIEZNANY	UNBEKANNT
+Verdict %s	Verdict %s	Veredicto %s	Verdetto %s	Werdykt %s	Ergebnis %s
+Verdict	Verdict	Veredicto	Verdetto	Werdykt	Bewertung
+État	Status	Estado	Stato	Stan	Status
+Date (UTC)	Date (UTC)	Fecha (UTC)	Data (UTC)	Data (UTC)	Datum (UTC)
+Palier	Step	Escalón	Passo	Etap	Stufe
+Ping ICMP en direct : RTT de chaque réponse, perte, gigue. Hors du sous-réseau de l'appliance, un traceroute est lancé automatiquement.	Live ICMP ping: RTT of each reply, loss, jitter. Outside the appliance's subnet, a traceroute starts automatically.	Ping ICMP en directo: RTT de cada respuesta, pérdida, jitter. Fuera de la subred del appliance se lanza un traceroute automáticamente.	Ping ICMP in diretta: RTT di ogni risposta, perdita, jitter. Fuori dalla sottorete dell'appliance parte automaticamente un traceroute.	Ping ICMP na żywo: RTT każdej odpowiedzi, straty, jitter. Poza podsiecią appliance traceroute uruchamia się automatycznie.	Live-ICMP-Ping: RTT jeder Antwort, Verlust, Jitter. Außerhalb des Subnetzes der Appliance startet automatisch ein Traceroute.
+Saisir une cible (adresse IP ou nom).	Enter a target (IP address or name).	Introduzca un destino (IP o nombre).	Inserire una destinazione (IP o nome).	Podaj cel (adres IP lub nazwę).	Ziel eingeben (IP-Adresse oder Name).
+%s (%s) — même sous-réseau	%s (%s) — same subnet	%s (%s) — misma subred	%s (%s) — stessa sottorete	%s (%s) — ta sama podsieć	%s (%s) — gleiches Subnetz
+%s (%s) — routé	%s (%s) — routed	%s (%s) — enrutado	%s (%s) — instradato	%s (%s) — routowany	%s (%s) — geroutet
+%s (%s) — même sous-réseau — en cours	%s (%s) — same subnet — running	%s (%s) — misma subred — en curso	%s (%s) — stessa sottorete — in corso	%s (%s) — ta sama podsieć — w toku	%s (%s) — gleiches Subnetz — läuft
+%s (%s) — routé — en cours	%s (%s) — routed — running	%s (%s) — enrutado — en curso	%s (%s) — instradato — in corso	%s (%s) — routowany — w toku	%s (%s) — geroutet — läuft
+%s (%s) — en cours	%s (%s) — running	%s (%s) — en curso	%s (%s) — in corso	%s (%s) — w toku	%s (%s) — läuft
+%d/%d reçus	%d/%d received	%d/%d recibidos	%d/%d ricevuti	%d/%d odebrano	%d/%d empfangen
+perte %s	loss %s	pérdida %s	perdita %s	straty %s	Verlust %s
+gigue %s	jitter %s	jitter %s	jitter %s	jitter %s	Jitter %s
+RTT min %s  médiane %s  max %s	RTT min %s  median %s  max %s	RTT mín %s  mediana %s  máx %s	RTT min %s  mediana %s  max %s	RTT min %s  mediana %s  max %s	RTT min %s  Median %s  max %s
+Traceroute vers %s (%s) : %s	Traceroute to %s (%s): %s	Traceroute hacia %s (%s): %s	Traceroute verso %s (%s): %s	Traceroute do %s (%s): %s	Traceroute zu %s (%s): %s
+en cours…	running…	en curso…	in corso…	w toku…	läuft…
+cible atteinte	target reached	destino alcanzado	destinazione raggiunta	cel osiągnięty	Ziel erreicht
+cible non atteinte	target not reached	destino no alcanzado	destinazione non raggiunta	cel nieosiągnięty	Ziel nicht erreicht
+erreur : %s	error: %s	error: %s	errore: %s	błąd: %s	Fehler: %s
+RTT (3 sondes)	RTT (3 probes)	RTT (3 sondas)	RTT (3 sonde)	RTT (3 próby)	RTT (3 Proben)
+Échos ICMP à TTL croissant, 3 sondes par saut, 30 sauts au maximum, avec résolution inverse des noms.	ICMP echoes with increasing TTL, 3 probes per hop, at most 30 hops, with reverse name resolution.	Ecos ICMP con TTL creciente, 3 sondas por salto, 30 saltos como máximo, con resolución inversa de nombres.	Echi ICMP con TTL crescente, 3 sonde per hop, al massimo 30 hop, con risoluzione inversa dei nomi.	Echa ICMP z rosnącym TTL, 3 próby na skok, maks. 30 skoków, z odwrotnym rozwiązywaniem nazw.	ICMP-Echos mit steigender TTL, 3 Proben pro Hop, höchstens 30 Hops, mit Rückwärtsauflösung der Namen.
+Perte	Loss	Pérdida	Perdita	Straty	Verlust
+Médiane	Median	Mediana	Mediana	Mediana	Median
+erreur	error	error	errore	błąd	Fehler
+Aucune cible. a : ajouter une adresse à surveiller (20 pings par minute, consolidation 1 min / 5 min / 1 h sur un an).	No target. a: add an address to monitor (20 pings per minute, 1 min / 5 min / 1 h consolidation over a year).	Ningún destino. a: añadir una dirección a monitorizar (20 pings por minuto, consolidación 1 min / 5 min / 1 h durante un año).	Nessuna destinazione. a: aggiungi un indirizzo da monitorare (20 ping al minuto, consolidamento 1 min / 5 min / 1 h su un anno).	Brak celów. a: dodaj adres do monitorowania (20 pingów na minutę, agregacja 1 min / 5 min / 1 h przez rok).	Kein Ziel. a: zu überwachende Adresse hinzufügen (20 Pings pro Minute, Konsolidierung 1 min / 5 min / 1 h über ein Jahr).
+Nouvelle cible de surveillance (20 pings par minute, historique d'un an)	New monitoring target (20 pings per minute, one-year history)	Nuevo destino de monitorización (20 pings por minuto, historial de un año)	Nuova destinazione di monitoraggio (20 ping al minuto, storico di un anno)	Nowy cel monitorowania (20 pingów na minutę, historia roczna)	Neues Überwachungsziel (20 Pings pro Minute, ein Jahr Verlauf)
+Cible %s ajoutée : 20 pings par minute.	Target %s added: 20 pings per minute.	Destino %s añadido: 20 pings por minuto.	Destinazione %s aggiunta: 20 ping al minuto.	Dodano cel %s: 20 pingów na minutę.	Ziel %s hinzugefügt: 20 Pings pro Minute.
+Retirer la cible	Remove target	Quitar destino	Rimuovi destinazione	Usuń cel	Ziel entfernen
+Arrêter la surveillance de %s ?	Stop monitoring %s?	¿Dejar de monitorizar %s?	Interrompere il monitoraggio di %s?	Zatrzymać monitorowanie %s?	Überwachung von %s beenden?
+Son historique sera effacé.	Its history will be erased.	Su historial se borrará.	Il suo storico verrà cancellato.	Jego historia zostanie usunięta.	Der Verlauf wird gelöscht.
+1 point = %s ; %d pings, perte %s, médiane %s	1 point = %s; %d pings, loss %s, median %s	1 punto = %s; %d pings, pérdida %s, mediana %s	1 punto = %s; %d ping, perdita %s, mediana %s	1 punkt = %s; %d pingów, straty %s, mediana %s	1 Punkt = %s; %d Pings, Verlust %s, Median %s
+sans perte	no loss	sin pérdida	senza perdita	bez strat	ohne Verlust
+perte < 5 %%	loss < 5 %%	pérdida < 5 %%	perdita < 5 %%	straty < 5 %%	Verlust < 5 %%
+░ p10-p90  x perdu	░ p10-p90  x lost	░ p10-p90  x perdido	░ p10-p90  x perso	░ p10-p90  x utracone	░ p10-p90  x verloren
+Interf.	Iface	Interf.	Interf.	Interf.	Schnitt.
+Table ARP vide.	ARP table empty.	Tabla ARP vacía.	Tabella ARP vuota.	Tablica ARP pusta.	ARP-Tabelle leer.
+Supprimer une entrée ARP	Delete an ARP entry	Borrar una entrada ARP	Elimina una voce ARP	Usuń wpis ARP	ARP-Eintrag löschen
+Supprimer %s (%s) ?	Delete %s (%s)?	¿Borrar %s (%s)?	Eliminare %s (%s)?	Usunąć %s (%s)?	%s (%s) löschen?
+Elle sera réapprise au prochain échange.	It will be learned again at the next exchange.	Se volverá a aprender en el próximo intercambio.	Verrà riappresa al prossimo scambio.	Zostanie ponownie nauczony przy następnej wymianie.	Er wird beim nächsten Austausch neu gelernt.
+Entrée %s supprimée.	Entry %s deleted.	Entrada %s borrada.	Voce %s eliminata.	Usunięto wpis %s.	Eintrag %s gelöscht.
+Vider la table ARP	Flush ARP table	Vaciar la tabla ARP	Svuota la tabella ARP	Wyczyść tablicę ARP	ARP-Tabelle leeren
+Supprimer toutes les entrées dynamiques ?	Delete all dynamic entries?	¿Borrar todas las entradas dinámicas?	Eliminare tutte le voci dinamiche?	Usunąć wszystkie wpisy dynamiczne?	Alle dynamischen Einträge löschen?
+complète	complete	completa	completa	kompletny	vollständig
+complète (%s)	complete (%s)	completa (%s)	completa (%s)	kompletny (%s)	vollständig (%s)
+incomplète	incomplete	incompleta	incompleta	niekompletny	unvollständig
+incomplète (%s)	incomplete (%s)	incompleta (%s)	incompleta (%s)	niekompletny (%s)	unvollständig (%s)
+permanente	permanent	permanente	permanente	stały	permanent
+permanente (%s)	permanent (%s)	permanente (%s)	permanente (%s)	stały (%s)	permanent (%s)
+Aucun pair : en ajouter un dans « Pairs » (une autre appliance vigie, qui ouvre son serveur iperf3 pour le test), ou viser un serveur iperf3 quelconque.	No peer: add one under “Peers” (another vigie appliance, which opens its iperf3 server for the test), or target any iperf3 server.	Ningún par: añada uno en «Pares» (otro appliance vigie, que abre su servidor iperf3 para la prueba) o use cualquier servidor iperf3.	Nessun peer: aggiungine uno in «Peer» (un'altra appliance vigie, che apre il suo server iperf3 per il test) o usa un server iperf3 qualsiasi.	Brak peerów: dodaj w „Peery” (inny appliance vigie, który otwiera serwer iperf3 na czas testu) lub użyj dowolnego serwera iperf3.	Kein Peer: unter „Peers“ hinzufügen (eine andere vigie-Appliance, die für den Test ihren iperf3-Server öffnet) oder einen beliebigen iperf3-Server verwenden.
+Choisir un pair (Pairs) ou saisir l'hôte d'un serveur iperf3.	Choose a peer (Peers) or enter the host of an iperf3 server.	Elija un par (Pares) o introduzca el host de un servidor iperf3.	Scegli un peer (Peer) o inserisci l'host di un server iperf3.	Wybierz peera (Peery) lub podaj host serwera iperf3.	Peer wählen (Peers) oder Host eines iperf3-Servers eingeben.
+iperf3 : %s — %s	iperf3: %s — %s	iperf3: %s — %s	iperf3: %s — %s	iperf3: %s — %s	iperf3: %s — %s
+ouverture du serveur iperf3 du pair %s	opening peer %s's iperf3 server	abriendo el servidor iperf3 del par %s	apertura del server iperf3 del peer %s	otwieranie serwera iperf3 peera %s	iperf3-Server von Peer %s wird geöffnet
+iperf3 %s, %s, %d flux, %d s	iperf3 %s, %s, %d streams, %d s	iperf3 %s, %s, %d flujos, %d s	iperf3 %s, %s, %d flussi, %d s	iperf3 %s, %s, %d strumieni, %d s	iperf3 %s, %s, %d Streams, %d s
+Émis %s Mbit/s, reçu %s Mbit/s, retransmissions %d	Sent %s Mbit/s, received %s Mbit/s, retransmits %d	Enviado %s Mbit/s, recibido %s Mbit/s, retransmisiones %d	Inviato %s Mbit/s, ricevuto %s Mbit/s, ritrasmissioni %d	Wysłano %s Mbit/s, odebrano %s Mbit/s, retransmisje %d	Gesendet %s Mbit/s, empfangen %s Mbit/s, Neuübertragungen %d
+Gigue %s, perte %s, CPU émetteur %s, récepteur %s	Jitter %s, loss %s, CPU sender %s, receiver %s	Jitter %s, pérdida %s, CPU emisor %s, receptor %s	Jitter %s, perdita %s, CPU mittente %s, ricevente %s	Jitter %s, straty %s, CPU nadawca %s, odbiorca %s	Jitter %s, Verlust %s, CPU Sender %s, Empfänger %s
+Profil : %s, %s, %s, %d flux, %d s	Profile: %s, %s, %s, %d streams, %d s	Perfil: %s, %s, %s, %d flujos, %d s	Profilo: %s, %s, %s, %d flussi, %d s	Profil: %s, %s, %s, %d strumieni, %d s	Profil: %s, %s, %s, %d Streams, %d s
+Profil : %s, %s, %s, %d flux, %d s, cible %s	Profile: %s, %s, %s, %d streams, %d s, target %s	Perfil: %s, %s, %s, %d flujos, %d s, objetivo %s	Profilo: %s, %s, %s, %d flussi, %d s, obiettivo %s	Profil: %s, %s, %s, %d strumieni, %d s, cel %s	Profil: %s, %s, %s, %d Streams, %d s, Ziel %s
+Nouveau pair : une autre appliance vigie	New peer: another vigie appliance	Nuevo par: otro appliance vigie	Nuovo peer: un'altra appliance vigie	Nowy peer: inny appliance vigie	Neuer Peer: eine andere vigie-Appliance
+Sur le pair : Réglages > Jetons d'API, créer un jeton. L'empreinte du certificat du pair est affichée sur sa console ; elle est vérifiée avant l'ajout puis épinglée.	On the peer: Settings > API tokens, create a token. The peer's certificate fingerprint is shown on its console; it is checked before adding, then pinned.	En el par: Ajustes > Tokens de API, cree un token. La huella del certificado del par se muestra en su consola; se comprueba antes de añadirlo y luego se fija.	Sul peer: Impostazioni > Token API, crea un token. L'impronta del certificato del peer è mostrata sulla sua console; viene verificata prima dell'aggiunta e poi fissata.	Na peerze: Ustawienia > Tokeny API, utwórz token. Odcisk certyfikatu peera jest na jego konsoli; jest sprawdzany przed dodaniem i potem przypięty.	Auf dem Peer: Einstellungen > API-Token, Token erstellen. Der Zertifikat-Fingerabdruck des Peers steht auf seiner Konsole; er wird vor dem Hinzufügen geprüft und dann fixiert.
+serveur iperf3 local : fermé (s : l'ouvrir 10 min)	local iperf3 server: closed (s: open it for 10 min)	servidor iperf3 local: cerrado (s: abrirlo 10 min)	server iperf3 locale: chiuso (s: aprirlo 10 min)	lokalny serwer iperf3: zamknięty (s: otwórz na 10 min)	lokaler iperf3-Server: geschlossen (s: 10 min öffnen)
+serveur iperf3 local : ouvert sur le port %d jusqu'à %s UTC (s : fermer)	local iperf3 server: open on port %d until %s UTC (s: close)	servidor iperf3 local: abierto en el puerto %d hasta las %s UTC (s: cerrar)	server iperf3 locale: aperto sulla porta %d fino alle %s UTC (s: chiudi)	lokalny serwer iperf3: otwarty na porcie %d do %s UTC (s: zamknij)	lokaler iperf3-Server: offen auf Port %d bis %s UTC (s: schließen)
+Empreinte	Fingerprint	Huella	Impronta	Odcisk	Fingerabdruck
+Aucun pair. a : ajouter une autre appliance.	No peer. a: add another appliance.	Ningún par. a: añadir otro appliance.	Nessun peer. a: aggiungi un'altra appliance.	Brak peerów. a: dodaj inny appliance.	Kein Peer. a: weitere Appliance hinzufügen.
+Empreinte du pair	Peer fingerprint	Huella del par	Impronta del peer	Odcisk peera	Fingerabdruck des Peers
+Certificat présenté par %s :	Certificate presented by %s:	Certificado presentado por %s:	Certificato presentato da %s:	Certyfikat przedstawiony przez %s:	Von %s vorgelegtes Zertifikat:
+Est-ce bien celle affichée sur la console du pair ?	Is it the one shown on the peer's console?	¿Es la que muestra la consola del par?	È quella mostrata sulla console del peer?	Czy to ten pokazany na konsoli peera?	Ist es der auf der Konsole des Peers angezeigte?
+Pair %s ajouté.	Peer %s added.	Par %s añadido.	Peer %s aggiunto.	Dodano peera %s.	Peer %s hinzugefügt.
+Retirer le pair	Remove peer	Quitar par	Rimuovi peer	Usuń peera	Peer entfernen
+Oublier le pair %s (%s) ?	Forget peer %s (%s)?	¿Olvidar el par %s (%s)?	Dimenticare il peer %s (%s)?	Zapomnieć peera %s (%s)?	Peer %s (%s) vergessen?
+Serveur iperf3 ouvert pour 10 minutes (port 5201).	iperf3 server open for 10 minutes (port 5201).	Servidor iperf3 abierto durante 10 minutos (puerto 5201).	Server iperf3 aperto per 10 minuti (porta 5201).	Serwer iperf3 otwarty na 10 minut (port 5201).	iperf3-Server für 10 Minuten offen (Port 5201).
+actif	up	activo	attivo	aktywny	aktiv
+bas	down	inactivo	inattivo	nieaktywny	inaktiv
+Passerelle : %s	Gateway: %s	Pasarela: %s	Gateway: %s	Brama: %s	Gateway: %s
+aucune	none	ninguna	nessuna	brak	keine
+DNS        : %s	DNS:     %s	DNS:     %s	DNS:     %s	DNS:     %s	DNS:     %s
+Adressage par DHCP ou fixe : propriétés OVF du déploiement, ou onglet Système > Réseau (IP).	Addressing by DHCP or static: OVF properties at deployment, or System tab > Network (IP).	Direccionamiento por DHCP o fijo: propiedades OVF del despliegue, o pestaña Sistema > Red (IP).	Indirizzamento DHCP o statico: proprietà OVF del deployment, oppure scheda Sistema > Rete (IP).	Adresacja DHCP lub statyczna: właściwości OVF przy wdrożeniu albo karta System > Sieć (IP).	Adressierung per DHCP oder statisch: OVF-Eigenschaften beim Deployment oder Reiter System > Netzwerk (IP).
+%d Gio	%d GiB	%d GiB	%d GiB	%d GiB	%d GiB
+%d Kio	%d KiB	%d KiB	%d KiB	%d KiB	%d KiB
+%d Mio	%d MiB	%d MiB	%d MiB	%d MiB	%d MiB
+Lecture de l'état du disque de test…	Reading test disk status…	Leyendo el estado del disco de prueba…	Lettura dello stato del disco di test…	Odczyt stanu dysku testowego…	Status des Testdisks wird gelesen…
+Lecture de l'état du disque…	Reading disk status…	Leyendo el estado del disco…	Lettura dello stato del disco…	Odczyt stanu dysku…	Disk-Status wird gelesen…
+Aucun disque de test.	No test disk.	Ningún disco de prueba.	Nessun disco di test.	Brak dysku testowego.	Kein Testdisk.
+Sans vCenter : menu « Ajouter disque », qui explique les paramètres à saisir dans le client vSphere, puis adopte le disque après contrôles et confirmation.	Without vCenter: “Add disk” menu, which explains the settings to enter in the vSphere Client, then adopts the disk after checks and confirmation.	Sin vCenter: menú «Añadir disco», que explica los parámetros a introducir en el cliente vSphere y adopta el disco tras controles y confirmación.	Senza vCenter: menu «Aggiungi disco», che spiega i parametri da inserire nel client vSphere, poi adotta il disco dopo controlli e conferma.	Bez vCenter: menu „Dodaj dysk”, które objaśnia ustawienia do wpisania w kliencie vSphere, a potem przejmuje dysk po kontrolach i potwierdzeniu.	Ohne vCenter: Menü „Disk hinzufügen“, das die im vSphere Client einzugebenden Parameter erklärt und den Disk nach Prüfungen und Bestätigung übernimmt.
+Avec vCenter : l'interface web (onglet Datastore performance) crée et supprime elle-même le disque.	With vCenter: the web UI (Datastore performance tab) creates and deletes the disk itself.	Con vCenter: la interfaz web (pestaña Datastore performance) crea y elimina el disco por sí misma.	Con vCenter: l'interfaccia web (scheda Datastore performance) crea ed elimina da sé il disco.	Z vCenter: interfejs web (karta Datastore performance) sam tworzy i usuwa dysk.	Mit vCenter: Die Weboberfläche (Reiter Datastore performance) erstellt und löscht den Disk selbst.
+Une demande d'ajout est en cours depuis le %s UTC : poursuivre dans « Ajouter disque ».	An add request has been pending since %s UTC: continue in “Add disk”.	Hay una solicitud de añadido en curso desde el %s UTC: continúe en «Añadir disco».	Una richiesta di aggiunta è in corso dal %s UTC: proseguire in «Aggiungi disco».	Prośba o dodanie trwa od %s UTC: kontynuuj w „Dodaj dysk”.	Eine Hinzufügeanfrage läuft seit %s UTC: unter „Disk hinzufügen“ fortfahren.
+Prêt pour les tests	Ready for tests	Listo para las pruebas	Pronto per i test	Gotowy do testów	Bereit für Tests
+Non utilisable	Not usable	No utilizable	Non utilizzabile	Nieużywalny	Nicht nutzbar
+Disque	Disk	Disco	Disco	Dysk	Disk
+Origine	Origin	Origen	Origine	Pochodzenie	Herkunft
+Taille	Size	Tamaño	Dimensione	Rozmiar	Größe
+Invité	Guest	Invitado	Guest	Gość	Gast
+créé via vCenter	created via vCenter	creado vía vCenter	creato tramite vCenter	utworzony przez vCenter	über vCenter erstellt
+ajouté à la main (mode local, sans vCenter)	added by hand (local mode, no vCenter)	añadido a mano (modo local, sin vCenter)	aggiunto a mano (modalità locale, senza vCenter)	dodany ręcznie (tryb lokalny, bez vCenter)	von Hand hinzugefügt (lokaler Modus, ohne vCenter)
+Signature  : posée le %s UTC, %s	Signature : written on %s UTC, %s	Firma    : escrita el %s UTC, %s	Firma    : scritta il %s UTC, %s	Sygnatura : zapisana %s UTC, %s	Signatur : geschrieben am %s UTC, %s
+non prérempli	not prefilled	sin prellenado	non preriempito	niewypełniony wstępnie	nicht vorbefüllt
+prérempli %s	prefilled %s	prellenado %s	preriempito %s	wstępnie wypełniony %s	vorbefüllt %s
+Contrôles de sécurité (refaits avant chaque test) :	Safety checks (repeated before each test):	Controles de seguridad (repetidos antes de cada prueba):	Controlli di sicurezza (ripetuti prima di ogni test):	Kontrole bezpieczeństwa (powtarzane przed każdym testem):	Sicherheitsprüfungen (vor jedem Test wiederholt):
+OK  %s — %s	OK  %s — %s	OK  %s — %s	OK  %s — %s	OK  %s — %s	OK  %s — %s
+OK  %s	OK  %s	OK  %s	OK  %s	OK  %s	OK  %s
+NON %s — %s	NO  %s — %s	NO  %s — %s	NO  %s — %s	NIE %s — %s	NEIN %s — %s
+NON %s	NO  %s	NO  %s	NO  %s	NIE %s	NEIN %s
+disque local %s (SCSI %s)	local disk %s (SCSI %s)	disco local %s (SCSI %s)	disco locale %s (SCSI %s)	dysk lokalny %s (SCSI %s)	lokaler Disk %s (SCSI %s)
+ajouté par l'appliance	added by the appliance	añadido por el appliance	aggiunto dall'appliance	dodany przez appliance	von der Appliance hinzugefügt
+adopté par l'appliance (mode local)	adopted by the appliance (local mode)	adoptado por el appliance (modo local)	adottato dall'appliance (modalità locale)	przejęty przez appliance (tryb lokalny)	von der Appliance übernommen (lokaler Modus)
+ajouté à la main dans vSphere, %s	added by hand in vSphere, %s	añadido a mano en vSphere, %s	aggiunto a mano in vSphere, %s	dodany ręcznie w vSphere, %s	von Hand in vSphere hinzugefügt, %s
+aucun enregistrement de création	no creation record	ningún registro de creación	nessun record di creazione	brak rekordu utworzenia	kein Erstellungseintrag
+numéro de série = UUID du VMDK	serial number = VMDK UUID	número de serie = UUID del VMDK	numero di serie = UUID del VMDK	numer seryjny = UUID VMDK	Seriennummer = VMDK-UUID
+unité SCSI attendue	expected SCSI unit	unidad SCSI esperada	unità SCSI attesa	oczekiwana jednostka SCSI	erwartete SCSI-Einheit
+non monté	not mounted	no montado	non montato	niezamontowany	nicht eingehängt
+une partition ou le disque est monté	a partition or the disk is mounted	una partición o el disco está montado	una partizione o il disco è montato	partycja lub dysk jest zamontowany	eine Partition oder der Disk ist eingehängt
+sans partition	no partition	sin partición	nessuna partizione	bez partycji	keine Partition
+%d partition(s)	%d partition(s)	%d partición(es)	%d partizione/i	%d partycji	%d Partition(en)
+sans utilisateur (LVM, md…)	not in use (LVM, md…)	sin uso (LVM, md…)	non in uso (LVM, md…)	nieużywany (LVM, md…)	nicht in Benutzung (LVM, md…)
+%d holder(s)	%d holder(s)	%d holder(s)	%d holder	%d holderów	%d Holder
+différent du disque système	not the system disk	distinto del disco de sistema	diverso dal disco di sistema	inny niż dysk systemowy	nicht der Systemdisk
+système : %s	system: %s	sistema: %s	sistema: %s	system: %s	System: %s
+ce disque porte le média de boot ou /data	this disk holds the boot media or /data	este disco contiene el medio de arranque o /data	questo disco contiene il supporto di avvio o /data	ten dysk zawiera nośnik rozruchowy lub /data	dieser Disk trägt das Boot-Medium oder /data
+nœud /dev cohérent	consistent /dev node	nodo /dev coherente	nodo /dev coerente	spójny węzeł /dev	konsistenter /dev-Knoten
+fichier ordinaire (tests)	regular file (tests)	archivo normal (pruebas)	file normale (test)	zwykły plik (testy)	normale Datei (Tests)
+taille attendue	expected size	tamaño esperado	dimensione attesa	oczekiwany rozmiar	erwartete Größe
+%d octets	%d bytes	%d bytes	%d byte	%d bajtów	%d Bytes
+%d octets, attendu %d	%d bytes, expected %d	%d bytes, esperado %d	%d byte, attesi %d	%d bajtów, oczekiwano %d	%d Bytes, erwartet %d
+disque virtuel VMware	VMware virtual disk	disco virtual VMware	disco virtuale VMware	dysk wirtualny VMware	virtueller VMware-Disk
+signature vigie	vigie signature	firma vigie	firma vigie	sygnatura vigie	vigie-Signatur
+créée le %s, préremplie %d octets	created on %s, prefilled %d bytes	creada el %s, prellenada %d bytes	creata il %s, preriempita %d byte	utworzona %s, wypełniona %d bajtów	erstellt am %s, vorbefüllt %d Bytes
+disque vierge	blank disk	disco vacío	disco vuoto	pusty dysk	leerer Disk
+premier et dernier Mio à zéro	first and last MiB are zero	primer y último MiB a cero	primo e ultimo MiB a zero	pierwszy i ostatni MiB wyzerowane	erstes und letztes MiB sind null
+signature vigie de ce disque déjà présente (réadoption)	this disk's vigie signature already present (re-adoption)	firma vigie de este disco ya presente (readopción)	firma vigie di questo disco già presente (riadozione)	sygnatura vigie tego dysku już obecna (ponowne przejęcie)	vigie-Signatur dieses Disks bereits vorhanden (Neuübernahme)
+données présentes : %s ; l'appliance n'écrit que sur un disque neuf	data present: %s; the appliance only writes to a new disk	datos presentes: %s; el appliance solo escribe en un disco nuevo	dati presenti: %s; l'appliance scrive solo su un disco nuovo	obecne dane: %s; appliance zapisuje tylko na nowym dysku	Daten vorhanden: %s; die Appliance schreibt nur auf einen neuen Disk
+table de partitions MBR	MBR partition table	tabla de particiones MBR	tabella delle partizioni MBR	tablica partycji MBR	MBR-Partitionstabelle
+table de partitions GPT	GPT partition table	tabla de particiones GPT	tabella delle partizioni GPT	tablica partycji GPT	GPT-Partitionstabelle
+système de fichiers ext2/3/4	ext2/3/4 file system	sistema de archivos ext2/3/4	file system ext2/3/4	system plików ext2/3/4	ext2/3/4-Dateisystem
+contenu non reconnu	unrecognized content	contenido no reconocido	contenuto non riconosciuto	nierozpoznana zawartość	unbekannter Inhalt
+apparu après la demande	appeared after the request	apareció tras la solicitud	comparso dopo la richiesta	pojawił się po prośbie	nach der Anfrage erschienen
+absent de l'instantané du %s UTC	absent from the %s UTC snapshot	ausente de la instantánea del %s UTC	assente dall'istantanea del %s UTC	nieobecny w migawce z %s UTC	nicht im Schnappschuss vom %s UTC
+taille suffisante	sufficient size	tamaño suficiente	dimensione sufficiente	wystarczający rozmiar	ausreichende Größe
+%d Gio (minimum %d Gio, conseillé %d Gio)	%d GiB (minimum %d GiB, recommended %d GiB)	%d GiB (mínimo %d GiB, recomendado %d GiB)	%d GiB (minimo %d GiB, consigliati %d GiB)	%d GiB (minimum %d GiB, zalecane %d GiB)	%d GiB (mindestens %d GiB, empfohlen %d GiB)
+identifiant unique (disk.EnableUUID)	unique identifier (disk.EnableUUID)	identificador único (disk.EnableUUID)	identificatore univoco (disk.EnableUUID)	unikalny identyfikator (disk.EnableUUID)	eindeutige Kennung (disk.EnableUUID)
+confirmation refusée : retaper exactement le nom du disque (%s)	confirmation refused: retype the exact disk name (%s)	confirmación rechazada: escriba exactamente el nombre del disco (%s)	conferma rifiutata: ridigitare esattamente il nome del disco (%s)	potwierdzenie odrzucone: wpisz dokładnie nazwę dysku (%s)	Bestätigung abgelehnt: genauen Disk-Namen eingeben (%s)
+contrôles en échec : aucune écriture effectuée	checks failed: nothing was written	controles fallidos: no se escribió nada	controlli falliti: nessuna scrittura effettuata	kontrole nieudane: nic nie zapisano	Prüfungen fehlgeschlagen: nichts geschrieben
+un job est en cours (%s)	a job is running (%s)	hay un job en curso (%s)	un job è in corso (%s)	trwa zadanie (%s)	ein Job läuft (%s)
+Un disque de test est déjà en place : %s	A test disk is already in place: %s	Ya hay un disco de prueba: %s	Un disco di test è già presente: %s	Dysk testowy jest już na miejscu: %s	Es ist bereits ein Testdisk vorhanden: %s
+Pour en ajouter un autre, le libérer d'abord (menu « Libérer disque »).	To add another one, release it first (“Release disk” menu).	Para añadir otro, libérelo primero (menú «Liberar disco»).	Per aggiungerne un altro, rilascialo prima (menu «Rilascia disco»).	Aby dodać inny, najpierw go zwolnij (menu „Zwolnij dysk”).	Um einen anderen hinzuzufügen, zuerst freigeben (Menü „Disk freigeben“).
+Ajouter un disque de test (sans vCenter)	Add a test disk (without vCenter)	Añadir un disco de prueba (sin vCenter)	Aggiungere un disco di test (senza vCenter)	Dodaj dysk testowy (bez vCenter)	Testdisk hinzufügen (ohne vCenter)
+Dans le client vSphere : clic droit sur la VM « %s » > Modifier les paramètres > Ajouter un périphérique > Disque dur, puis :	In the vSphere Client: right-click the VM “%s” > Edit Settings > Add New Device > Hard Disk, then:	En el cliente vSphere: clic derecho en la VM «%s» > Editar configuración > Agregar nuevo dispositivo > Disco duro, y luego:	Nel client vSphere: clic destro sulla VM «%s» > Modifica impostazioni > Aggiungi nuovo dispositivo > Disco rigido, poi:	W kliencie vSphere: prawy klik na VM „%s” > Edytuj ustawienia > Dodaj nowe urządzenie > Dysk twardy, następnie:	Im vSphere Client: Rechtsklick auf die VM „%s“ > Einstellungen bearbeiten > Neues Gerät hinzufügen > Festplatte, dann:
+Dans le client vSphere : clic droit sur la VM > Modifier les paramètres > Ajouter un périphérique > Disque dur, puis :	In the vSphere Client: right-click the VM > Edit Settings > Add New Device > Hard Disk, then:	En el cliente vSphere: clic derecho en la VM > Editar configuración > Agregar nuevo dispositivo > Disco duro, y luego:	Nel client vSphere: clic destro sulla VM > Modifica impostazioni > Aggiungi nuovo dispositivo > Disco rigido, poi:	W kliencie vSphere: prawy klik na VM > Edytuj ustawienia > Dodaj nowe urządzenie > Dysk twardy, następnie:	Im vSphere Client: Rechtsklick auf die VM > Einstellungen bearbeiten > Neues Gerät hinzufügen > Festplatte, dann:
+Emplacement	Location	Ubicación	Posizione	Lokalizacja	Speicherort
+Provisionnement	Provisioning	Aprovisionamiento	Provisioning	Alokacja	Bereitstellung
+Contrôleur	Controller	Controladora	Controller	Kontroler	Controller
+Mode disque	Disk mode	Modo de disco	Modalità disco	Tryb dysku	Disk-Modus
+Partage	Sharing	Uso compartido	Condivisione	Współdzielenie	Freigabe
+%d Go conseillés, %d Go minimum : tout le disque sert de zone de test (plus grand que le cache du serveur = plus réaliste).	%d GB recommended, %d GB minimum: the whole disk is the test area (larger than the server cache = more realistic).	%d GB recomendados, %d GB mínimo: todo el disco es la zona de prueba (mayor que la caché del servidor = más realista).	%d GB consigliati, %d GB minimo: tutto il disco è l'area di test (più grande della cache del server = più realistico).	%d GB zalecane, %d GB minimum: cały dysk jest obszarem testu (większy niż cache serwera = bardziej realistycznie).	%d GB empfohlen, mindestens %d GB: der ganze Disk ist Testbereich (größer als der Server-Cache = realistischer).
+le datastore à mesurer, pas celui de la VM.	the datastore to measure, not the VM's one.	el datastore a medir, no el de la VM.	il datastore da misurare, non quello della VM.	datastore do zmierzenia, nie ten VM.	der zu messende Datastore, nicht der der VM.
+Thick eager-zeroed conseillé ; thin accepté (préremplissage plus long).	Thick eager-zeroed recommended; thin accepted (longer prefill).	Thick eager-zeroed recomendado; thin aceptado (prellenado más largo).	Thick eager-zeroed consigliato; thin accettato (preriempimento più lungo).	Zalecany thick eager-zeroed; thin akceptowany (dłuższe wypełnianie).	Thick Eager-Zeroed empfohlen; Thin akzeptiert (längeres Vorbefüllen).
+SCSI 0 existant (VMware Paravirtual), unité libre ; pas de contrôleur SATA ou NVMe.	existing SCSI 0 (VMware Paravirtual), free unit; no SATA or NVMe controller.	SCSI 0 existente (VMware Paravirtual), unidad libre; sin controladora SATA ni NVMe.	SCSI 0 esistente (VMware Paravirtual), unità libera; nessun controller SATA o NVMe.	istniejący SCSI 0 (VMware Paravirtual), wolna jednostka; bez kontrolera SATA ani NVMe.	vorhandener SCSI 0 (VMware Paravirtual), freie Einheit; kein SATA- oder NVMe-Controller.
+Dépendant (pas « indépendant non persistant ») ; pas de snapshot pendant les tests.	Dependent (not “independent nonpersistent”); no snapshot during tests.	Dependiente (no «independiente no persistente»); sin snapshot durante las pruebas.	Dipendente (non «indipendente non persistente»); nessuno snapshot durante i test.	Zależny (nie „niezależny nietrwały”); bez snapshotu podczas testów.	Abhängig (nicht „unabhängig – nicht dauerhaft“); kein Snapshot während der Tests.
+aucun (pas de multi-writer) ; IOPS illimitées.	none (no multi-writer); unlimited IOPS.	ninguno (sin multi-writer); IOPS ilimitadas.	nessuna (niente multi-writer); IOPS illimitati.	brak (bez multi-writer); IOPS bez limitu.	keine (kein Multi-Writer); unbegrenzte IOPS.
+OK : ajout à chaud, sans redémarrage. Seul un disque neuf, apparu après votre demande et dont vous retapez le nom, sera utilisé ; ses données seront détruites.	OK: hot add, no restart. Only a new disk, appearing after your request and whose name you retype, will be used; its data will be destroyed.	OK: añadido en caliente, sin reinicio. Solo se usará un disco nuevo, aparecido tras su solicitud y cuyo nombre vuelva a escribir; sus datos se destruirán.	OK: aggiunta a caldo, senza riavvio. Verrà usato solo un disco nuovo, comparso dopo la richiesta e di cui ridigiti il nome; i suoi dati saranno distrutti.	OK: dodanie na gorąco, bez restartu. Użyty zostanie tylko nowy dysk, który pojawił się po prośbie i którego nazwę wpiszesz; jego dane zostaną zniszczone.	OK: Hot-Add, ohne Neustart. Nur ein neuer Disk, der nach Ihrer Anfrage erscheint und dessen Namen Sie erneut eingeben, wird verwendet; seine Daten werden zerstört.
+%d Go conseillés (%d Go minimum)	%d GB recommended (%d GB minimum)	%d GB recomendados (%d GB mínimo)	%d GB consigliati (%d GB minimo)	%d GB zalecane (%d GB minimum)	%d GB empfohlen (mindestens %d GB)
+le datastore à mesurer	the datastore to measure	el datastore a medir	il datastore da misurare	datastore do zmierzenia	der zu messende Datastore
+Thick eager-zeroed (thin accepté)	Thick eager-zeroed (thin accepted)	Thick eager-zeroed (thin aceptado)	Thick eager-zeroed (thin accettato)	Thick eager-zeroed (thin akceptowany)	Thick Eager-Zeroed (Thin akzeptiert)
+SCSI 0 existant (VMware Paravirtual)	existing SCSI 0 (VMware Paravirtual)	SCSI 0 existente (VMware Paravirtual)	SCSI 0 esistente (VMware Paravirtual)	istniejący SCSI 0 (VMware Paravirtual)	vorhandener SCSI 0 (VMware Paravirtual)
+Dépendant, sans partage	Dependent, not shared	Dependiente, sin compartir	Dipendente, non condiviso	Zależny, bez współdzielenia	Abhängig, ohne Freigabe
+Entrée : je vais ajouter le disque, préparer la détection	Enter: I will add the disk, prepare detection	Intro: voy a añadir el disco, preparar la detección	Invio: aggiungerò il disco, prepara il rilevamento	Enter: dodam dysk, przygotuj wykrywanie	Enter: Ich füge den Disk hinzu, Erkennung vorbereiten
+Prêt : %d disque(s) déjà présent(s), ignoré(s).	Ready: %d disk(s) already present, ignored.	Listo: %d disco(s) ya presente(s), ignorado(s).	Pronto: %d disco/i già presente/i, ignorato/i.	Gotowe: %d obecnych dysków, pominięte.	Bereit: %d bereits vorhandene(r) Disk(s), ignoriert.
+Ajoutez maintenant le disque dans vSphere :	Now add the disk in vSphere:	Añada ahora el disco en vSphere:	Ora aggiungi il disco in vSphere:	Teraz dodaj dysk w vSphere:	Fügen Sie jetzt den Disk in vSphere hinzu:
+Entrée : c'est fait, détecter le disque	Enter: done, detect the disk	Intro: hecho, detectar el disco	Invio: fatto, rileva il disco	Enter: gotowe, wykryj dysk	Enter: erledigt, Disk erkennen
+Recherche du nouveau disque (rescan des contrôleurs SCSI, jusqu'à 15 s)…	Looking for the new disk (SCSI controller rescan, up to 15 s)…	Buscando el disco nuevo (reescaneo de controladoras SCSI, hasta 15 s)…	Ricerca del nuovo disco (nuova scansione dei controller SCSI, fino a 15 s)…	Szukanie nowego dysku (ponowne skanowanie kontrolerów SCSI, do 15 s)…	Suche nach dem neuen Disk (SCSI-Controller-Rescan, bis zu 15 s)…
+Aucun nouveau disque détecté.	No new disk detected.	No se detectó ningún disco nuevo.	Nessun nuovo disco rilevato.	Nie wykryto nowego dysku.	Kein neuer Disk erkannt.
+Vérifier dans vSphere que l'ajout est validé (OK), que le disque est sur le contrôleur SCSI 0 (VMware Paravirtual) et non sur un nouveau contrôleur SATA ou NVMe. Entrée : relancer la détection ; Suppr : abandonner.	Check in vSphere that the addition is confirmed (OK), that the disk is on SCSI controller 0 (VMware Paravirtual) and not on a new SATA or NVMe controller. Enter: detect again; Del: abort.	Compruebe en vSphere que el añadido está validado (OK), que el disco está en la controladora SCSI 0 (VMware Paravirtual) y no en una nueva SATA o NVMe. Intro: volver a detectar; Supr: abandonar.	Verifica in vSphere che l'aggiunta sia confermata (OK), che il disco sia sul controller SCSI 0 (VMware Paravirtual) e non su un nuovo controller SATA o NVMe. Invio: rileva di nuovo; Canc: abbandona.	Sprawdź w vSphere, że dodanie jest zatwierdzone (OK), a dysk jest na kontrolerze SCSI 0 (VMware Paravirtual), a nie na nowym SATA lub NVMe. Enter: wykryj ponownie; Del: przerwij.	Prüfen Sie in vSphere, dass das Hinzufügen bestätigt ist (OK) und der Disk am SCSI-Controller 0 (VMware Paravirtual) hängt, nicht an einem neuen SATA- oder NVMe-Controller. Enter: erneut erkennen; Entf: abbrechen.
+Disque(s) apparu(s) depuis la demande :	Disk(s) appeared since the request:	Disco(s) aparecido(s) desde la solicitud:	Disco/i comparso/i dalla richiesta:	Dyski, które pojawiły się od prośby:	Seit der Anfrage erschienene Disk(s):
+acceptable	acceptable	aceptable	accettabile	akceptowalny	geeignet
+refusé	refused	rechazado	rifiutato	odrzucony	abgelehnt
+Contrôles de %s (%s) :	Checks of %s (%s):	Controles de %s (%s):	Controlli di %s (%s):	Kontrole %s (%s):	Prüfungen von %s (%s):
+Ce disque ne passe pas les contrôles : l'appliance n'y écrira pas.	This disk fails the checks: the appliance will not write to it.	Este disco no supera los controles: el appliance no escribirá en él.	Questo disco non supera i controlli: l'appliance non vi scriverà.	Ten dysk nie przechodzi kontroli: appliance nic na nim nie zapisze.	Dieser Disk besteht die Prüfungen nicht: die Appliance schreibt nicht darauf.
+Abandonner l'ajout	Abort adding	Abandonar el añadido	Abbandona l'aggiunta	Przerwij dodawanie	Hinzufügen abbrechen
+Abandonner la demande d'ajout de disque ?	Abort the disk add request?	¿Abandonar la solicitud de añadir disco?	Abbandonare la richiesta di aggiunta del disco?	Przerwać prośbę o dodanie dysku?	Disk-Hinzufügeanfrage abbrechen?
+Si le disque a déjà été ajouté dans vSphere, le retirer là-bas.	If the disk was already added in vSphere, remove it there.	Si el disco ya se añadió en vSphere, quítelo allí.	Se il disco è già stato aggiunto in vSphere, rimuovilo lì.	Jeśli dysk został już dodany w vSphere, usuń go tam.	Wurde der Disk bereits in vSphere hinzugefügt, dort entfernen.
+Disque détecté : vérifiez que c'est bien le vôtre.	Disk detected: check it is yours.	Disco detectado: compruebe que es el suyo.	Disco rilevato: verifica che sia il tuo.	Wykryto dysk: sprawdź, czy to twój.	Disk erkannt: prüfen Sie, ob es Ihrer ist.
+Nom dans la VM . %s	Name in the VM .. %s	Nombre en la VM %s	Nome nella VM .. %s	Nazwa w VM ..... %s	Name in der VM . %s
+Taille ......... %s (%s octets)	Size ........... %s (%s bytes)	Tamaño ......... %s (%s bytes)	Dimensione ..... %s (%s byte)	Rozmiar ........ %s (%s bajtów)	Größe .......... %s (%s Bytes)
+Contrôleur ..... SCSI %d (%s), unité %d	Controller ..... SCSI %d (%s), unit %d	Controladora ... SCSI %d (%s), unidad %d	Controller ..... SCSI %d (%s), unità %d	Kontroler ...... SCSI %d (%s), jednostka %d	Controller ..... SCSI %d (%s), Einheit %d
+Identifiant .... %s	Identifier ..... %s	Identificador .. %s	Identificatore . %s	Identyfikator .. %s	Kennung ........ %s
+Modèle ......... %s	Model .......... %s	Modelo ......... %s	Modello ........ %s	Model .......... %s	Modell ......... %s
+Provisionnement  non visible depuis la VM	Provisioning ... not visible from the VM	Aprovisionam. .. no visible desde la VM	Provisioning ... non visibile dalla VM	Alokacja ....... niewidoczna z VM	Bereitstellung . in der VM nicht sichtbar
+L'appliance écrira une signature de 4 Kio au début du disque ; les tests écriront ensuite sur tout le disque. Toutes ses données seront détruites.	The appliance will write a 4 KiB signature at the start of the disk; tests will then write over the whole disk. All its data will be destroyed.	El appliance escribirá una firma de 4 KiB al principio del disco; las pruebas escribirán luego en todo el disco. Todos sus datos se destruirán.	L'appliance scriverà una firma di 4 KiB all'inizio del disco; i test scriveranno poi su tutto il disco. Tutti i suoi dati saranno distrutti.	Appliance zapisze sygnaturę 4 KiB na początku dysku; testy zapiszą potem cały dysk. Wszystkie dane zostaną zniszczone.	Die Appliance schreibt eine 4-KiB-Signatur an den Anfang des Disks; die Tests beschreiben dann den ganzen Disk. Alle Daten werden zerstört.
+Disque adopté : prêt pour les tests (menus Test standard et Test avancé).	Disk adopted: ready for tests (Standard test and Advanced test menus).	Disco adoptado: listo para las pruebas (menús Prueba estándar y Prueba avanzada).	Disco adottato: pronto per i test (menu Test standard e Test avanzato).	Dysk przejęty: gotowy do testów (menu Test standardowy i Test rozszerzony).	Disk übernommen: bereit für Tests (Menüs Standardtest und Erweiterter Test).
+Disque adopté : prêt pour les tests.	Disk adopted: ready for tests.	Disco adoptado: listo para las pruebas.	Disco adottato: pronto per i test.	Dysk przejęty: gotowy do testów.	Disk übernommen: bereit für Tests.
+Entrée : terminer	Enter: finish	Intro: terminar	Invio: termina	Enter: zakończ	Enter: beenden
+Un disque de test est déjà en place : le libérer d'abord.	A test disk is already in place: release it first.	Ya hay un disco de prueba: libérelo primero.	Un disco di test è già presente: rilascialo prima.	Dysk testowy jest już na miejscu: najpierw go zwolnij.	Es ist bereits ein Testdisk vorhanden: zuerst freigeben.
+Test standard local : débit séquentiel en écriture puis en lecture	Local standard test: sequential write then read throughput	Prueba estándar local: caudal secuencial de escritura y luego lectura	Test standard locale: throughput sequenziale in scrittura poi in lettura	Lokalny test standardowy: przepływność sekwencyjna zapisu, potem odczytu	Lokaler Standardtest: sequenzieller Durchsatz Schreiben, dann Lesen
+Test avancé local : débit séquentiel, puis IOPS et latences 4 Kio	Local advanced test: sequential throughput, then 4 KiB IOPS and latencies	Prueba avanzada local: caudal secuencial, luego IOPS y latencias 4 KiB	Test avanzato locale: throughput sequenziale, poi IOPS e latenze 4 KiB	Lokalny test rozszerzony: przepływność sekwencyjna, potem IOPS i opóźnienia 4 KiB	Lokaler erweiterter Test: sequenzieller Durchsatz, dann 4-KiB-IOPS und Latenzen
+Durée estimée : %d min %02d s, plus le préremplissage du disque au premier test.	Estimated duration: %d min %02d s, plus disk prefill on the first test.	Duración estimada: %d min %02d s, más el prellenado del disco en la primera prueba.	Durata stimata: %d min %02d s, più il preriempimento del disco al primo test.	Szacowany czas: %d min %02d s, plus wstępne wypełnienie dysku przy pierwszym teście.	Geschätzte Dauer: %d min %02d s, plus Vorbefüllen des Disks beim ersten Test.
+Profil d'I/O : écriture puis lecture séquentielles, bloc 1 Mio, QD 4, O_DIRECT+O_SYNC, données aléatoires incompressibles renouvelées à chaque passe, sur tout le disque de test.	I/O profile: sequential write then read, 1 MiB block, QD 4, O_DIRECT+O_SYNC, incompressible random data renewed on each pass, over the whole test disk.	Perfil de E/S: escritura y luego lectura secuenciales, bloque 1 MiB, QD 4, O_DIRECT+O_SYNC, datos aleatorios incompresibles renovados en cada pasada, en todo el disco de prueba.	Profilo di I/O: scrittura poi lettura sequenziali, blocco 1 MiB, QD 4, O_DIRECT+O_SYNC, dati casuali incomprimibili rinnovati a ogni passata, su tutto il disco di test.	Profil I/O: zapis, potem odczyt sekwencyjny, blok 1 MiB, QD 4, O_DIRECT+O_SYNC, losowe nieskompresowalne dane odnawiane w każdym przebiegu, na całym dysku testowym.	I/O-Profil: sequenzielles Schreiben, dann Lesen, Block 1 MiB, QD 4, O_DIRECT+O_SYNC, nicht komprimierbare Zufallsdaten, bei jedem Durchlauf erneuert, über den ganzen Testdisk.
+Profil d'I/O : écriture puis lecture séquentielles, bloc 1 Mio, QD 4, O_DIRECT+O_SYNC, données aléatoires incompressibles renouvelées à chaque passe, sur tout le disque de test. Puis 4 Kio aléatoire en lecture, écriture et mixte 70/30, QD 1, 4, 16 et 32, 5 s de chauffe et 40 s de mesure par palier.	I/O profile: sequential write then read, 1 MiB block, QD 4, O_DIRECT+O_SYNC, incompressible random data renewed on each pass, over the whole test disk. Then 4 KiB random read, write and 70/30 mixed, QD 1, 4, 16 and 32, 5 s warm-up and 40 s measurement per step.	Perfil de E/S: escritura y luego lectura secuenciales, bloque 1 MiB, QD 4, O_DIRECT+O_SYNC, datos aleatorios incompresibles renovados en cada pasada, en todo el disco de prueba. Luego 4 KiB aleatorio en lectura, escritura y mixto 70/30, QD 1, 4, 16 y 32, 5 s de calentamiento y 40 s de medida por escalón.	Profilo di I/O: scrittura poi lettura sequenziali, blocco 1 MiB, QD 4, O_DIRECT+O_SYNC, dati casuali incomprimibili rinnovati a ogni passata, su tutto il disco di test. Poi 4 KiB casuale in lettura, scrittura e misto 70/30, QD 1, 4, 16 e 32, 5 s di riscaldamento e 40 s di misura per passo.	Profil I/O: zapis, potem odczyt sekwencyjny, blok 1 MiB, QD 4, O_DIRECT+O_SYNC, losowe nieskompresowalne dane odnawiane w każdym przebiegu, na całym dysku testowym. Potem losowo 4 KiB odczyt, zapis i mieszany 70/30, QD 1, 4, 16 i 32, 5 s rozgrzewki i 40 s pomiaru na etap.	I/O-Profil: sequenzielles Schreiben, dann Lesen, Block 1 MiB, QD 4, O_DIRECT+O_SYNC, nicht komprimierbare Zufallsdaten, bei jedem Durchlauf erneuert, über den ganzen Testdisk. Dann 4 KiB zufällig Lesen, Schreiben und gemischt 70/30, QD 1, 4, 16 und 32, 5 s Aufwärmen und 40 s Messung pro Stufe.
+Sans vCenter, seul ce que voit la VM est mesuré : pas de ratio TX/écrit, d'erreurs NIC ni de journaux de l'hôte.	Without vCenter, only what the VM sees is measured: no TX/written ratio, NIC errors or host logs.	Sin vCenter solo se mide lo que ve la VM: sin ratio TX/escrito, errores de NIC ni registros del host.	Senza vCenter si misura solo ciò che vede la VM: niente rapporto TX/scritto, errori NIC o log dell'host.	Bez vCenter mierzone jest tylko to, co widzi VM: bez współczynnika TX/zapis, błędów NIC i logów hosta.	Ohne vCenter wird nur gemessen, was die VM sieht: kein TX/Schreib-Verhältnis, keine NIC-Fehler, keine Host-Logs.
+hybride	hybrid	híbrido	ibrido	hybrydowy	hybrid
+disques	HDD	HDD	HDD	HDD	HDD
+Test %s local : %s	Local %s test: %s	Prueba %s local: %s	Test %s locale: %s	Lokalny test %s: %s	Lokaler %s Test: %s
+standard	standard	estándar	standard	standardowy	Standard-
+avancé	advanced	avanzada	avanzato	rozszerzony	erweiterter
+démarrage du worker	starting the worker	iniciando el worker	avvio del worker	uruchamianie workera	Worker wird gestartet
+préremplissage %s %%	prefill %s %%	prellenado %s %%	preriempimento %s %%	wypełnianie %s %%	Vorbefüllen %s %%
+palier %d/%d %s : chauffe	step %d/%d %s: warm-up	escalón %d/%d %s: calentamiento	passo %d/%d %s: riscaldamento	etap %d/%d %s: rozgrzewka	Stufe %d/%d %s: Aufwärmen
+palier %d/%d %s : %d s — %s Mo/s — %d IO/s — p99 %s ms	step %d/%d %s: %d s — %s MB/s — %d IO/s — p99 %s ms	escalón %d/%d %s: %d s — %s MB/s — %d IO/s — p99 %s ms	passo %d/%d %s: %d s — %s MB/s — %d IO/s — p99 %s ms	etap %d/%d %s: %d s — %s MB/s — %d IO/s — p99 %s ms	Stufe %d/%d %s: %d s — %s MB/s — %d IO/s — p99 %s ms
+terminé — verdict : %s	finished — verdict: %s	terminado — veredicto: %s	terminato — verdetto: %s	zakończono — werdykt: %s	beendet — Bewertung: %s
+écriture séquentielle	sequential write	escritura secuencial	scrittura sequenziale	zapis sekwencyjny	sequenzielles Schreiben
+lecture séquentielle	sequential read	lectura secuencial	lettura sequenziale	odczyt sekwencyjny	sequenzielles Lesen
+lecture %d Kio QD%d	read %d KiB QD%d	lectura %d KiB QD%d	lettura %d KiB QD%d	odczyt %d KiB QD%d	Lesen %d KiB QD%d
+écriture %d Kio QD%d	write %d KiB QD%d	escritura %d KiB QD%d	scrittura %d KiB QD%d	zapis %d KiB QD%d	Schreiben %d KiB QD%d
+mixte 70/30 %d Kio QD%d	mixed 70/30 %d KiB QD%d	mixto 70/30 %d KiB QD%d	misto 70/30 %d KiB QD%d	mieszany 70/30 %d KiB QD%d	gemischt 70/30 %d KiB QD%d
+Débit d'écriture : %s Mo/s (seuils %s / %s)	Write throughput: %s MB/s (thresholds %s / %s)	Caudal de escritura: %s MB/s (umbrales %s / %s)	Throughput in scrittura: %s MB/s (soglie %s / %s)	Przepływność zapisu: %s MB/s (progi %s / %s)	Schreibdurchsatz: %s MB/s (Schwellen %s / %s)
+Latence 4 Kio QD1 p99, %s : %s ms (seuils %s / %s)	4 KiB QD1 p99 latency, %s: %s ms (thresholds %s / %s)	Latencia 4 KiB QD1 p99, %s: %s ms (umbrales %s / %s)	Latenza 4 KiB QD1 p99, %s: %s ms (soglie %s / %s)	Opóźnienie 4 KiB QD1 p99, %s: %s ms (progi %s / %s)	Latenz 4 KiB QD1 p99, %s: %s ms (Schwellen %s / %s)
+CPU du worker : au-delà de %s %% sur %s : résultat limité par l'appliance, passer la VM à 4 vCPU	Worker CPU: above %s %% on %s: result limited by the appliance, give the VM 4 vCPUs	CPU del worker: por encima del %s %% en %s: resultado limitado por el appliance, pase la VM a 4 vCPU	CPU del worker: oltre il %s %% su %s: risultato limitato dall'appliance, portare la VM a 4 vCPU	CPU workera: powyżej %s %% na %s: wynik ograniczony przez appliance, daj VM 4 vCPU	Worker-CPU: über %s %% bei %s: Ergebnis durch die Appliance begrenzt, VM auf 4 vCPU erhöhen
+lecture	read	lectura	lettura	odczyt	Lesen
+écriture	write	escritura	scrittura	zapis	Schreiben
+mixte 70/30	mixed 70/30	mixto 70/30	misto 70/30	mieszany 70/30	gemischt 70/30
+lecture 4 Kio	read 4 KiB	lectura 4 KiB	lettura 4 KiB	odczyt 4 KiB	Lesen 4 KiB
+écriture 4 Kio	write 4 KiB	escritura 4 KiB	scrittura 4 KiB	zapis 4 KiB	Schreiben 4 KiB
+mixte 4 Kio	mixed 4 KiB	mixto 4 KiB	misto 4 KiB	mieszany 4 KiB	gemischt 4 KiB
+Écriture séquentielle %s Mo/s (p99 %s) ; lecture %s Mo/s (p99 %s)	Sequential write %s MB/s (p99 %s); read %s MB/s (p99 %s)	Escritura secuencial %s MB/s (p99 %s); lectura %s MB/s (p99 %s)	Scrittura sequenziale %s MB/s (p99 %s); lettura %s MB/s (p99 %s)	Zapis sekwencyjny %s MB/s (p99 %s); odczyt %s MB/s (p99 %s)	Sequenzielles Schreiben %s MB/s (p99 %s); Lesen %s MB/s (p99 %s)
+IOPS utiles %s %s IO/s à QD %d (p99 < %s ; max brut %s à QD %d)	Useful IOPS %s %s IO/s at QD %d (p99 < %s; raw max %s at QD %d)	IOPS útiles %s %s IO/s a QD %d (p99 < %s; máx. bruto %s a QD %d)	IOPS utili %s %s IO/s a QD %d (p99 < %s; max grezzo %s a QD %d)	Użyteczne IOPS %s %s IO/s przy QD %d (p99 < %s; maks. surowe %s przy QD %d)	Nutzbare IOPS %s %s IO/s bei QD %d (p99 < %s; Rohmaximum %s bei QD %d)
+IOPS utiles %s aucun palier sous %s (max brut %s à QD %d)	Useful IOPS %s no step under %s (raw max %s at QD %d)	IOPS útiles %s ningún escalón bajo %s (máx. bruto %s a QD %d)	IOPS utili %s nessun passo sotto %s (max grezzo %s a QD %d)	Użyteczne IOPS %s brak etapu poniżej %s (maks. surowe %s przy QD %d)	Nutzbare IOPS %s keine Stufe unter %s (Rohmaximum %s bei QD %d)
+Profil écriture :	Write profile:	Perfil escritura:	Profilo scrittura:	Profil zapisu:	Schreibprofil:
+Profil lecture :	Read profile:	Perfil lectura:	Profilo lettura:	Profil odczytu:	Leseprofil:
+mixte %d/%d lecture/écriture	mixed %d/%d read/write	mixto %d/%d lectura/escritura	misto %d/%d lettura/scrittura	mieszany %d/%d odczyt/zapis	gemischt %d/%d Lesen/Schreiben
+%s %s, bloc %s, QD %d, %d s, zone %s, %s	%s %s, block %s, QD %d, %d s, area %s, %s	%s %s, bloque %s, QD %d, %d s, zona %s, %s	%s %s, blocco %s, QD %d, %d s, area %s, %s	%s %s, blok %s, QD %d, %d s, obszar %s, %s	%s %s, Block %s, QD %d, %d s, Bereich %s, %s
+séquentielle en boucle sur la zone	sequential, looping over the area	secuencial en bucle sobre la zona	sequenziale in ciclo sull'area	sekwencyjnie w pętli po obszarze	sequenziell in Schleife über den Bereich
+séquentielle, une passe sur toute la zone	sequential, one pass over the whole area	secuencial, una pasada por toda la zona	sequenziale, una passata su tutta l'area	sekwencyjnie, jeden przebieg po całym obszarze	sequenziell, ein Durchlauf über den ganzen Bereich
+aléatoire uniforme, aligné sur le bloc	uniform random, block-aligned	aleatorio uniforme, alineado al bloque	casuale uniforme, allineato al blocco	losowo jednorodnie, wyrównane do bloku	gleichverteilt zufällig, blockausgerichtet
+aléatoires incompressibles, contenu nouveau à chaque passe, secteurs de 4 Kio tous distincts	incompressible random data, new content on each pass, all 4 KiB sectors distinct	datos aleatorios incompresibles, contenido nuevo en cada pasada, sectores de 4 KiB todos distintos	dati casuali incomprimibili, contenuto nuovo a ogni passata, settori da 4 KiB tutti distinti	losowe nieskompresowalne dane, nowa zawartość w każdym przebiegu, wszystkie sektory 4 KiB różne	nicht komprimierbare Zufallsdaten, neuer Inhalt bei jedem Durchlauf, alle 4-KiB-Sektoren verschieden
+aléatoires incompressibles, contenu nouveau à chaque écriture	incompressible random data, new content on each write	datos aleatorios incompresibles, contenido nuevo en cada escritura	dati casuali incomprimibili, contenuto nuovo a ogni scrittura	losowe nieskompresowalne dane, nowa zawartość przy każdym zapisie	nicht komprimierbare Zufallsdaten, neuer Inhalt bei jedem Schreiben
+Profil paliers : aléatoire aligné, bloc 4 Kio, QD 1 à 32, %d s de chauffe + %d s de mesure, zone %s, O_DIRECT+O_SYNC	Step profile: aligned random, 4 KiB block, QD 1 to 32, %d s warm-up + %d s measurement, area %s, O_DIRECT+O_SYNC	Perfil de escalones: aleatorio alineado, bloque 4 KiB, QD 1 a 32, %d s de calentamiento + %d s de medida, zona %s, O_DIRECT+O_SYNC	Profilo passi: casuale allineato, blocco 4 KiB, QD da 1 a 32, %d s di riscaldamento + %d s di misura, area %s, O_DIRECT+O_SYNC	Profil etapów: losowo wyrównane, blok 4 KiB, QD 1 do 32, %d s rozgrzewki + %d s pomiaru, obszar %s, O_DIRECT+O_SYNC	Stufenprofil: zufällig ausgerichtet, Block 4 KiB, QD 1 bis 32, %d s Aufwärmen + %d s Messung, Bereich %s, O_DIRECT+O_SYNC
+Disque : %s ; seuils « %s »	Disk: %s; thresholds “%s”	Disco: %s; umbrales «%s»	Disco: %s; soglie «%s»	Dysk: %s; progi „%s”	Disk: %s; Schwellen „%s“
+Disque : %s, datastore %s ; seuils « %s »	Disk: %s, datastore %s; thresholds “%s”	Disco: %s, datastore %s; umbrales «%s»	Disco: %s, datastore %s; soglie «%s»	Dysk: %s, datastore %s; progi „%s”	Disk: %s, Datastore %s; Schwellen „%s“
+Mode local : sans vCenter, ni le ratio TX/écrit, ni les erreurs NIC, ni les journaux de l'hôte ne sont mesurés ; seul ce que voit la VM est évalué.	Local mode: without vCenter, neither the TX/written ratio, NIC errors nor host logs are measured; only what the VM sees is assessed.	Modo local: sin vCenter no se miden ni el ratio TX/escrito, ni los errores de NIC, ni los registros del host; solo se evalúa lo que ve la VM.	Modalità locale: senza vCenter non si misurano né il rapporto TX/scritto, né gli errori NIC, né i log dell'host; si valuta solo ciò che vede la VM.	Tryb lokalny: bez vCenter nie są mierzone ani współczynnik TX/zapis, ani błędy NIC, ani logi hosta; oceniane jest tylko to, co widzi VM.	Lokaler Modus: ohne vCenter werden weder TX/Schreib-Verhältnis noch NIC-Fehler noch Host-Logs gemessen; bewertet wird nur, was die VM sieht.
+Aucun test local pour l'instant.	No local test yet.	Todavía no hay pruebas locales.	Ancora nessun test locale.	Brak lokalnych testów.	Noch kein lokaler Test.
+%s UTC — verdict %s	%s UTC — verdict %s	%s UTC — veredicto %s	%s UTC — verdetto %s	%s UTC — werdykt %s	%s UTC — Bewertung %s
+all-flash	all-flash	all-flash	all-flash	all-flash	All-Flash
+Mo/s	MB/s	MB/s	MB/s	MB/s	MB/s
+%s Mo/s / %s Mo/s	%s MB/s / %s MB/s	%s MB/s / %s MB/s	%s MB/s / %s MB/s	%s MB/s / %s MB/s	%s MB/s / %s MB/s
+%s Mo/s / %s Mo/s · %s IO/s	%s MB/s / %s MB/s · %s IO/s	%s MB/s / %s MB/s · %s IO/s	%s MB/s / %s MB/s · %s IO/s	%s MB/s / %s MB/s · %s IO/s	%s MB/s / %s MB/s · %s IO/s
+Aucun disque de test à libérer.	No test disk to release.	Ningún disco de prueba que liberar.	Nessun disco di test da rilasciare.	Brak dysku testowego do zwolnienia.	Kein Testdisk freizugeben.
+Disque en place : %s, %s	Disk in place: %s, %s	Disco presente: %s, %s	Disco presente: %s, %s	Dysk na miejscu: %s, %s	Vorhandener Disk: %s, %s
+Libérer : l'appliance oublie ce disque sans rien y écrire ni l'effacer. Il faut ensuite le retirer de la VM dans le client vSphere.	Release: the appliance forgets this disk without writing to or erasing it. Then remove it from the VM in the vSphere Client.	Liberar: el appliance olvida este disco sin escribir ni borrar nada. Después hay que quitarlo de la VM en el cliente vSphere.	Rilascia: l'appliance dimentica questo disco senza scriverci né cancellarlo. Va poi rimosso dalla VM nel client vSphere.	Zwolnij: appliance zapomina ten dysk, nic na nim nie zapisując ani nie kasując. Potem usuń go z VM w kliencie vSphere.	Freigeben: Die Appliance vergisst diesen Disk, ohne darauf zu schreiben oder ihn zu löschen. Danach in vSphere Client aus der VM entfernen.
+Entrée : libérer le disque	Enter: release the disk	Intro: liberar el disco	Invio: rilascia il disco	Enter: zwolnij dysk	Enter: Disk freigeben
+Disque créé via vCenter	Disk created via vCenter	Disco creado vía vCenter	Disco creato tramite vCenter	Dysk utworzony przez vCenter	Über vCenter erstellter Disk
+Ce disque a été créé par l'appliance via vCenter :	This disk was created by the appliance via vCenter:	Este disco lo creó el appliance vía vCenter:	Questo disco è stato creato dall'appliance tramite vCenter:	Ten dysk utworzył appliance przez vCenter:	Dieser Disk wurde von der Appliance über vCenter erstellt:
+le supprimer depuis l'interface web (Datastore performance).	delete it from the web UI (Datastore performance).	elimínelo desde la interfaz web (Datastore performance).	eliminalo dall'interfaccia web (Datastore performance).	usuń go z interfejsu web (Datastore performance).	über die Weboberfläche löschen (Datastore performance).
+Libérer le disque	Release the disk	Liberar el disco	Rilascia il disco	Zwolnij dysk	Disk freigeben
+Oublier %s ?	Forget %s?	¿Olvidar %s?	Dimenticare %s?	Zapomnieć %s?	%s vergessen?
+Rien n'est effacé ; le retirer ensuite dans vSphere.	Nothing is erased; then remove it in vSphere.	No se borra nada; quítelo después en vSphere.	Nulla viene cancellato; rimuovilo poi in vSphere.	Nic nie jest kasowane; potem usuń go w vSphere.	Nichts wird gelöscht; danach in vSphere entfernen.
+Disque libéré. Dans vSphere : Modifier les paramètres de la VM, retirer le disque dur de %s sur SCSI 0, unité %d, en cochant « Supprimer les fichiers du datastore ».	Disk released. In vSphere: Edit Settings of the VM, remove the %s hard disk on SCSI 0, unit %d, ticking “Delete files from datastore”.	Disco liberado. En vSphere: Editar configuración de la VM, quitar el disco duro de %s en SCSI 0, unidad %d, marcando «Eliminar archivos del datastore».	Disco rilasciato. In vSphere: Modifica impostazioni della VM, rimuovi il disco rigido da %s su SCSI 0, unità %d, selezionando «Elimina file dal datastore».	Dysk zwolniony. W vSphere: Edytuj ustawienia VM, usuń dysk twardy %s na SCSI 0, jednostka %d, zaznaczając „Usuń pliki z datastore”.	Disk freigegeben. In vSphere: Einstellungen der VM bearbeiten, Festplatte mit %s an SCSI 0, Einheit %d entfernen und „Dateien aus Datenspeicher löschen“ ankreuzen.
+Actuel : %s, passerelle %s	Current: %s, gateway %s	Actual: %s, pasarela %s	Attuale: %s, gateway %s	Obecnie: %s, brama %s	Aktuell: %s, Gateway %s
+DNS %s ; origine : %s	DNS %s; origin: %s	DNS %s; origen: %s	DNS %s; origine: %s	DNS %s; pochodzenie: %s	DNS %s; Herkunft: %s
+aucune adresse	no address	ninguna dirección	nessun indirizzo	brak adresu	keine Adresse
+aucun	none	ninguno	nessuno	brak	keiner
+configuration choisie dans cette console	configuration chosen in this console	configuración elegida en esta consola	configurazione scelta in questa console	konfiguracja wybrana w tej konsoli	in dieser Konsole gewählte Konfiguration
+propriétés OVF du déploiement	OVF deployment properties	propiedades OVF del despliegue	proprietà OVF del deployment	właściwości OVF wdrożenia	OVF-Eigenschaften des Deployments
+DHCP (par défaut)	DHCP (default)	DHCP (por defecto)	DHCP (predefinito)	DHCP (domyślnie)	DHCP (Standard)
+En DHCP, adresse, masque, passerelle et DNS sont fournis par le serveur DHCP ; seul le nom d'hôte est pris en compte.	With DHCP, address, netmask, gateway and DNS come from the DHCP server; only the hostname is used.	En DHCP, dirección, máscara, pasarela y DNS los proporciona el servidor DHCP; solo se tiene en cuenta el nombre de host.	In DHCP, indirizzo, maschera, gateway e DNS sono forniti dal server DHCP; si usa solo il nome host.	W trybie DHCP adres, maskę, bramę i DNS podaje serwer DHCP; brana jest pod uwagę tylko nazwa hosta.	Bei DHCP liefert der DHCP-Server Adresse, Netzmaske, Gateway und DNS; nur der Hostname wird übernommen.
+La configuration choisie ici est conservée dans /data et prime au démarrage sur les propriétés OVF du déploiement.	The configuration chosen here is kept in /data and takes precedence at boot over the OVF deployment properties.	La configuración elegida aquí se guarda en /data y prevalece al arrancar sobre las propiedades OVF del despliegue.	La configurazione scelta qui è conservata in /data e all'avvio prevale sulle proprietà OVF del deployment.	Wybrana tu konfiguracja jest przechowywana w /data i przy starcie ma pierwszeństwo przed właściwościami OVF.	Die hier gewählte Konfiguration wird in /data gespeichert und hat beim Start Vorrang vor den OVF-Eigenschaften.
+Réseau de gestion	Management network	Red de gestión	Rete di gestione	Sieć zarządzania	Verwaltungsnetzwerk
+Appliquer : %s	Apply: %s	Aplicar: %s	Applica: %s	Zastosuj: %s	Anwenden: %s
+statique %s/%s, passerelle %s, DNS %s	static %s/%s, gateway %s, DNS %s	estática %s/%s, pasarela %s, DNS %s	statico %s/%s, gateway %s, DNS %s	statyczny %s/%s, brama %s, DNS %s	statisch %s/%s, Gateway %s, DNS %s
+Nom d'hôte : %s	Hostname: %s	Nombre de host: %s	Nome host: %s	Nazwa hosta: %s	Hostname: %s
+Le réseau redémarre ; si l'adresse change, les sessions web	The network restarts; if the address changes, web	La red se reinicia; si cambia la dirección, las sesiones web	La rete si riavvia; se l'indirizzo cambia, le sessioni web	Sieć się zrestartuje; jeśli adres się zmieni, sesje web	Das Netzwerk startet neu; ändert sich die Adresse, werden Web-
+et SSH en cours sont coupées. Conservé au redémarrage.	and SSH sessions are cut. Kept across reboots.	y SSH en curso se cortan. Se conserva al reiniciar.	e SSH in corso vengono interrotte. Conservato al riavvio.	i SSH zostaną przerwane. Zachowane po restarcie.	und SSH-Sitzungen getrennt. Bleibt nach Neustart erhalten.
+Application de la configuration réseau…	Applying the network configuration…	Aplicando la configuración de red…	Applicazione della configurazione di rete…	Stosowanie konfiguracji sieci…	Netzwerkkonfiguration wird angewendet…
+Configuration réseau appliquée et enregistrée.	Network configuration applied and saved.	Configuración de red aplicada y guardada.	Configurazione di rete applicata e salvata.	Konfiguracja sieci zastosowana i zapisana.	Netzwerkkonfiguration angewendet und gespeichert.
+la passerelle %s n'est pas dans le réseau %s	gateway %s is not in network %s	la pasarela %s no está en la red %s	il gateway %s non è nella rete %s	brama %s nie należy do sieci %s	Gateway %s liegt nicht im Netz %s
+adresse IPv4 invalide %s	invalid IPv4 address %s	dirección IPv4 no válida %s	indirizzo IPv4 non valido %s	nieprawidłowy adres IPv4 %s	ungültige IPv4-Adresse %s
+masque invalide %s (ex. 255.255.255.0 ou 24)	invalid netmask %s (e.g. 255.255.255.0 or 24)	máscara no válida %s (p. ej. 255.255.255.0 o 24)	maschera non valida %s (es. 255.255.255.0 o 24)	nieprawidłowa maska %s (np. 255.255.255.0 lub 24)	ungültige Netzmaske %s (z. B. 255.255.255.0 oder 24)
+serveur DNS invalide %s	invalid DNS server %s	servidor DNS no válido %s	server DNS non valido %s	nieprawidłowy serwer DNS %s	ungültiger DNS-Server %s
+%s est l'adresse de réseau ou de diffusion de %s	%s is the network or broadcast address of %s	%s es la dirección de red o de difusión de %s	%s è l'indirizzo di rete o di broadcast di %s	%s to adres sieci lub rozgłoszeniowy %s	%s ist die Netz- oder Broadcastadresse von %s
+la passerelle ne peut pas être l'adresse de l'appliance	the gateway cannot be the appliance's address	la pasarela no puede ser la dirección del appliance	il gateway non può essere l'indirizzo dell'appliance	brama nie może być adresem appliance	das Gateway darf nicht die Adresse der Appliance sein
+Ping (3 échos) de chaque adresse, puis résolution et ping du nom.	Ping (3 echoes) each address, then resolve and ping the name.	Ping (3 ecos) a cada dirección, luego resolución y ping del nombre.	Ping (3 echi) di ogni indirizzo, poi risoluzione e ping del nome.	Ping (3 echa) każdego adresu, potem rozwiązanie i ping nazwy.	Ping (3 Echos) jeder Adresse, dann Namensauflösung und Ping.
+Aucune adresse à tester.	No address to test.	Ninguna dirección que probar.	Nessun indirizzo da testare.	Brak adresów do testu.	Keine Adresse zu testen.
+%s en cours…	%s running…	%s en curso…	%s in corso…	%s w toku…	%s läuft…
+%s OK %d/%d, %s	%s OK %d/%d, %s	%s OK %d/%d, %s	%s OK %d/%d, %s	%s OK %d/%d, %s	%s OK %d/%d, %s
+%s ÉCHEC : aucune réponse (%s)	%s FAILED: no reply (%s)	%s FALLO: sin respuesta (%s)	%s ERRORE: nessuna risposta (%s)	%s BŁĄD: brak odpowiedzi (%s)	%s FEHLER: keine Antwort (%s)
+%s ÉCHEC : %s	%s FAILED: %s	%s FALLO: %s	%s ERRORE: %s	%s BŁĄD: %s	%s FEHLER: %s
+Mot de passe actuel : %s	Current password: %s	Contraseña actual: %s	Password attuale: %s	Obecne hasło: %s	Aktuelles Passwort: %s
+Le même mot de passe sert à root (SSH) et à l'interface web. Il reste affiché sur la console, qui donne de toute façon un accès root. Saisie en clair pour vérifier le clavier : la console est en QWERTY ; 8 à 64 caractères ASCII.	The same password is used for root (SSH) and the web UI. It stays displayed on the console, which gives root access anyway. Typed in clear to check the keyboard: the console uses QWERTY; 8 to 64 ASCII characters.	La misma contraseña sirve para root (SSH) y la interfaz web. Sigue mostrándose en la consola, que de todos modos da acceso root. Se escribe en claro para comprobar el teclado: la consola está en QWERTY; de 8 a 64 caracteres ASCII.	La stessa password vale per root (SSH) e per l'interfaccia web. Resta visibile sulla console, che dà comunque accesso root. Digitata in chiaro per verificare la tastiera: la console è in QWERTY; da 8 a 64 caratteri ASCII.	To samo hasło służy root (SSH) i interfejsowi web. Pozostaje widoczne na konsoli, która i tak daje dostęp root. Wpisywane jawnie, by sprawdzić klawiaturę: konsola jest w QWERTY; 8–64 znaki ASCII.	Dasselbe Passwort gilt für root (SSH) und die Weboberfläche. Es bleibt auf der Konsole sichtbar, die ohnehin Root-Zugang gibt. Klartexteingabe zur Tastaturprüfung: Die Konsole nutzt QWERTY; 8 bis 64 ASCII-Zeichen.
+Les deux saisies diffèrent.	The two entries differ.	Las dos entradas no coinciden.	Le due voci non coincidono.	Oba wpisy się różnią.	Die beiden Eingaben unterscheiden sich.
+mot de passe : 8 à 64 caractères	password: 8 to 64 characters	contraseña: de 8 a 64 caracteres	password: da 8 a 64 caratteri	hasło: od 8 do 64 znaków	Passwort: 8 bis 64 Zeichen
+mot de passe : pas d'espace au début ni à la fin	password: no space at the start or end	contraseña: sin espacios al principio ni al final	password: niente spazi all'inizio o alla fine	hasło: bez spacji na początku i na końcu	Passwort: keine Leerzeichen am Anfang oder Ende
+mot de passe : caractères ASCII imprimables uniquement (saisie possible sur toute console)	password: printable ASCII characters only (typeable on any console)	contraseña: solo caracteres ASCII imprimibles (escribibles en cualquier consola)	password: solo caratteri ASCII stampabili (digitabili su qualsiasi console)	hasło: tylko drukowalne znaki ASCII (do wpisania na każdej konsoli)	Passwort: nur druckbare ASCII-Zeichen (auf jeder Konsole eingebbar)
+Mot de passe root	Root password	Contraseña de root	Password di root	Hasło root	Root-Passwort
+Remplacer le mot de passe de root et de l'interface web ?	Replace the root and web UI password?	¿Sustituir la contraseña de root y de la interfaz web?	Sostituire la password di root e dell'interfaccia web?	Zastąpić hasło root i interfejsu web?	Passwort von root und Weboberfläche ersetzen?
+Les sessions web ouvertes seront fermées ; SSH demandera le nouveau.	Open web sessions will be closed; SSH will ask for the new one.	Las sesiones web abiertas se cerrarán; SSH pedirá la nueva.	Le sessioni web aperte verranno chiuse; SSH chiederà la nuova.	Otwarte sesje web zostaną zamknięte; SSH poprosi o nowe.	Offene Web-Sitzungen werden geschlossen; SSH fragt nach dem neuen.
+Mot de passe changé (root, interface web, API).	Password changed (root, web UI, API).	Contraseña cambiada (root, interfaz web, API).	Password cambiata (root, interfaccia web, API).	Hasło zmienione (root, interfejs web, API).	Passwort geändert (root, Weboberfläche, API).
+Shell root de la console	Console root shell	Shell root de la consola	Shell root della console	Powłoka root konsoli	Root-Shell der Konsole
+Entrée (ou Alt+F2) bascule sur la deuxième console, ouverte en root sans mot de passe : l'accès à la console de la VM vaut un accès physique. Alt+F1 revient ici ; « exit » ferme le shell, qui se rouvre au prochain passage.	Enter (or Alt+F2) switches to the second console, logged in as root without a password: access to the VM console counts as physical access. Alt+F1 comes back here; “exit” closes the shell, which reopens next time.	Intro (o Alt+F2) cambia a la segunda consola, abierta como root sin contraseña: el acceso a la consola de la VM equivale a un acceso físico. Alt+F1 vuelve aquí; «exit» cierra la shell, que se reabre la próxima vez.	Invio (o Alt+F2) passa alla seconda console, aperta come root senza password: l'accesso alla console della VM vale un accesso fisico. Alt+F1 torna qui; «exit» chiude la shell, che si riapre la volta successiva.	Enter (lub Alt+F2) przełącza na drugą konsolę, zalogowaną jako root bez hasła: dostęp do konsoli VM to dostęp fizyczny. Alt+F1 wraca tutaj; „exit” zamyka powłokę, która otworzy się ponownie następnym razem.	Enter (oder Alt+F2) wechselt zur zweiten Konsole, als root ohne Passwort angemeldet: Zugriff auf die VM-Konsole gilt als physischer Zugang. Alt+F1 kehrt hierher zurück; „exit“ schließt die Shell, die beim nächsten Mal neu öffnet.
+En SSH, le mot de passe root est toujours demandé.	Over SSH, the root password is always required.	Por SSH siempre se pide la contraseña de root.	In SSH la password di root è sempre richiesta.	Przez SSH hasło root jest zawsze wymagane.	Über SSH wird immer das Root-Passwort verlangt.
+changement de console indisponible	console switch unavailable	cambio de consola no disponible	cambio console non disponibile	przełączanie konsoli niedostępne	Konsolenwechsel nicht verfügbar
+Service vigie	vigie service	Servicio vigie	Servizio vigie	Usługa vigie	vigie-Dienst
+injoignable : %s	unreachable: %s	inaccesible: %s	irraggiungibile: %s	nieosiągalna: %s	nicht erreichbar: %s
+Appliance	Appliance	Appliance	Appliance	Appliance	Appliance
+en attente (DHCP)…	waiting (DHCP)…	pendiente (DHCP)…	in attesa (DHCP)…	oczekiwanie (DHCP)…	wartend (DHCP)…
+Interface web	Web UI	Interfaz web	Interfaccia web	Interfejs web	Weboberfläche
+Certificat HTTPS de l'appliance (SHA-256), à comparer à celui que montre le navigateur :	Appliance HTTPS certificate (SHA-256), to compare with the one shown by the browser:	Certificado HTTPS del appliance (SHA-256), para comparar con el del navegador:	Certificato HTTPS dell'appliance (SHA-256), da confrontare con quello del browser:	Certyfikat HTTPS appliance (SHA-256) do porównania z pokazanym w przeglądarce:	HTTPS-Zertifikat der Appliance (SHA-256), mit dem im Browser angezeigten zu vergleichen:
+vCenter	vCenter	vCenter	vCenter	vCenter	vCenter
+connecté : %s	connected: %s	conectado: %s	connesso: %s	połączony: %s	verbunden: %s
+non connecté (mode local : onglet Storage)	not connected (local mode: Storage tab)	no conectado (modo local: pestaña Storage)	non connesso (locale: scheda Storage)	niepołączony (tryb lokalny: karta Storage)	nicht verbunden (lokal: Reiter Storage)
+Job en cours	Running job	Job en curso	Job in corso	Trwające zadanie	Laufender Job
+Le mot de passe sert à l'interface web et à root en SSH. En console, root est ouvert sans mot de passe : Alt+F2 (shell), Alt+F1 pour revenir. Adresse IP et mot de passe : menus Réseau (IP) et Mot de passe de l'onglet Système.	The password is used for the web UI and for root over SSH. On the console, root needs no password: Alt+F2 (shell), Alt+F1 to come back. IP address and password: Network (IP) and Password menus in the System tab.	La contraseña sirve para la interfaz web y para root por SSH. En la consola, root no necesita contraseña: Alt+F2 (shell), Alt+F1 para volver. Dirección IP y contraseña: menús Red (IP) y Contraseña de la pestaña Sistema.	La password vale per l'interfaccia web e per root in SSH. In console root non richiede password: Alt+F2 (shell), Alt+F1 per tornare. Indirizzo IP e password: menu Rete (IP) e Password della scheda Sistema.	Hasło służy do interfejsu web i do root przez SSH. Na konsoli root nie wymaga hasła: Alt+F2 (powłoka), Alt+F1 powrót. Adres IP i hasło: menu Sieć (IP) i Hasło w karcie System.	Das Passwort gilt für die Weboberfläche und für root über SSH. Auf der Konsole braucht root kein Passwort: Alt+F2 (Shell), Alt+F1 zurück. IP-Adresse und Passwort: Menüs Netzwerk (IP) und Passwort im Reiter System.
+Langue de la console	Console language	Idioma de la consola	Lingua della console	Język konsoli	Konsolensprache
+haut/bas choisir  Entrée appliquer	up/down choose  Enter apply	arriba/abajo elegir  Intro aplicar	su/giù scegli  Invio applica	góra/dół wybierz  Enter zastosuj	auf/ab wählen  Enter anwenden
+Langue appliquée et enregistrée.	Language applied and saved.	Idioma aplicado y guardado.	Lingua applicata e salvata.	Język zastosowany i zapisany.	Sprache angewendet und gespeichert.
+La langue s'applique à la console (accueil et menus). Elle est conservée dans /data.	The language applies to the console (home screen and menus). It is kept in /data.	El idioma se aplica a la consola (inicio y menús). Se guarda en /data.	La lingua si applica alla console (home e menu). È conservata in /data.	Język dotyczy konsoli (ekran startowy i menu). Jest zapisany w /data.	Die Sprache gilt für die Konsole (Startseite und Menüs). Sie wird in /data gespeichert.
+vigie — diagnostic réseau et datastore	vigie — network and datastore diagnostics	vigie — diagnóstico de red y datastore	vigie — diagnostica di rete e datastore	vigie — diagnostyka sieci i datastore	vigie — Netzwerk- und Datastore-Diagnose
+Appliance de diagnostic pour vSphere	Diagnostics appliance for vSphere	Appliance de diagnóstico para vSphere	Appliance di diagnostica per vSphere	Appliance diagnostyczny dla vSphere	Diagnose-Appliance für vSphere
+: ping et latence, surveillance continue façon smokeping, traceroute, table ARP, débit iperf3 entre appliances	: ping and latency, smokeping-style continuous monitoring, traceroute, ARP table, iperf3 throughput between appliances	: ping y latencia, monitorización continua estilo smokeping, traceroute, tabla ARP, caudal iperf3 entre appliances	: ping e latenza, monitoraggio continuo stile smokeping, traceroute, tabella ARP, throughput iperf3 tra appliance	: ping i opóźnienia, ciągłe monitorowanie w stylu smokeping, traceroute, tablica ARP, przepływność iperf3 między appliance	: Ping und Latenz, Dauerüberwachung im Smokeping-Stil, Traceroute, ARP-Tabelle, iperf3-Durchsatz zwischen Appliances
+: test standard (santé du chemin hôte → NFS) et test avancé (IOPS et latences)	: standard test (health of the host → NFS path) and advanced test (IOPS and latencies)	: prueba estándar (salud del camino host → NFS) y prueba avanzada (IOPS y latencias)	: test standard (salute del percorso host → NFS) e test avanzato (IOPS e latenze)	: test standardowy (kondycja ścieżki host → NFS) i test rozszerzony (IOPS i opóźnienia)	: Standardtest (Zustand des Pfads Host → NFS) und erweiterter Test (IOPS und Latenzen)
+Mot de passe de l'appliance	Appliance password	Contraseña del appliance	Password dell'appliance	Hasło appliance	Passwort der Appliance
+Le mot de passe initial est affiché sur la console VMware de l'appliance.	The initial password is shown on the appliance's VMware console.	La contraseña inicial se muestra en la consola VMware del appliance.	La password iniziale è mostrata sulla console VMware dell'appliance.	Hasło początkowe jest wyświetlane na konsoli VMware appliance.	Das Anfangspasswort wird auf der VMware-Konsole der Appliance angezeigt.
+Se connecter	Sign in	Conectarse	Accedi	Zaloguj	Anmelden
+Historique	History	Historial	Cronologia	Historia	Verlauf
+Réglages	Settings	Ajustes	Impostazioni	Ustawienia	Einstellungen
+À propos	About	Acerca de	Informazioni	O programie	Über
+Datastore performance	Datastore performance	Rendimiento datastore	Prestazioni datastore	Wydajność datastore	Datastore-Leistung
+vSphere : déconnecté	vSphere: disconnected	vSphere: desconectado	vSphere: disconnesso	vSphere: rozłączony	vSphere: getrennt
+Thème clair / sombre	Light / dark theme	Tema claro / oscuro	Tema chiaro / scuro	Motyw jasny / ciemny	Helles / dunkles Design
+Thème	Theme	Tema	Tema	Motyw	Design
+Déconnexion	Sign out	Cerrar sesión	Esci	Wyloguj	Abmelden
+Connexion vSphere	vSphere connection	Conexión vSphere	Connessione vSphere	Połączenie vSphere	vSphere-Verbindung
+URL du vCenter (ou de l'ESXi)	vCenter URL (or ESXi)	URL del vCenter (o del ESXi)	URL del vCenter (o dell'ESXi)	URL vCenter (lub ESXi)	vCenter-URL (oder ESXi)
+Utilisateur	User	Usuario	Utente	Użytkownik	Benutzer
+Lire le certificat	Read the certificate	Leer el certificado	Leggi il certificato	Odczytaj certyfikat	Zertifikat lesen
+Empreinte SHA-256 du certificat présenté par	SHA-256 fingerprint of the certificate presented by	Huella SHA-256 del certificado presentado por	Impronta SHA-256 del certificato presentato da	Odcisk SHA-256 certyfikatu przedstawionego przez	SHA-256-Fingerabdruck des Zertifikats von
+Comparez-la à celle du serveur avant de confirmer. Elle est mémorisée pour les connexions suivantes.	Compare it with the server's before confirming. It is remembered for later connections.	Compárela con la del servidor antes de confirmar. Se recuerda para las siguientes conexiones.	Confrontala con quella del server prima di confermare. Viene ricordata per le connessioni successive.	Porównaj z odciskiem serwera przed potwierdzeniem. Zostanie zapamiętany na kolejne połączenia.	Vor dem Bestätigen mit dem des Servers vergleichen. Er wird für spätere Verbindungen gespeichert.
+Confirmer l'empreinte et se connecter	Confirm the fingerprint and connect	Confirmar la huella y conectar	Conferma l'impronta e connetti	Potwierdź odcisk i połącz	Fingerabdruck bestätigen und verbinden
+Se déconnecter	Disconnect	Desconectar	Disconnetti	Rozłącz	Trennen
+Oublier l'URL et l'empreinte	Forget URL and fingerprint	Olvidar URL y huella	Dimentica URL e impronta	Zapomnij URL i odcisk	URL und Fingerabdruck vergessen
+Auto-identification	Self-identification	Autoidentificación	Auto-identificazione	Samoidentyfikacja	Selbstidentifikation
+Disponible après la connexion.	Available after connecting.	Disponible tras la conexión.	Disponibile dopo la connessione.	Dostępne po połączeniu.	Nach der Verbindung verfügbar.
+Datastore	Datastore	Datastore	Datastore	Datastore	Datastore
+Type	Type	Tipo	Tipo	Typ	Typ
+Serveur : export	Server: export	Servidor: export	Server: export	Serwer: eksport	Server: Export
+Libre	Free	Libre	Libero	Wolne	Frei
+Hôtes	Hosts	Hosts	Host	Hosty	Hosts
+Disque de test	Test disk	Disco de prueba	Disco di test	Dysk testowy	Testdisk
+1 Go	1 GB	1 GB	1 GB	1 GB	1 GB
+4 Go	4 GB	4 GB	4 GB	4 GB	4 GB
+8 Go	8 GB	8 GB	8 GB	8 GB	8 GB
+16 Go	16 GB	16 GB	16 GB	16 GB	16 GB
+32 Go	32 GB	32 GB	32 GB	32 GB	32 GB
+64 Go	64 GB	64 GB	64 GB	64 GB	64 GB
+Créer le disque de test	Create the test disk	Crear el disco de prueba	Crea il disco di test	Utwórz dysk testowy	Testdisk erstellen
+Créé dans	Created in	Creado en	Creato in	Tworzony w	Erstellt in
+, thick eager zeroed si VAAI-NAS est disponible, sinon thin. Il est prérempli de données incompressibles au premier test.	, thick eager zeroed if VAAI-NAS is available, otherwise thin. It is prefilled with incompressible data on the first test.	, thick eager zeroed si VAAI-NAS está disponible, si no thin. Se prellena con datos incompresibles en la primera prueba.	, thick eager zeroed se VAAI-NAS è disponibile, altrimenti thin. Viene preriempito di dati incomprimibili al primo test.	, thick eager zeroed jeśli dostępne jest VAAI-NAS, inaczej thin. Przy pierwszym teście jest wypełniany nieskompresowalnymi danymi.	, Thick Eager-Zeroed falls VAAI-NAS verfügbar ist, sonst Thin. Beim ersten Test wird er mit nicht komprimierbaren Daten vorbefüllt.
+Contrôles de sécurité	Safety checks	Controles de seguridad	Controlli di sicurezza	Kontrole bezpieczeństwa	Sicherheitsprüfungen
+Le test porte sur l'hôte où tourne l'appliance. On peut la déplacer (vMotion de l'appliance seule) ou lancer une tournée de comparaison en alternance A/B/A/B.	The test measures the host the appliance runs on. You can move it (vMotion of the appliance only) or start an alternating A/B/A/B comparison tour.	La prueba se hace en el host donde corre el appliance. Puede moverlo (vMotion del appliance solo) o lanzar una ronda de comparación alternada A/B/A/B.	Il test riguarda l'host su cui gira l'appliance. Puoi spostarla (vMotion della sola appliance) o avviare un giro di confronto alternato A/B/A/B.	Test dotyczy hosta, na którym działa appliance. Można go przenieść (vMotion samego appliance) lub uruchomić naprzemienną serię porównawczą A/B/A/B.	Der Test betrifft den Host, auf dem die Appliance läuft. Sie lässt sich verschieben (vMotion nur der Appliance) oder eine abwechselnde A/B/A/B-Vergleichsrunde starten.
+Tournée	Tour	Ronda	Giro	Seria	Runde
+vMotion	vMotion	vMotion	vMotion	vMotion	vMotion
+Cycles	Cycles	Ciclos	Cicli	Cykle	Zyklen
+Override DRS (appliance seule)	DRS override (appliance only)	Override DRS (solo el appliance)	Override DRS (solo appliance)	Nadpisanie DRS (tylko appliance)	DRS-Override (nur Appliance)
+oui, pendant la tournée	yes, during the tour	sí, durante la ronda	sì, durante il giro	tak, podczas serii	ja, während der Runde
+non	no	no	no	nie	nein
+À la fin	At the end	Al final	Alla fine	Na koniec	Am Ende
+revenir sur l'hôte de départ	return to the starting host	volver al host de partida	tornare all'host di partenza	wróć na host początkowy	zum Ausgangshost zurück
+rester sur le dernier hôte	stay on the last host	quedarse en el último host	restare sull'ultimo host	zostań na ostatnim hoście	auf dem letzten Host bleiben
+Lancer la tournée	Start the tour	Lanzar la ronda	Avvia il giro	Uruchom serię	Runde starten
+Type de test	Test type	Tipo de prueba	Tipo di test	Typ testu	Testart
+Standard	Standard	Estándar	Standard	Standardowy	Standard
+Le chemin hôte → datastore est-il sain ? Ligne de base, écriture et lecture séquentielles, ratio TX/écrit, erreurs, latence.	Is the host → datastore path healthy? Baseline, sequential write and read, TX/written ratio, errors, latency.	¿Está sano el camino host → datastore? Línea base, escritura y lectura secuenciales, ratio TX/escrito, errores, latencia.	Il percorso host → datastore è sano? Linea di base, scrittura e lettura sequenziali, rapporto TX/scritto, errori, latenza.	Czy ścieżka host → datastore jest zdrowa? Linia bazowa, zapis i odczyt sekwencyjny, współczynnik TX/zapis, błędy, opóźnienie.	Ist der Pfad Host → Datastore gesund? Basislinie, sequenzielles Schreiben und Lesen, TX/Schreib-Verhältnis, Fehler, Latenz.
+Avancé	Advanced	Avanzado	Avanzato	Rozszerzony	Erweitert
+Que vaut ce datastore pour des VMs ? Le test standard, puis IOPS et latences en 4 Kio aléatoire (lecture, écriture, mixte 70/30) à QD 1, 4, 16 et 32.	What is this datastore worth for VMs? The standard test, then IOPS and latencies in 4 KiB random (read, write, 70/30 mixed) at QD 1, 4, 16 and 32.	¿Qué vale este datastore para VMs? La prueba estándar y luego IOPS y latencias en 4 KiB aleatorio (lectura, escritura, mixto 70/30) a QD 1, 4, 16 y 32.	Quanto vale questo datastore per le VM? Il test standard, poi IOPS e latenze in 4 KiB casuale (lettura, scrittura, misto 70/30) a QD 1, 4, 16 e 32.	Ile jest wart ten datastore dla VM? Test standardowy, potem IOPS i opóźnienia losowo 4 KiB (odczyt, zapis, mieszany 70/30) przy QD 1, 4, 16 i 32.	Was taugt dieser Datastore für VMs? Der Standardtest, dann IOPS und Latenzen bei 4 KiB zufällig (Lesen, Schreiben, gemischt 70/30) mit QD 1, 4, 16 und 32.
+Disponible en phase 9	Available in phase 9	Disponible en la fase 9	Disponibile nella fase 9	Dostępne w fazie 9	Verfügbar in Phase 9
+Surveillance continue	Continuous monitoring	Monitorización continua	Monitoraggio continuo	Ciągłe monitorowanie	Dauerüberwachung
+Test standard toutes les N minutes (phase 9).	Standard test every N minutes (phase 9).	Prueba estándar cada N minutos (fase 9).	Test standard ogni N minuti (fase 9).	Test standardowy co N minut (faza 9).	Standardtest alle N Minuten (Phase 9).
+Répétitions	Repetitions	Repeticiones	Ripetizioni	Powtórzenia	Wiederholungen
+Préréglage des seuils	Threshold preset	Ajuste de umbrales	Preimpostazione soglie	Zestaw progów	Schwellen-Voreinstellung
+Ligne de base (s)	Baseline (s)	Línea base (s)	Linea di base (s)	Linia bazowa (s)	Basislinie (s)
+Écriture / lecture (s)	Write / read (s)	Escritura / lectura (s)	Scrittura / lettura (s)	Zapis / odczyt (s)	Schreiben / Lesen (s)
+Option « complet »	“Full” option	Opción «completo»	Opzione «completo»	Opcja „pełny”	Option „vollständig“
+4 Kio seulement	4 KiB only	Solo 4 KiB	Solo 4 KiB	Tylko 4 KiB	Nur 4 KiB
+4, 8 et 64 Kio	4, 8 and 64 KiB	4, 8 y 64 KiB	4, 8 e 64 KiB	4, 8 i 64 KiB	4, 8 und 64 KiB
+Plafond de latence p99 des IOPS utiles (ms)	p99 latency ceiling for useful IOPS (ms)	Techo de latencia p99 de las IOPS útiles (ms)	Tetto di latenza p99 degli IOPS utili (ms)	Pułap opóźnienia p99 dla użytecznych IOPS (ms)	p99-Latenzgrenze der nutzbaren IOPS (ms)
+Lancer le test	Start the test	Lanzar la prueba	Avvia il test	Uruchom test	Test starten
+Exécution	Execution	Ejecución	Esecuzione	Wykonanie	Ausführung
+Journal	Log	Registro	Registro	Dziennik	Protokoll
+Annuler	Cancel	Cancelar	Annulla	Anuluj	Abbrechen
+Aucun résultat pour l'instant.	No results yet.	Todavía no hay resultados.	Ancora nessun risultato.	Brak wyników.	Noch keine Ergebnisse.
+Nettoyage	Cleanup	Limpieza	Pulizia	Porządki	Aufräumen
+Supprimer le disque de test	Delete the test disk	Eliminar el disco de prueba	Elimina il disco di test	Usuń dysk testowy	Testdisk löschen
+Se déconnecter et oublier l'URL	Disconnect and forget the URL	Desconectar y olvidar la URL	Disconnetti e dimentica l'URL	Rozłącz i zapomnij URL	Trennen und URL vergessen
+Cette appliance	This appliance	Este appliance	Questa appliance	Ten appliance	Diese Appliance
+Interface	Interface	Interfaz	Interfaccia	Interfejs	Schnittstelle
+Tester une cible	Test a target	Probar un destino	Testa una destinazione	Testuj cel	Ziel testen
+Adresse IP ou nom	IP address or name	Dirección IP o nombre	Indirizzo IP o nome	Adres IP lub nazwa	IP-Adresse oder Name
+Nombre de pings	Number of pings	Número de pings	Numero di ping	Liczba pingów	Anzahl Pings
+continu (bouton Arrêter)	continuous (Stop button)	continuo (botón Detener)	continuo (pulsante Ferma)	ciągły (przycisk Zatrzymaj)	dauerhaft (Taste Stoppen)
+Libellé (surveillance)	Label (monitoring)	Etiqueta (monitorización)	Etichetta (monitoraggio)	Etykieta (monitorowanie)	Bezeichnung (Überwachung)
+Arrêter	Stop	Detener	Ferma	Zatrzymaj	Stoppen
+Surveiller en continu	Monitor continuously	Monitorizar en continuo	Monitora in continuo	Monitoruj ciągle	Dauerhaft überwachen
+20 pings par minute et par cible	20 pings per minute per target	20 pings por minuto y destino	20 ping al minuto per destinazione	20 pingów na minutę na cel	20 Pings pro Minute und Ziel
+Période	Period	Periodo	Periodo	Okres	Zeitraum
+7 jours	7 days	7 días	7 giorni	7 dni	7 Tage
+14 jours	14 days	14 días	14 giorni	14 dni	14 Tage
+1 an	1 year	1 año	1 anno	1 rok	1 Jahr
+Médiane en trait plein ; fumée claire p10–p90, foncée p25–p75 ; barres : perte en % (axe de droite).	Median as a solid line; light smoke p10–p90, dark p25–p75; bars: loss in % (right axis).	Mediana en línea continua; humo claro p10–p90, oscuro p25–p75; barras: pérdida en % (eje derecho).	Mediana a tratto pieno; fumo chiaro p10–p90, scuro p25–p75; barre: perdita in % (asse destro).	Mediana linią ciągłą; jasny dym p10–p90, ciemny p25–p75; słupki: straty w % (prawa oś).	Median als durchgezogene Linie; heller Rauch p10–p90, dunkler p25–p75; Balken: Verlust in % (rechte Achse).
+Rafraîchir	Refresh	Refrescar	Aggiorna	Odśwież	Aktualisieren
+Vider la table	Flush the table	Vaciar la tabla	Svuota la tabella	Wyczyść tablicę	Tabelle leeren
+Débit (iperf3)	Throughput (iperf3)	Caudal (iperf3)	Throughput (iperf3)	Przepływność (iperf3)	Durchsatz (iperf3)
+Serveur iperf3 de cette appliance	This appliance's iperf3 server	Servidor iperf3 de este appliance	Server iperf3 di questa appliance	Serwer iperf3 tego appliance	iperf3-Server dieser Appliance
+Ouvrir 10 min	Open 10 min	Abrir 10 min	Apri 10 min	Otwórz 10 min	10 min öffnen
+Fermer	Close	Cerrar	Chiudi	Zamknij	Schließen
+Appliances pairs	Peer appliances	Appliances pares	Appliance peer	Appliance peery	Peer-Appliances
+Une autre appliance vigie : son adresse et un jeton d'API créé dans ses Réglages. Elle ouvre son serveur iperf3 le temps du test.	Another vigie appliance: its address and an API token created in its Settings. It opens its iperf3 server for the duration of the test.	Otro appliance vigie: su dirección y un token de API creado en sus Ajustes. Abre su servidor iperf3 durante la prueba.	Un'altra appliance vigie: il suo indirizzo e un token API creato nelle sue Impostazioni. Apre il suo server iperf3 per la durata del test.	Inny appliance vigie: jego adres i token API utworzony w jego Ustawieniach. Otwiera serwer iperf3 na czas testu.	Eine andere vigie-Appliance: ihre Adresse und ein in ihren Einstellungen erstelltes API-Token. Sie öffnet ihren iperf3-Server für die Dauer des Tests.
+Adresse du pair	Peer address	Dirección del par	Indirizzo del peer	Adres peera	Peer-Adresse
+Jeton d'API du pair	Peer API token	Token de API del par	Token API del peer	Token API peera	API-Token des Peers
+Nom (facultatif)	Name (optional)	Nombre (opcional)	Nome (facoltativo)	Nazwa (opcjonalnie)	Name (optional)
+Empreinte SHA-256 du pair :	Peer SHA-256 fingerprint:	Huella SHA-256 del par:	Impronta SHA-256 del peer:	Odcisk SHA-256 peera:	SHA-256-Fingerabdruck des Peers:
+Comparez-la à celle affichée sur la console du pair.	Compare it with the one shown on the peer's console.	Compárela con la que muestra la consola del par.	Confrontala con quella mostrata sulla console del peer.	Porównaj z odciskiem na konsoli peera.	Mit dem auf der Konsole des Peers angezeigten vergleichen.
+Confirmer et ajouter	Confirm and add	Confirmar y añadir	Conferma e aggiungi	Potwierdź i dodaj	Bestätigen und hinzufügen
+Test de débit	Throughput test	Prueba de caudal	Test di throughput	Test przepływności	Durchsatztest
+Serveur iperf3 (IP)	iperf3 server (IP)	Servidor iperf3 (IP)	Server iperf3 (IP)	Serwer iperf3 (IP)	iperf3-Server (IP)
+cette appliance émet	this appliance sends	este appliance envía	questa appliance invia	ten appliance wysyła	diese Appliance sendet
+le serveur émet (-R)	the server sends (-R)	el servidor envía (-R)	il server invia (-R)	serwer wysyła (-R)	der Server sendet (-R)
+Durée (s)	Duration (s)	Duración (s)	Durata (s)	Czas (s)	Dauer (s)
+Flux parallèles	Parallel streams	Flujos paralelos	Flussi paralleli	Strumienie równoległe	Parallele Streams
+Débit cible UDP	UDP target rate	Caudal objetivo UDP	Banda obiettivo UDP	Docelowa przepływność UDP	UDP-Zielrate
+Historique des jobs	Job history	Historial de jobs	Cronologia dei job	Historia zadań	Job-Verlauf
+Rapport client : version imprimable (A4) et autonome de chaque test standard, avancé ou tournée. Pour un avant/après, cochez deux tests puis « Rapport avant / après ».	Client report: printable (A4), self-contained version of each standard test, advanced test or tour. For a before/after, tick two tests then “Before / after report”.	Informe de cliente: versión imprimible (A4) y autónoma de cada prueba estándar, avanzada o ronda. Para un antes/después, marque dos pruebas y luego «Informe antes / después».	Report cliente: versione stampabile (A4) e autonoma di ogni test standard, avanzato o giro. Per un prima/dopo, seleziona due test poi «Report prima / dopo».	Raport dla klienta: drukowalna (A4), samodzielna wersja każdego testu standardowego, rozszerzonego lub serii. Dla porównania przed/po zaznacz dwa testy, potem „Raport przed / po”.	Kundenbericht: druckbare (A4), eigenständige Fassung jedes Standardtests, erweiterten Tests oder jeder Runde. Für Vorher/Nachher zwei Tests ankreuzen, dann „Vorher-/Nachher-Bericht“.
+Rapport avant / après	Before / after report	Informe antes / después	Report prima / dopo	Raport przed / po	Vorher-/Nachher-Bericht
+Cochez deux tests.	Tick two tests.	Marque dos pruebas.	Seleziona due test.	Zaznacz dwa testy.	Zwei Tests ankreuzen.
+avant / après	before / after	antes / después	prima / dopo	przed / po	vorher / nachher
+Date	Date	Fecha	Data	Data	Datum
+Profil	Profile	Perfil	Profilo	Profil	Profil
+Rapport	Report	Informe	Report	Raport	Bericht
+Par	By	Por	Da	Przez	Von
+Jetons d'API	API tokens	Tokens de API	Token API	Tokeny API	API-Token
+Pour lancer des tests par script :	To run tests from a script:	Para lanzar pruebas por script:	Per avviare i test da script:	Aby uruchamiać testy ze skryptu:	Um Tests per Skript zu starten:
+. Le secret n'est affiché qu'une fois.	. The secret is shown only once.	. El secreto solo se muestra una vez.	. Il segreto viene mostrato una sola volta.	. Sekret jest pokazywany tylko raz.	. Das Geheimnis wird nur einmal angezeigt.
+nom du jeton (ex. qa-ci)	token name (e.g. qa-ci)	nombre del token (p. ej. qa-ci)	nome del token (es. qa-ci)	nazwa tokenu (np. qa-ci)	Token-Name (z. B. qa-ci)
+Créer	Create	Crear	Crea	Utwórz	Erstellen
+Créé	Created	Creado	Creato	Utworzono	Erstellt
+Dernier usage	Last used	Último uso	Ultimo uso	Ostatnie użycie	Zuletzt verwendet
+Rapport client	Client report	Informe de cliente	Report cliente	Raport dla klienta	Kundenbericht
+Repris en tête de chaque rapport. Logo PNG ou SVG, 200 Kio au maximum ; un SVG contenant un script, un gestionnaire d'événement ou une référence externe est refusé.	Shown at the top of each report. PNG or SVG logo, 200 KiB max; an SVG containing a script, an event handler or an external reference is refused.	Se muestra al principio de cada informe. Logo PNG o SVG, 200 KiB como máximo; se rechaza un SVG con script, manejador de eventos o referencia externa.	Ripreso in testa a ogni report. Logo PNG o SVG, massimo 200 KiB; un SVG con script, gestore di eventi o riferimento esterno viene rifiutato.	Umieszczane na początku każdego raportu. Logo PNG lub SVG, maks. 200 KiB; SVG ze skryptem, obsługą zdarzeń lub odwołaniem zewnętrznym jest odrzucany.	Erscheint oben in jedem Bericht. PNG- oder SVG-Logo, höchstens 200 KiB; ein SVG mit Skript, Event-Handler oder externem Verweis wird abgelehnt.
+Client	Client	Cliente	Cliente	Klient	Kunde
+Site	Site	Sitio	Sito	Lokalizacja	Standort
+Intervenant	Engineer	Técnico	Tecnico	Wykonawca	Bearbeiter
+Commentaire en tête de rapport	Comment at the top of the report	Comentario al principio del informe	Commento in testa al report	Komentarz na początku raportu	Kommentar oben im Bericht
+Logo	Logo	Logo	Logo	Logo	Logo
+Retirer le logo	Remove the logo	Quitar el logo	Rimuovi il logo	Usuń logo	Logo entfernen
+Enregistrer	Save	Guardar	Salva	Zapisz	Speichern
+Seuils (§7)	Thresholds (§7)	Umbrales (§7)	Soglie (§7)	Progi (§7)	Schwellen (§7)
+Préréglages fournis ; l'édition fine des seuils arrive avec la surveillance continue (phase 9).	Built-in presets; fine-grained threshold editing comes with continuous monitoring (phase 9).	Ajustes predefinidos; la edición fina de umbrales llega con la monitorización continua (fase 9).	Preimpostazioni fornite; la modifica fine delle soglie arriva con il monitoraggio continuo (fase 9).	Wbudowane zestawy; szczegółowa edycja progów pojawi się z ciągłym monitorowaniem (faza 9).	Mitgelieferte Voreinstellungen; die feine Bearbeitung der Schwellen kommt mit der Dauerüberwachung (Phase 9).
+vigie est une appliance de diagnostic pour vSphere, pilotable entièrement par l'interface web et par l'API (jetons dans Réglages). On en déploie une ou plusieurs.	vigie is a diagnostics appliance for vSphere, fully driven from the web UI and the API (tokens in Settings). Deploy one or several.	vigie es un appliance de diagnóstico para vSphere, controlable por completo desde la interfaz web y la API (tokens en Ajustes). Se despliegan uno o varios.	vigie è un'appliance di diagnostica per vSphere, gestibile interamente dall'interfaccia web e dall'API (token in Impostazioni). Se ne distribuiscono una o più.	vigie to appliance diagnostyczny dla vSphere, w pełni sterowany z interfejsu web i API (tokeny w Ustawieniach). Wdraża się jeden lub kilka.	vigie ist eine Diagnose-Appliance für vSphere, vollständig über die Weboberfläche und die API steuerbar (Token unter Einstellungen). Man setzt eine oder mehrere ein.
+: ping et latence vers une adresse ou un nom, surveillance continue façon smokeping (20 pings par minute, historique d'un an), traceroute automatique hors du sous-réseau, table ARP de l'appliance, tests de débit iperf3 TCP et UDP vers une autre appliance.	: ping and latency to an address or name, smokeping-style continuous monitoring (20 pings per minute, one-year history), automatic traceroute outside the subnet, appliance ARP table, iperf3 TCP and UDP throughput tests to another appliance.	: ping y latencia hacia una dirección o nombre, monitorización continua estilo smokeping (20 pings por minuto, historial de un año), traceroute automático fuera de la subred, tabla ARP del appliance, pruebas de caudal iperf3 TCP y UDP hacia otro appliance.	: ping e latenza verso un indirizzo o un nome, monitoraggio continuo stile smokeping (20 ping al minuto, storico di un anno), traceroute automatico fuori sottorete, tabella ARP dell'appliance, test di throughput iperf3 TCP e UDP verso un'altra appliance.	: ping i opóźnienia do adresu lub nazwy, ciągłe monitorowanie w stylu smokeping (20 pingów na minutę, historia roczna), automatyczny traceroute poza podsiecią, tablica ARP appliance, testy przepływności iperf3 TCP i UDP do innego appliance.	: Ping und Latenz zu einer Adresse oder einem Namen, Dauerüberwachung im Smokeping-Stil (20 Pings pro Minute, ein Jahr Verlauf), automatisches Traceroute außerhalb des Subnetzes, ARP-Tabelle der Appliance, iperf3-Durchsatztests TCP und UDP zu einer anderen Appliance.
+Console de la VM	VM console	Consola de la VM	Console della VM	Konsola VM	VM-Konsole
+(console VMware, clavier seul) : les mêmes tests réseau, et des tests de stockage sans vCenter sur un disque ajouté à la main, adopté après contrôles et confirmation.	(VMware console, keyboard only): the same network tests, and storage tests without vCenter on a disk added by hand, adopted after checks and confirmation.	(consola VMware, solo teclado): las mismas pruebas de red, y pruebas de almacenamiento sin vCenter en un disco añadido a mano, adoptado tras controles y confirmación.	(console VMware, solo tastiera): gli stessi test di rete, e test di storage senza vCenter su un disco aggiunto a mano, adottato dopo controlli e conferma.	(konsola VMware, tylko klawiatura): te same testy sieci oraz testy dysków bez vCenter na ręcznie dodanym dysku, przejętym po kontrolach i potwierdzeniu.	(VMware-Konsole, nur Tastatur): dieselben Netzwerktests sowie Speichertests ohne vCenter auf einem von Hand hinzugefügten Disk, übernommen nach Prüfungen und Bestätigung.
+: mesure du datastore depuis l'hôte où tourne l'appliance, sans SSH sur les ESXi. Test standard (débit séquentiel, ratio TX/écrit, erreurs NIC, latence vue par l'hôte) et test avancé (IOPS et latences 4 Kio par profondeur de file, IOPS utiles sous plafond).	: datastore measurement from the host the appliance runs on, without SSH to the ESXi hosts. Standard test (sequential throughput, TX/written ratio, NIC errors, host-side latency) and advanced test (4 KiB IOPS and latencies per queue depth, useful IOPS under a ceiling).	: medida del datastore desde el host donde corre el appliance, sin SSH a los ESXi. Prueba estándar (caudal secuencial, ratio TX/escrito, errores de NIC, latencia vista por el host) y prueba avanzada (IOPS y latencias 4 KiB por profundidad de cola, IOPS útiles bajo un techo).	: misura del datastore dall'host su cui gira l'appliance, senza SSH sugli ESXi. Test standard (throughput sequenziale, rapporto TX/scritto, errori NIC, latenza vista dall'host) e test avanzato (IOPS e latenze 4 KiB per profondità di coda, IOPS utili sotto un tetto).	: pomiar datastore z hosta, na którym działa appliance, bez SSH na ESXi. Test standardowy (przepływność sekwencyjna, współczynnik TX/zapis, błędy NIC, opóźnienie widziane przez host) i rozszerzony (IOPS i opóźnienia 4 KiB wg głębokości kolejki, użyteczne IOPS poniżej pułapu).	: Messung des Datastores vom Host aus, auf dem die Appliance läuft, ohne SSH auf die ESXi. Standardtest (sequenzieller Durchsatz, TX/Schreib-Verhältnis, NIC-Fehler, hostseitige Latenz) und erweiterter Test (4-KiB-IOPS und Latenzen je Warteschlangentiefe, nutzbare IOPS unter einer Grenze).
+Limites assumées	Known limitations	Limitaciones asumidas	Limiti noti	Znane ograniczenia	Bekannte Grenzen
+Pas de compteur de retransmissions TCP du vmkernel : le ratio TX/écrit corrigé est un indicateur indirect, sensible au trafic des autres VMs sur la même vmnic.	No vmkernel TCP retransmission counter: the corrected TX/written ratio is an indirect indicator, sensitive to other VMs' traffic on the same vmnic.	Sin contador de retransmisiones TCP del vmkernel: el ratio TX/escrito corregido es un indicador indirecto, sensible al tráfico de otras VMs en la misma vmnic.	Nessun contatore di ritrasmissioni TCP del vmkernel: il rapporto TX/scritto corretto è un indicatore indiretto, sensibile al traffico di altre VM sulla stessa vmnic.	Brak licznika retransmisji TCP vmkernel: skorygowany współczynnik TX/zapis to wskaźnik pośredni, wrażliwy na ruch innych VM na tej samej vmnic.	Kein vmkernel-Zähler für TCP-Neuübertragungen: das korrigierte TX/Schreib-Verhältnis ist ein indirekter Indikator, empfindlich gegenüber dem Verkehr anderer VMs auf derselben vmnic.
+Comparaison séquentielle et non simultanée entre hôtes : l'alternance réduit, sans l'annuler, l'effet d'une charge serveur variable.	Sequential, not simultaneous, comparison between hosts: alternation reduces, without cancelling, the effect of a varying server load.	Comparación secuencial y no simultánea entre hosts: la alternancia reduce, sin anularlo, el efecto de una carga variable del servidor.	Confronto sequenziale e non simultaneo tra host: l'alternanza riduce, senza annullarlo, l'effetto di un carico variabile del server.	Porównanie hostów sekwencyjne, nie równoczesne: naprzemienność zmniejsza, ale nie znosi, wpływu zmiennego obciążenia serwera.	Sequenzieller, nicht gleichzeitiger Vergleich der Hosts: das Abwechseln verringert den Effekt einer schwankenden Serverlast, ohne ihn aufzuheben.
+Granularité de 20 s du PerformanceManager : les micro-coupures plus courtes sont lissées.	20 s PerformanceManager granularity: shorter micro-outages are smoothed out.	Granularidad de 20 s del PerformanceManager: los microcortes más cortos se suavizan.	Granularità di 20 s del PerformanceManager: le micro-interruzioni più brevi vengono livellate.	Rozdzielczość 20 s PerformanceManager: krótsze mikroprzerwy są wygładzane.	20-s-Auflösung des PerformanceManagers: kürzere Mikroausfälle werden geglättet.
+Les débits et IOPS incluent l'effet du cache du serveur NFS tant que la zone de test y tient : c'est ce que voit une VM, pas une mesure des disques du serveur.	Throughputs and IOPS include the NFS server cache effect as long as the test area fits in it: it is what a VM sees, not a measurement of the server's disks.	Caudales e IOPS incluyen el efecto de la caché del servidor NFS mientras la zona de prueba quepa en ella: es lo que ve una VM, no una medida de los discos del servidor.	Throughput e IOPS includono l'effetto della cache del server NFS finché l'area di test vi rientra: è ciò che vede una VM, non una misura dei dischi del server.	Przepływności i IOPS obejmują wpływ cache serwera NFS, dopóki obszar testu się w nim mieści: to obraz z perspektywy VM, nie pomiar dysków serwera.	Durchsätze und IOPS enthalten den Effekt des NFS-Server-Caches, solange der Testbereich hineinpasst: das sieht eine VM, keine Messung der Server-Disks.
+L'appliance teste le chemin de l'hôte où elle tourne.	The appliance tests the path of the host it runs on.	El appliance prueba el camino del host donde corre.	L'appliance testa il percorso dell'host su cui gira.	Appliance testuje ścieżkę hosta, na którym działa.	Die Appliance testet den Pfad des Hosts, auf dem sie läuft.
+Unités	Units	Unidades	Unità	Jednostki	Einheiten
+Mo/s = 10⁶ octets par seconde. Kio et Mio (2¹⁰, 2²⁰ octets) pour les tailles de bloc.	MB/s = 10⁶ bytes per second. KiB and MiB (2¹⁰, 2²⁰ bytes) for block sizes.	MB/s = 10⁶ bytes por segundo. KiB y MiB (2¹⁰, 2²⁰ bytes) para los tamaños de bloque.	MB/s = 10⁶ byte al secondo. KiB e MiB (2¹⁰, 2²⁰ byte) per le dimensioni dei blocchi.	MB/s = 10⁶ bajtów na sekundę. KiB i MiB (2¹⁰, 2²⁰ bajtów) dla rozmiarów bloków.	MB/s = 10⁶ Bytes pro Sekunde. KiB und MiB (2¹⁰, 2²⁰ Bytes) für Blockgrößen.
+%s Mo/s	%s MB/s	%s MB/s	%s MB/s	%s MB/s	%s MB/s
+%s Go	%s GB	%s GB	%s GB	%s GB	%s GB
+%s Gio	%s GiB	%s GiB	%s GiB	%s GiB	%s GiB
+%s (seuils %s / %s)	%s (thresholds %s / %s)	%s (umbrales %s / %s)	%s (soglie %s / %s)	%s (progi %s / %s)	%s (Schwellen %s / %s)
+< %s / < %s Mo/s	< %s / < %s MB/s	< %s / < %s MB/s	< %s / < %s MB/s	< %s / < %s MB/s	< %s / < %s MB/s
+%s événement(s)	%s event(s)	%s evento(s)	%s evento/i	%s zdarzeń	%s Ereignis(se)
+%s nouvelle(s) ligne(s)	%s new line(s)	%s línea(s) nueva(s)	%s nuova/e riga/he	%s nowych wierszy	%s neue Zeile(n)
+%% des I/O	%% of I/Os	%% de las E/S	%% degli I/O	%% operacji I/O	%% der I/Os
+Connecté à %s en tant que %s (%s). Empreinte %s	Connected to %s as %s (%s). Fingerprint %s	Conectado a %s como %s (%s). Huella %s	Connesso a %s come %s (%s). Impronta %s	Połączono z %s jako %s (%s). Odcisk %s	Verbunden mit %s als %s (%s). Fingerabdruck %s
+Je suis la VM %s sur l'hôte %s (ESXi %s), cluster %s. Identification par %s.	I am VM %s on host %s (ESXi %s), cluster %s. Identified by %s.	Soy la VM %s en el host %s (ESXi %s), clúster %s. Identificación por %s.	Sono la VM %s sull'host %s (ESXi %s), cluster %s. Identificazione tramite %s.	Jestem VM %s na hoście %s (ESXi %s), klaster %s. Identyfikacja przez %s.	Ich bin die VM %s auf Host %s (ESXi %s), Cluster %s. Identifiziert über %s.
+Je suis la VM %s sur l'hôte %s (ESXi %s). Identification par %s.	I am VM %s on host %s (ESXi %s). Identified by %s.	Soy la VM %s en el host %s (ESXi %s). Identificación por %s.	Sono la VM %s sull'host %s (ESXi %s). Identificazione tramite %s.	Jestem VM %s na hoście %s (ESXi %s). Identyfikacja przez %s.	Ich bin die VM %s auf Host %s (ESXi %s). Identifiziert über %s.
+Privilèges requis présents pour %s.	Required privileges present for %s.	Privilegios requeridos presentes para %s.	Privilegi richiesti presenti per %s.	Wymagane uprawnienia obecne dla %s.	Erforderliche Rechte für %s vorhanden.
+Privilèges manquants : %s	Missing privileges: %s	Privilegios que faltan: %s	Privilegi mancanti: %s	Brakujące uprawnienia: %s	Fehlende Rechte: %s
+Chemin NFS :	NFS path:	Camino NFS:	Percorso NFS:	Ścieżka NFS:	NFS-Pfad:
+Chemin : %s via %s (MTU %s) → %s → %s	Path: %s via %s (MTU %s) → %s → %s	Camino: %s vía %s (MTU %s) → %s → %s	Percorso: %s via %s (MTU %s) → %s → %s	Ścieżka: %s przez %s (MTU %s) → %s → %s	Pfad: %s über %s (MTU %s) → %s → %s
+commutateur distribué : la politique de teaming du portgroup n'est pas lue, tous les uplinks du vDS sont listés	distributed switch: the portgroup teaming policy is not read, all vDS uplinks are listed	switch distribuido: no se lee la política de teaming del portgroup, se listan todos los uplinks del vDS	switch distribuito: la policy di teaming del portgroup non viene letta, sono elencati tutti gli uplink del vDS	przełącznik rozproszony: polityka teamingu portgroup nie jest odczytywana, wymieniono wszystkie uplinki vDS	Distributed Switch: die Teaming-Richtlinie der Portgruppe wird nicht gelesen, alle vDS-Uplinks werden aufgeführt
+Cluster %s : DRS actif (%s) — DRS peut déplacer l'appliance pendant une mesure : l'override est recommandé.	Cluster %s: DRS enabled (%s) — DRS may move the appliance during a measurement: the override is recommended.	Clúster %s: DRS activo (%s) — DRS puede mover el appliance durante una medida: se recomienda el override.	Cluster %s: DRS attivo (%s) — DRS può spostare l'appliance durante una misura: si consiglia l'override.	Klaster %s: DRS aktywny (%s) — DRS może przenieść appliance podczas pomiaru: zalecane nadpisanie.	Cluster %s: DRS aktiv (%s) — DRS kann die Appliance während einer Messung verschieben: Override empfohlen.
+Cluster %s : DRS actif (%s)	Cluster %s: DRS enabled (%s)	Clúster %s: DRS activo (%s)	Cluster %s: DRS attivo (%s)	Klaster %s: DRS aktywny (%s)	Cluster %s: DRS aktiv (%s)
+Cluster %s : DRS inactif	Cluster %s: DRS disabled	Clúster %s: DRS inactivo	Cluster %s: DRS non attivo	Klaster %s: DRS nieaktywny	Cluster %s: DRS inaktiv
+Cluster %s : DRS actif (%s), override de l'appliance : %s	Cluster %s: DRS enabled (%s), appliance override: %s	Clúster %s: DRS activo (%s), override del appliance: %s	Cluster %s: DRS attivo (%s), override dell'appliance: %s	Klaster %s: DRS aktywny (%s), nadpisanie appliance: %s	Cluster %s: DRS aktiv (%s), Override der Appliance: %s
+hôte courant	current host	host actual	host attuale	bieżący host	aktueller Host
+possible (%s)	possible (%s)	posible (%s)	possibile (%s)	możliwe (%s)	möglich (%s)
+possible	possible	posible	possibile	możliwe	möglich
+impossible : %s	impossible: %s	imposible: %s	impossibile: %s	niemożliwe: %s	nicht möglich: %s
+Déplacer ici	Move here	Mover aquí	Sposta qui	Przenieś tutaj	Hierher verschieben
+Déplacer l'appliance vers %s (vMotion) ?	Move the appliance to %s (vMotion)?	¿Mover el appliance a %s (vMotion)?	Spostare l'appliance su %s (vMotion)?	Przenieść appliance na %s (vMotion)?	Appliance nach %s verschieben (vMotion)?
+prévalidation du vMotion vers chaque hôte…	vMotion pre-check to each host…	validación previa del vMotion hacia cada host…	pre-verifica del vMotion verso ogni host…	wstępna weryfikacja vMotion do każdego hosta…	vMotion-Vorprüfung zu jedem Host…
+Tournée : %s hôtes × %s cycle(s) = %s tests standard, durée estimée %s min (paramètres de l'étape 6).	Tour: %s hosts × %s cycle(s) = %s standard tests, estimated %s min (step 6 settings).	Ronda: %s hosts × %s ciclo(s) = %s pruebas estándar, duración estimada %s min (parámetros del paso 6).	Giro: %s host × %s ciclo/i = %s test standard, durata stimata %s min (parametri del passo 6).	Seria: %s hostów × %s cykli = %s testów standardowych, szacowany czas %s min (ustawienia kroku 6).	Runde: %s Hosts × %s Zyklus/Zyklen = %s Standardtests, geschätzt %s min (Parameter von Schritt 6).
+Cochez au moins deux hôtes.	Tick at least two hosts.	Marque al menos dos hosts.	Seleziona almeno due host.	Zaznacz co najmniej dwa hosty.	Mindestens zwei Hosts ankreuzen.
+choisissez un datastore (étape 3)	choose a datastore (step 3)	elija un datastore (paso 3)	scegli un datastore (passo 3)	wybierz datastore (krok 3)	Datastore wählen (Schritt 3)
+prêt	ready	listo	pronto	gotowy	bereit
+non prêt	not ready	no listo	non pronto	niegotowy	nicht bereit
+connecté	connected	conectado	connesso	połączony	verbunden
+vSphere : %s	vSphere: %s	vSphere: %s	vSphere: %s	vSphere: %s	vSphere: %s
+✔ %s — %s	✔ %s — %s	✔ %s — %s	✔ %s — %s	✔ %s — %s	✔ %s — %s
+✔ %s	✔ %s	✔ %s	✔ %s	✔ %s	✔ %s
+✘ %s — %s	✘ %s — %s	✘ %s — %s	✘ %s — %s	✘ %s — %s	✘ %s — %s
+✘ %s	✘ %s	✘ %s	✘ %s	✘ %s	✘ %s
+VMDK %s (clé %s, unité %s)	VMDK %s (key %s, unit %s)	VMDK %s (clave %s, unidad %s)	VMDK %s (chiave %s, unità %s)	VMDK %s (klucz %s, jednostka %s)	VMDK %s (Schlüssel %s, Einheit %s)
+⚠ %s	⚠ %s	⚠ %s	⚠ %s	⚠ %s	⚠ %s
+vmkernel.log illisible : %s	vmkernel.log unreadable: %s	vmkernel.log ilegible: %s	vmkernel.log illeggibile: %s	vmkernel.log nieczytelny: %s	vmkernel.log nicht lesbar: %s
+journal vmkernel : %s	vmkernel log: %s	registro vmkernel: %s	log vmkernel: %s	dziennik vmkernel: %s	vmkernel-Protokoll: %s
+Durée estimée : %s min.	Estimated duration: %s min.	Duración estimada: %s min.	Durata stimata: %s min.	Szacowany czas: %s min.	Geschätzte Dauer: %s min.
+Durée estimée : %s min (dont préremplissage ~%s s).	Estimated duration: %s min (including ~%s s prefill).	Duración estimada: %s min (incluido prellenado ~%s s).	Durata stimata: %s min (incluso preriempimento ~%s s).	Szacowany czas: %s min (w tym wypełnianie ~%s s).	Geschätzte Dauer: %s min (davon ~%s s Vorbefüllen).
+Profil : écriture puis lecture séquentielles, bloc 1 Mio, QD 4, %s s chacune sans chauffe, sur toute la zone du disque de test, O_DIRECT+O_SYNC, données aléatoires incompressibles renouvelées à chaque passe ; ligne de base au repos %s s.	Profile: sequential write then read, 1 MiB block, QD 4, %s s each without warm-up, over the whole test disk area, O_DIRECT+O_SYNC, incompressible random data renewed on each pass; idle baseline %s s.	Perfil: escritura y luego lectura secuenciales, bloque 1 MiB, QD 4, %s s cada una sin calentamiento, en toda la zona del disco de prueba, O_DIRECT+O_SYNC, datos aleatorios incompresibles renovados en cada pasada; línea base en reposo %s s.	Profilo: scrittura poi lettura sequenziali, blocco 1 MiB, QD 4, %s s ciascuna senza riscaldamento, su tutta l'area del disco di test, O_DIRECT+O_SYNC, dati casuali incomprimibili rinnovati a ogni passata; linea di base a riposo %s s.	Profil: zapis, potem odczyt sekwencyjny, blok 1 MiB, QD 4, po %s s bez rozgrzewki, na całym obszarze dysku testowego, O_DIRECT+O_SYNC, losowe nieskompresowalne dane odnawiane w każdym przebiegu; linia bazowa w spoczynku %s s.	Profil: sequenzielles Schreiben, dann Lesen, Block 1 MiB, QD 4, je %s s ohne Aufwärmen, über den ganzen Testdisk-Bereich, O_DIRECT+O_SYNC, nicht komprimierbare Zufallsdaten, bei jedem Durchlauf erneuert; Ruhe-Basislinie %s s.
+Profil : écriture puis lecture séquentielles, bloc 1 Mio, QD 4, %s s chacune sans chauffe, sur toute la zone du disque de test, O_DIRECT+O_SYNC, données aléatoires incompressibles renouvelées à chaque passe ; ligne de base au repos %s s. Puis %s paliers aléatoires uniformes alignés : %s en lecture, écriture et mixte 70/30, QD 1, 4, 16 et 32, 5 s de chauffe puis 40 s de mesure chacun, données renouvelées à chaque écriture ; IOPS utiles = palier le plus élevé dont la p99 reste sous %s ms.	Profile: sequential write then read, 1 MiB block, QD 4, %s s each without warm-up, over the whole test disk area, O_DIRECT+O_SYNC, incompressible random data renewed on each pass; idle baseline %s s. Then %s aligned uniform random steps: %s read, write and 70/30 mixed, QD 1, 4, 16 and 32, 5 s warm-up then 40 s measurement each, data renewed on each write; useful IOPS = highest step whose p99 stays under %s ms.	Perfil: escritura y luego lectura secuenciales, bloque 1 MiB, QD 4, %s s cada una sin calentamiento, en toda la zona del disco de prueba, O_DIRECT+O_SYNC, datos aleatorios incompresibles renovados en cada pasada; línea base en reposo %s s. Luego %s escalones aleatorios uniformes alineados: %s en lectura, escritura y mixto 70/30, QD 1, 4, 16 y 32, 5 s de calentamiento y 40 s de medida cada uno, datos renovados en cada escritura; IOPS útiles = escalón más alto cuya p99 queda bajo %s ms.	Profilo: scrittura poi lettura sequenziali, blocco 1 MiB, QD 4, %s s ciascuna senza riscaldamento, su tutta l'area del disco di test, O_DIRECT+O_SYNC, dati casuali incomprimibili rinnovati a ogni passata; linea di base a riposo %s s. Poi %s passi casuali uniformi allineati: %s in lettura, scrittura e misto 70/30, QD 1, 4, 16 e 32, 5 s di riscaldamento poi 40 s di misura ciascuno, dati rinnovati a ogni scrittura; IOPS utili = passo più alto la cui p99 resta sotto %s ms.	Profil: zapis, potem odczyt sekwencyjny, blok 1 MiB, QD 4, po %s s bez rozgrzewki, na całym obszarze dysku testowego, O_DIRECT+O_SYNC, losowe nieskompresowalne dane odnawiane w każdym przebiegu; linia bazowa w spoczynku %s s. Potem %s wyrównanych etapów losowych: %s odczyt, zapis i mieszany 70/30, QD 1, 4, 16 i 32, po 5 s rozgrzewki i 40 s pomiaru, dane odnawiane przy każdym zapisie; użyteczne IOPS = najwyższy etap, którego p99 pozostaje poniżej %s ms.	Profil: sequenzielles Schreiben, dann Lesen, Block 1 MiB, QD 4, je %s s ohne Aufwärmen, über den ganzen Testdisk-Bereich, O_DIRECT+O_SYNC, nicht komprimierbare Zufallsdaten, bei jedem Durchlauf erneuert; Ruhe-Basislinie %s s. Dann %s ausgerichtete gleichverteilte Zufallsstufen: %s Lesen, Schreiben und gemischt 70/30, QD 1, 4, 16 und 32, je 5 s Aufwärmen und 40 s Messung, Daten bei jedem Schreiben erneuert; nutzbare IOPS = höchste Stufe, deren p99 unter %s ms bleibt.
+4 Kio	4 KiB	4 KiB	4 KiB	4 KiB	4 KiB
+%s %s, bloc %s Kio, QD %s, %s, zone %s Gio, %s, données %s	%s %s, block %s KiB, QD %s, %s, area %s GiB, %s, data %s	%s %s, bloque %s KiB, QD %s, %s, zona %s GiB, %s, datos %s	%s %s, blocco %s KiB, QD %s, %s, area %s GiB, %s, dati %s	%s %s, blok %s KiB, QD %s, %s, obszar %s GiB, %s, dane %s	%s %s, Block %s KiB, QD %s, %s, Bereich %s GiB, %s, Daten %s
+%s %s, bloc %s Kio, QD %s, %s, zone %s Gio, %s	%s %s, block %s KiB, QD %s, %s, area %s GiB, %s	%s %s, bloque %s KiB, QD %s, %s, zona %s GiB, %s	%s %s, blocco %s KiB, QD %s, %s, area %s GiB, %s	%s %s, blok %s KiB, QD %s, %s, obszar %s GiB, %s	%s %s, Block %s KiB, QD %s, %s, Bereich %s GiB, %s
+%s s après %s s de chauffe	%s s after %s s warm-up	%s s tras %s s de calentamiento	%s s dopo %s s di riscaldamento	%s s po %s s rozgrzewki	%s s nach %s s Aufwärmen
+Profil aléatoire : lecture, écriture et mixte 70/30, %s, bloc %s, QD 1, 4, 16, 32, %s, zone %s Gio, %s	Random profile: read, write and 70/30 mixed, %s, block %s, QD 1, 4, 16, 32, %s, area %s GiB, %s	Perfil aleatorio: lectura, escritura y mixto 70/30, %s, bloque %s, QD 1, 4, 16, 32, %s, zona %s GiB, %s	Profilo casuale: lettura, scrittura e misto 70/30, %s, blocco %s, QD 1, 4, 16, 32, %s, area %s GiB, %s	Profil losowy: odczyt, zapis i mieszany 70/30, %s, blok %s, QD 1, 4, 16, 32, %s, obszar %s GiB, %s	Zufallsprofil: Lesen, Schreiben und gemischt 70/30, %s, Block %s, QD 1, 4, 16, 32, %s, Bereich %s GiB, %s
+Profil séquentiel :	Sequential profile:	Perfil secuencial:	Profilo sequenziale:	Profil sekwencyjny:	Sequenzielles Profil:
+Profil de chaque passage : %s ; puis %s ; ligne de base %s s. Tournée : %s cycle(s) en alternance, override DRS %s, hôte de départ %s.	Profile of each pass: %s; then %s; baseline %s s. Tour: %s alternating cycle(s), DRS override %s, starting host %s.	Perfil de cada pasada: %s; luego %s; línea base %s s. Ronda: %s ciclo(s) alternado(s), override DRS %s, host de partida %s.	Profilo di ogni passaggio: %s; poi %s; linea di base %s s. Giro: %s ciclo/i alternato/i, override DRS %s, host di partenza %s.	Profil każdego przebiegu: %s; potem %s; linia bazowa %s s. Seria: %s naprzemiennych cykli, nadpisanie DRS %s, host początkowy %s.	Profil jedes Durchlaufs: %s; dann %s; Basislinie %s s. Runde: %s abwechselnde(r) Zyklus/Zyklen, DRS-Override %s, Ausgangshost %s.
+posé puis restauré	set then restored	aplicado y restaurado	applicato poi ripristinato	ustawione, potem przywrócone	gesetzt, dann wiederhergestellt
+non utilisé	not used	no usado	non usato	nieużywane	nicht verwendet
+Hôte %s, datastore %s. %s	Host %s, datastore %s. %s	Host %s, datastore %s. %s	Host %s, datastore %s. %s	Host %s, datastore %s. %s	Host %s, Datastore %s. %s
+Hôte %s, datastore %s, médiane de %s répétitions. %s	Host %s, datastore %s, median of %s repetitions. %s	Host %s, datastore %s, mediana de %s repeticiones. %s	Host %s, datastore %s, mediana di %s ripetizioni. %s	Host %s, datastore %s, mediana z %s powtórzeń. %s	Host %s, Datastore %s, Median aus %s Wiederholungen. %s
+Hôte %s, datastore %s, préréglage %s. %s	Host %s, datastore %s, preset %s. %s	Host %s, datastore %s, ajuste %s. %s	Host %s, datastore %s, preimpostazione %s. %s	Host %s, datastore %s, zestaw %s. %s	Host %s, Datastore %s, Voreinstellung %s. %s
+Aucun indicateur déclenché.	No indicator triggered.	Ningún indicador activado.	Nessun indicatore attivato.	Żaden wskaźnik nie zadziałał.	Kein Indikator ausgelöst.
+Écriture %s (p50 %s, p99 %s, CPU worker %s %%) — lecture %s (p99 %s).	Write %s (p50 %s, p99 %s, worker CPU %s %%) — read %s (p99 %s).	Escritura %s (p50 %s, p99 %s, CPU worker %s %%) — lectura %s (p99 %s).	Scrittura %s (p50 %s, p99 %s, CPU worker %s %%) — lettura %s (p99 %s).	Zapis %s (p50 %s, p99 %s, CPU workera %s %%) — odczyt %s (p99 %s).	Schreiben %s (p50 %s, p99 %s, Worker-CPU %s %%) — Lesen %s (p99 %s).
+Indicateur	Indicator	Indicador	Indicatore	Wskaźnik	Indikator
+Valeur	Value	Valor	Valore	Wartość	Wert
+Ratio TX/écrit corrigé	Corrected TX/written ratio	Ratio TX/escrito corregido	Rapporto TX/scritto corretto	Skorygowany współczynnik TX/zapis	Korrigiertes TX/Schreib-Verhältnis
+Débit d'écriture	Write throughput	Caudal de escritura	Throughput in scrittura	Przepływność zapisu	Schreibdurchsatz
+Erreurs/pertes en réception (vmnic NFS)	Receive errors/drops (NFS vmnic)	Errores/pérdidas en recepción (vmnic NFS)	Errori/perdite in ricezione (vmnic NFS)	Błędy/straty odbioru (vmnic NFS)	Empfangsfehler/-verluste (NFS-vmnic)
+Avertissements NFS (vmkernel.log)	NFS warnings (vmkernel.log)	Avisos NFS (vmkernel.log)	Avvisi NFS (vmkernel.log)	Ostrzeżenia NFS (vmkernel.log)	NFS-Warnungen (vmkernel.log)
+Changements d'état de lien	Link state changes	Cambios de estado de enlace	Cambi di stato del link	Zmiany stanu łącza	Link-Statusänderungen
+Latence d'écriture datastore (hôte)	Datastore write latency (host)	Latencia de escritura del datastore (host)	Latenza di scrittura del datastore (host)	Opóźnienie zapisu datastore (host)	Datastore-Schreiblatenz (Host)
+Latence 4 Kio QD1 p99, lecture	4 KiB QD1 p99 latency, read	Latencia 4 KiB QD1 p99, lectura	Latenza 4 KiB QD1 p99, lettura	Opóźnienie 4 KiB QD1 p99, odczyt	Latenz 4 KiB QD1 p99, Lesen
+Latence 4 Kio QD1 p99, écriture	4 KiB QD1 p99 latency, write	Latencia 4 KiB QD1 p99, escritura	Latenza 4 KiB QD1 p99, scrittura	Opóźnienie 4 KiB QD1 p99, zapis	Latenz 4 KiB QD1 p99, Schreiben
+Latence 4 Kio QD1 p99, %s : %s	4 KiB QD1 p99 latency, %s: %s	Latencia 4 KiB QD1 p99, %s: %s	Latenza 4 KiB QD1 p99, %s: %s	Opóźnienie 4 KiB QD1 p99, %s: %s	Latenz 4 KiB QD1 p99, %s: %s
+Écart IOPS appliance / vSphere	IOPS gap appliance / vSphere	Diferencia IOPS appliance / vSphere	Scarto IOPS appliance / vSphere	Różnica IOPS appliance / vSphere	IOPS-Abweichung Appliance / vSphere
+CPU du worker	Worker CPU	CPU del worker	CPU del worker	CPU workera	Worker-CPU
+CPU worker	Worker CPU	CPU worker	CPU worker	CPU workera	Worker-CPU
+au plus %s %% sur %s palier(s) (seuil %s %%)	at most %s %% over %s step(s) (threshold %s %%)	como máximo %s %% en %s escalón(es) (umbral %s %%)	al massimo %s %% su %s passo/i (soglia %s %%)	najwyżej %s %% na %s etapach (próg %s %%)	höchstens %s %% über %s Stufe(n) (Schwelle %s %%)
+sous %s %% sur tous les paliers	under %s %% on all steps	por debajo del %s %% en todos los escalones	sotto il %s %% su tutti i passi	poniżej %s %% na wszystkich etapach	unter %s %% auf allen Stufen
+journal non lisible (privilège Global.Diagnostics ?)	log unreadable (Global.Diagnostics privilege?)	registro ilegible (¿privilegio Global.Diagnostics?)	log illeggibile (privilegio Global.Diagnostics?)	dziennik nieczytelny (uprawnienie Global.Diagnostics?)	Protokoll nicht lesbar (Recht Global.Diagnostics?)
+non mesurable	not measurable	no medible	non misurabile	niemierzalne	nicht messbar
+TX écriture	TX write	TX escritura	TX scrittura	TX zapis	TX Schreiben
+RX lecture	RX read	RX lectura	RX lettura	RX odczyt	RX Lesen
+TX au repos	TX idle	TX en reposo	TX a riposo	TX w spoczynku	TX im Leerlauf
+erreurs/pertes RX	RX errors/drops	errores/pérdidas RX	errori/perdite RX	błędy/straty RX	RX-Fehler/-Verluste
+erreurs/pertes TX	TX errors/drops	errores/pérdidas TX	errori/perdite TX	błędy/straty TX	TX-Fehler/-Verluste
+Chemin : %s	Path: %s	Camino: %s	Percorso: %s	Ścieżka: %s	Pfad: %s
+débit séquentiel écriture / lecture (1 Mio QD4)	sequential write / read throughput (1 MiB QD4)	caudal secuencial escritura / lectura (1 MiB QD4)	throughput sequenziale scrittura / lettura (1 MiB QD4)	przepływność sekwencyjna zapis / odczyt (1 MiB QD4)	sequenzieller Durchsatz Schreiben / Lesen (1 MiB QD4)
+IOPS utiles	Useful IOPS	IOPS útiles	IOPS utili	Użyteczne IOPS	Nutzbare IOPS
+IOPS utiles 4 Kio mixte 70/30, p99 < %s ms (QD%s)	Useful IOPS 4 KiB mixed 70/30, p99 < %s ms (QD%s)	IOPS útiles 4 KiB mixto 70/30, p99 < %s ms (QD%s)	IOPS utili 4 KiB misto 70/30, p99 < %s ms (QD%s)	Użyteczne IOPS 4 KiB mieszany 70/30, p99 < %s ms (QD%s)	Nutzbare IOPS 4 KiB gemischt 70/30, p99 < %s ms (QD%s)
+IOPS utiles (p99 < %s ms)	Useful IOPS (p99 < %s ms)	IOPS útiles (p99 < %s ms)	IOPS utili (p99 < %s ms)	Użyteczne IOPS (p99 < %s ms)	Nutzbare IOPS (p99 < %s ms)
+latence 4 Kio QD1 lecture p50 / p99	4 KiB QD1 read latency p50 / p99	latencia 4 KiB QD1 lectura p50 / p99	latenza 4 KiB QD1 lettura p50 / p99	opóźnienie 4 KiB QD1 odczyt p50 / p99	Latenz 4 KiB QD1 Lesen p50 / p99
+latence 4 Kio QD1 écriture p50 / p99	4 KiB QD1 write latency p50 / p99	latencia 4 KiB QD1 escritura p50 / p99	latenza 4 KiB QD1 scrittura p50 / p99	opóźnienie 4 KiB QD1 zapis p50 / p99	Latenz 4 KiB QD1 Schreiben p50 / p99
+latence p99 en écriture	p99 write latency	latencia p99 de escritura	latenza p99 in scrittura	opóźnienie p99 zapisu	p99-Schreiblatenz
+ratio TX/écrit corrigé	corrected TX/written ratio	ratio TX/escrito corregido	rapporto TX/scritto corretto	skorygowany współczynnik TX/zapis	korrigiertes TX/Schreib-Verhältnis
+IOPS et latence p99 (4 Kio)	IOPS and p99 latency (4 KiB)	IOPS y latencia p99 (4 KiB)	IOPS e latenza p99 (4 KiB)	IOPS i opóźnienie p99 (4 KiB)	IOPS und p99-Latenz (4 KiB)
+Motif	Pattern	Patrón	Schema	Wzorzec	Muster
+Bloc	Block	Bloque	Blocco	Blok	Block
+IOPS vSphere	vSphere IOPS	IOPS vSphere	IOPS vSphere	IOPS vSphere	vSphere-IOPS
+écart	gap	diferencia	scarto	różnica	Abweichung
+maximum brut	raw maximum	máximo bruto	massimo grezzo	maksimum surowe	Rohmaximum
+p99 au maximum	p99 at maximum	p99 en el máximo	p99 al massimo	p99 przy maksimum	p99 beim Maximum
+à QD	at QD	a QD	a QD	przy QD	bei QD
+Paliers	Steps	Escalones	Passi	Etapy	Stufen
+Distribution des latences, 4 Kio QD1	Latency distribution, 4 KiB QD1	Distribución de latencias, 4 KiB QD1	Distribuzione delle latenze, 4 KiB QD1	Rozkład opóźnień, 4 KiB QD1	Latenzverteilung, 4 KiB QD1
+latence p99 (ms, échelle log)	p99 latency (ms, log scale)	latencia p99 (ms, escala log)	latenza p99 (ms, scala log)	opóźnienie p99 (ms, skala log)	p99-Latenz (ms, log. Skala)
+latence (µs, échelle log)	latency (µs, log scale)	latencia (µs, escala log)	latenza (µs, scala log)	opóźnienie (µs, skala log)	Latenz (µs, log. Skala)
+plafond %s ms	ceiling %s ms	techo %s ms	tetto %s ms	pułap %s ms	Grenze %s ms
+Mo/s (à la seconde)	MB/s (per second)	MB/s (por segundo)	MB/s (al secondo)	MB/s (na sekundę)	MB/s (pro Sekunde)
+Mo/s (médianes)	MB/s (medians)	MB/s (medianas)	MB/s (mediane)	MB/s (mediany)	MB/s (Mediane)
+écriture (Mo/s)	write (MB/s)	escritura (MB/s)	scrittura (MB/s)	zapis (MB/s)	Schreiben (MB/s)
+lecture (Mo/s)	read (MB/s)	lectura (MB/s)	lettura (MB/s)	odczyt (MB/s)	Lesen (MB/s)
+aléatoire (IO/s)	random (IO/s)	aleatorio (IO/s)	casuale (IO/s)	losowo (IO/s)	zufällig (IO/s)
+Passages	Passes	Pasadas	Passaggi	Przebiegi	Durchläufe
+Écriture (médiane)	Write (median)	Escritura (mediana)	Scrittura (mediana)	Zapis (mediana)	Schreiben (Median)
+Lecture (médiane)	Read (median)	Lectura (mediana)	Lettura (mediana)	Odczyt (mediana)	Lesen (Median)
+Ratio TX/écrit	TX/written ratio	Ratio TX/escrito	Rapporto TX/scritto	Współczynnik TX/zapis	TX/Schreib-Verhältnis
+p99 écriture	p99 write	p99 escritura	p99 scrittura	p99 zapis	p99 Schreiben
+vs meilleur	vs best	vs mejor	vs migliore	vs najlepszy	vs. bester
+Débit	Throughput	Caudal	Throughput	Przepływność	Durchsatz
+Répétition %s — %s	Repetition %s — %s	Repetición %s — %s	Ripetizione %s — %s	Powtórzenie %s — %s	Wiederholung %s — %s
+Passerelle %s — DNS %s	Gateway %s — DNS %s	Pasarela %s — DNS %s	Gateway %s — DNS %s	Brama %s — DNS %s	Gateway %s — DNS %s
+Profil : %s échos ICMP de 64 octets vers %s, un toutes les %s ms, délai de réponse 2 s ; cible %s.	Profile: %s ICMP echoes of 64 bytes to %s, one every %s ms, 2 s reply timeout; target %s.	Perfil: %s ecos ICMP de 64 bytes hacia %s, uno cada %s ms, tiempo de respuesta 2 s; destino %s.	Profilo: %s echi ICMP da 64 byte verso %s, uno ogni %s ms, timeout di risposta 2 s; destinazione %s.	Profil: %s ech ICMP 64 bajty do %s, co %s ms, limit odpowiedzi 2 s; cel %s.	Profil: %s ICMP-Echos à 64 Byte an %s, eines alle %s ms, 2 s Antwort-Timeout; Ziel %s.
+Profil : échos en continu ICMP de 64 octets vers %s, un toutes les %s ms, délai de réponse 2 s ; cible %s.	Profile: continuous 64-byte ICMP echoes to %s, one every %s ms, 2 s reply timeout; target %s.	Perfil: ecos ICMP continuos de 64 bytes hacia %s, uno cada %s ms, tiempo de respuesta 2 s; destino %s.	Profilo: echi ICMP continui da 64 byte verso %s, uno ogni %s ms, timeout di risposta 2 s; destinazione %s.	Profil: ciągłe echa ICMP 64 bajty do %s, co %s ms, limit odpowiedzi 2 s; cel %s.	Profil: dauerhafte 64-Byte-ICMP-Echos an %s, eines alle %s ms, 2 s Antwort-Timeout; Ziel %s.
+dans le sous-réseau de l'appliance	in the appliance's subnet	en la subred del appliance	nella sottorete dell'appliance	w podsieci appliance	im Subnetz der Appliance
+hors du sous-réseau (routée)	outside the subnet (routed)	fuera de la subred (enrutado)	fuori sottorete (instradata)	poza podsiecią (routowany)	außerhalb des Subnetzes (geroutet)
+Profil : échos ICMP à TTL croissant, 3 sondes par saut, délai 1,5 s, 30 sauts au maximum.	Profile: ICMP echoes with increasing TTL, 3 probes per hop, 1.5 s timeout, at most 30 hops.	Perfil: ecos ICMP con TTL creciente, 3 sondas por salto, tiempo 1,5 s, 30 saltos como máximo.	Profilo: echi ICMP con TTL crescente, 3 sonde per hop, timeout 1,5 s, al massimo 30 hop.	Profil: echa ICMP z rosnącym TTL, 3 próby na skok, limit 1,5 s, maks. 30 skoków.	Profil: ICMP-Echos mit steigender TTL, 3 Proben pro Hop, 1,5 s Timeout, höchstens 30 Hops.
+RTT (ms)	RTT (ms)	RTT (ms)	RTT (ms)	RTT (ms)	RTT (ms)
+RTT min / max	RTT min / max	RTT mín / máx	RTT min / max	RTT min / max	RTT min / max
+RTT médian	median RTT	RTT mediana	RTT mediano	mediana RTT	Median-RTT
+Réponses	Replies	Respuestas	Risposte	Odpowiedzi	Antworten
+n° du ping	ping no.	n.º de ping	n. del ping	nr pingu	Ping-Nr.
+Saut	Hop	Salto	Hop	Skok	Hop
+Traceroute vers %s (%s)	Traceroute to %s (%s)	Traceroute hacia %s (%s)	Traceroute verso %s (%s)	Traceroute do %s (%s)	Traceroute zu %s (%s)
+Traceroute vers %s…	Traceroute to %s…	Traceroute hacia %s…	Traceroute verso %s…	Traceroute do %s…	Traceroute zu %s…
+cible atteinte en %s saut(s)	target reached in %s hop(s)	destino alcanzado en %s salto(s)	destinazione raggiunta in %s hop	cel osiągnięty w %s skokach	Ziel in %s Hop(s) erreicht
+cible non atteinte après %s sauts	target not reached after %s hops	destino no alcanzado tras %s saltos	destinazione non raggiunta dopo %s hop	cel nieosiągnięty po %s skokach	Ziel nach %s Hops nicht erreicht
+cible hors du sous-réseau : traceroute automatique	target outside the subnet: automatic traceroute	destino fuera de la subred: traceroute automático	destinazione fuori sottorete: traceroute automatico	cel poza podsiecią: automatyczny traceroute	Ziel außerhalb des Subnetzes: automatisches Traceroute
+gigue	jitter	jitter	jitter	jitter	Jitter
+Pas encore de mesure sur cette période.	No measurement yet for this period.	Todavía no hay medidas en este periodo.	Ancora nessuna misura in questo periodo.	Brak pomiarów w tym okresie.	Noch keine Messung in diesem Zeitraum.
+première salve dans moins d'une minute	first burst within a minute	primera ráfaga en menos de un minuto	prima raffica entro un minuto	pierwsza seria w ciągu minuty	erste Salve in weniger als einer Minute
+résolution %s min, %s points	resolution %s min, %s points	resolución %s min, %s puntos	risoluzione %s min, %s punti	rozdzielczość %s min, %s punktów	Auflösung %s min, %s Punkte
+résolution %s h, %s points	resolution %s h, %s points	resolución %s h, %s puntos	risoluzione %s h, %s punti	rozdzielczość %s h, %s punktów	Auflösung %s h, %s Punkte
+médiane	median	mediana	mediana	mediana	Median
+perte %	loss %	pérdida %	perdita %	straty %	Verlust %
+ouvert sur le port %s jusqu'à %s (par %s)	open on port %s until %s (by %s)	abierto en el puerto %s hasta las %s (por %s)	aperto sulla porta %s fino alle %s (da %s)	otwarty na porcie %s do %s (przez %s)	offen auf Port %s bis %s (von %s)
+fermé (port %s)	closed (port %s)	cerrado (puerto %s)	chiuso (porta %s)	zamknięty (port %s)	geschlossen (Port %s)
+autre serveur iperf3 (adresse IP)…	other iperf3 server (IP address)…	otro servidor iperf3 (dirección IP)…	altro server iperf3 (indirizzo IP)…	inny serwer iperf3 (adres IP)…	anderer iperf3-Server (IP-Adresse)…
+Retirer	Remove	Quitar	Rimuovi	Usuń	Entfernen
+Supprimer	Delete	Eliminar	Elimina	Usuń	Löschen
+Révoquer	Revoke	Revocar	Revoca	Unieważnij	Widerrufen
+Révoquer le jeton %s ?	Revoke token %s?	¿Revocar el token %s?	Revocare il token %s?	Unieważnić token %s?	Token %s widerrufen?
+Retirer le pair %s ?	Remove peer %s?	¿Quitar el par %s?	Rimuovere il peer %s?	Usunąć peera %s?	Peer %s entfernen?
+Arrêter la surveillance de %s et effacer son historique ?	Stop monitoring %s and erase its history?	¿Dejar de monitorizar %s y borrar su historial?	Interrompere il monitoraggio di %s e cancellarne lo storico?	Zatrzymać monitorowanie %s i usunąć historię?	Überwachung von %s beenden und Verlauf löschen?
+Vider toute la table ARP de l'appliance ?	Flush the appliance's whole ARP table?	¿Vaciar toda la tabla ARP del appliance?	Svuotare tutta la tabella ARP dell'appliance?	Wyczyścić całą tablicę ARP appliance?	Gesamte ARP-Tabelle der Appliance leeren?
+Supprimer le disque de test et son fichier VMDK ?	Delete the test disk and its VMDK file?	¿Eliminar el disco de prueba y su archivo VMDK?	Eliminare il disco di test e il suo file VMDK?	Usunąć dysk testowy i jego plik VMDK?	Testdisk und seine VMDK-Datei löschen?
+Ouvrir	Open	Abrir	Apri	Otwórz	Öffnen
+HTML	HTML	HTML	HTML	HTML	HTML
+Télécharger (HTML)	Download (HTML)	Descargar (HTML)	Scarica (HTML)	Pobierz (HTML)	Herunterladen (HTML)
+Cochez deux tests (%s/2).	Tick two tests (%s/2).	Marque dos pruebas (%s/2).	Seleziona due test (%s/2).	Zaznacz dwa testy (%s/2).	Zwei Tests ankreuzen (%s/2).
+Le plus ancien est l'« avant ».	The oldest one is the “before”.	El más antiguo es el «antes».	Il più vecchio è il «prima».	Starszy to „przed”.	Der ältere ist „vorher“.
+sélectionner pour un rapport avant / après	select for a before / after report	seleccionar para un informe antes / después	seleziona per un report prima / dopo	wybierz do raportu przed / po	für Vorher-/Nachher-Bericht auswählen
+dernier test : %s	last test: %s	última prueba: %s	ultimo test: %s	ostatni test: %s	letzter Test: %s
+succeeded	succeeded	completado	completato	zakończony	abgeschlossen
+failed	failed	fallido	fallito	nieudany	fehlgeschlagen
+cancelled	cancelled	cancelado	annullato	anulowany	abgebrochen
+running	running	en curso	in corso	w toku	läuft
+mot de passe incorrect	wrong password	contraseña incorrecta	password errata	nieprawidłowe hasło	falsches Passwort
+Ratio TX/écrit ATTENTION / ALERTE	TX/written ratio WARNING / ALERT	Ratio TX/escrito AVISO / ALERTA	Rapporto TX/scritto ATTENZIONE / ALLARME	Współczynnik TX/zapis UWAGA / ALARM	TX/Schreib-Verhältnis WARNUNG / ALARM
+Débit d'écriture ATTENTION / ALERTE	Write throughput WARNING / ALERT	Caudal de escritura AVISO / ALERTA	Throughput in scrittura ATTENZIONE / ALLARME	Przepływność zapisu UWAGA / ALARM	Schreibdurchsatz WARNUNG / ALARM
+Latence d'écriture datastore	Datastore write latency	Latencia de escritura del datastore	Latenza di scrittura del datastore	Opóźnienie zapisu datastore	Datastore-Schreiblatenz
+Latence 4 Kio QD1 p99 (avancé)	4 KiB QD1 p99 latency (advanced)	Latencia 4 KiB QD1 p99 (avanzada)	Latenza 4 KiB QD1 p99 (avanzato)	Opóźnienie 4 KiB QD1 p99 (rozszerzony)	Latenz 4 KiB QD1 p99 (erweitert)
+Plafond IOPS utiles (avancé)	Useful IOPS ceiling (advanced)	Techo de IOPS útiles (avanzada)	Tetto IOPS utili (avanzato)	Pułap użytecznych IOPS (rozszerzony)	Grenze nutzbare IOPS (erweitert)
+Avertissements NFS	NFS warnings	Avisos NFS	Avvisi NFS	Ostrzeżenia NFS	NFS-Warnungen
+Erreurs NIC, changements de lien	NIC errors, link changes	Errores de NIC, cambios de enlace	Errori NIC, cambi di link	Błędy NIC, zmiany łącza	NIC-Fehler, Link-Wechsel
+ALERTE dès 1	ALERT from 1	ALERTA desde 1	ALLARME da 1	ALARM od 1	ALARM ab 1
+Logo trop lourd : 200 Kio au maximum.	Logo too large: 200 KiB maximum.	Logo demasiado pesado: 200 KiB como máximo.	Logo troppo pesante: massimo 200 KiB.	Logo za duże: maks. 200 KiB.	Logo zu groß: höchstens 200 KiB.
+Logo chargé : pensez à enregistrer.	Logo loaded: remember to save.	Logo cargado: recuerde guardar.	Logo caricato: ricorda di salvare.	Logo wczytane: pamiętaj o zapisie.	Logo geladen: Speichern nicht vergessen.
+Logo retiré : pensez à enregistrer.	Logo removed: remember to save.	Logo quitado: recuerde guardar.	Logo rimosso: ricorda di salvare.	Logo usunięte: pamiętaj o zapisie.	Logo entfernt: Speichern nicht vergessen.
+Enregistré.	Saved.	Guardado.	Salvato.	Zapisano.	Gespeichert.
+Jeton « %s » (copiez-le maintenant, il ne sera plus affiché) :	Token “%s” (copy it now, it will not be shown again):	Token «%s» (cópielo ahora, no se volverá a mostrar):	Token «%s» (copialo ora, non verrà più mostrato):	Token „%s” (skopiuj teraz, nie zostanie ponownie pokazany):	Token „%s“ (jetzt kopieren, er wird nicht mehr angezeigt):
+vigie %s (commit %s, build %s) sur %s. Certificat HTTPS de l'appliance : SHA-256 %s. Session : %s.	vigie %s (commit %s, build %s) on %s. Appliance HTTPS certificate: SHA-256 %s. Session: %s.	vigie %s (commit %s, build %s) en %s. Certificado HTTPS del appliance: SHA-256 %s. Sesión: %s.	vigie %s (commit %s, build %s) su %s. Certificato HTTPS dell'appliance: SHA-256 %s. Sessione: %s.	vigie %s (commit %s, build %s) na %s. Certyfikat HTTPS appliance: SHA-256 %s. Sesja: %s.	vigie %s (Commit %s, Build %s) auf %s. HTTPS-Zertifikat der Appliance: SHA-256 %s. Sitzung: %s.
+Connectez-vous à vSphere (étape 1).	Connect to vSphere (step 1).	Conéctese a vSphere (paso 1).	Connettiti a vSphere (passo 1).	Połącz się z vSphere (krok 1).	Mit vSphere verbinden (Schritt 1).
+Créez d'abord le disque de test (étape 4).	Create the test disk first (step 4).	Cree primero el disco de prueba (paso 4).	Crea prima il disco di test (passo 4).	Najpierw utwórz dysk testowy (krok 4).	Zuerst den Testdisk erstellen (Schritt 4).
+Un job est déjà en cours.	A job is already running.	Ya hay un job en curso.	Un job è già in corso.	Zadanie już trwa.	Es läuft bereits ein Job.
+connectez-vous à vSphere (étape 1)	connect to vSphere (step 1)	conéctese a vSphere (paso 1)	connettiti a vSphere (passo 1)	połącz się z vSphere (krok 1)	mit vSphere verbinden (Schritt 1)
+identification en cours (étape 2)	identification in progress (step 2)	identificación en curso (paso 2)	identificazione in corso (passo 2)	identyfikacja w toku (krok 2)	Identifizierung läuft (Schritt 2)
+un job est en cours	a job is running	hay un job en curso	un job è in corso	trwa zadanie	ein Job läuft
+Connectez-vous d'abord à vSphere (étape 1).	Connect to vSphere first (step 1).	Conéctese primero a vSphere (paso 1).	Connettiti prima a vSphere (passo 1).	Najpierw połącz się z vSphere (krok 1).	Zuerst mit vSphere verbinden (Schritt 1).
+Le disque de test n'est pas prêt : voir les contrôles de sécurité (étape 4).	The test disk is not ready: see the safety checks (step 4).	El disco de prueba no está listo: vea los controles de seguridad (paso 4).	Il disco di test non è pronto: vedi i controlli di sicurezza (passo 4).	Dysk testowy nie jest gotowy: zobacz kontrole bezpieczeństwa (krok 4).	Der Testdisk ist nicht bereit: siehe Sicherheitsprüfungen (Schritt 4).
+Un job est déjà en cours (étape 7).	A job is already running (step 7).	Ya hay un job en curso (paso 7).	Un job è già in corso (passo 7).	Zadanie już trwa (krok 7).	Es läuft bereits ein Job (Schritt 7).
+job en cours	job running	job en curso	job in corso	zadanie w toku	Job läuft
+Pas de résultat.	No result.	Sin resultado.	Nessun risultato.	Brak wyniku.	Kein Ergebnis.
+ping en cours…	ping running…	ping en curso…	ping in corso…	ping w toku…	Ping läuft…
+arrêté	stopped	detenido	fermato	zatrzymany	gestoppt
+flux interrompu	stream interrupted	flujo interrumpido	flusso interrotto	strumień przerwany	Stream unterbrochen
+test de débit en cours	throughput test running	prueba de caudal en curso	test di throughput in corso	test przepływności w toku	Durchsatztest läuft
+débit	throughput	caudal	throughput	przepływność	Durchsatz
+débit émis	sent throughput	caudal enviado	throughput inviato	przepływność wysłana	gesendeter Durchsatz
+débit reçu	received throughput	caudal recibido	throughput ricevuto	przepływność odebrana	empfangener Durchsatz
+retransmissions TCP	TCP retransmits	retransmisiones TCP	ritrasmissioni TCP	retransmisje TCP	TCP-Neuübertragungen
+retransmissions	retransmits	retransmisiones	ritrasmissioni	retransmisje	Neuübertragungen
+gigue / perte UDP	UDP jitter / loss	jitter / pérdida UDP	jitter / perdita UDP	jitter / straty UDP	UDP-Jitter / -Verlust
+CPU émetteur / récepteur	sender / receiver CPU	CPU emisor / receptor	CPU mittente / ricevente	CPU nadawcy / odbiorcy	CPU Sender / Empfänger
+%s est déjà surveillée	%s is already monitored	%s ya está monitorizado	%s è già monitorato	%s jest już monitorowany	%s wird bereits überwacht
+certificat reconnu par une autorité	certificate recognized by an authority	certificado reconocido por una autoridad	certificato riconosciuto da un'autorità	certyfikat uznany przez urząd	Zertifikat von einer Stelle anerkannt
+certificat auto-signé	self-signed certificate	certificado autofirmado	certificato autofirmato	certyfikat samopodpisany	selbstsigniertes Zertifikat
+autorité non reconnue	unknown authority	autoridad no reconocida	autorità non riconosciuta	nieznany urząd	unbekannte Stelle
+mesurée	measured	medida	misurata	zmierzony	gemessen
+%s — %s Gio %s sur %s — prérempli %s Gio	%s — %s GiB %s on %s — prefilled %s GiB	%s — %s GiB %s en %s — prellenado %s GiB	%s — %s GiB %s su %s — preriempito %s GiB	%s — %s GiB %s na %s — wypełniono %s GiB	%s — %s GiB %s auf %s — vorbefüllt %s GiB
+%s — %s Gio %s sur %s	%s — %s GiB %s on %s	%s — %s GiB %s en %s	%s — %s GiB %s su %s	%s — %s GiB %s na %s	%s — %s GiB %s auf %s
+Profil écriture : %s	Write profile: %s	Perfil escritura: %s	Profilo scrittura: %s	Profil zapisu: %s	Schreibprofil: %s
+Profil lecture : %s	Read profile: %s	Perfil lectura: %s	Profilo lettura: %s	Profil odczytu: %s	Leseprofil: %s
+Profil séquentiel : %s	Sequential profile: %s	Perfil secuencial: %s	Profilo sequenziale: %s	Profil sekwencyjny: %s	Sequenzielles Profil: %s
+séquentiel en boucle sur la zone	sequential, looping over the area	secuencial en bucle sobre la zona	sequenziale in ciclo sull'area	sekwencyjnie w pętli po obszarze	sequenziell in Schleife über den Bereich
+séquentiel, une passe sur toute la zone	sequential, one pass over the whole area	secuencial, una pasada por toda la zona	sequenziale, una passata su tutta l'area	sekwencyjnie, jeden przebieg po całym obszarze	sequenziell, ein Durchlauf über den ganzen Bereich
+thin	thin	thin	thin	thin	thin
+eagerZeroedThick	eager-zeroed thick	eager-zeroed thick	eager-zeroed thick	eager-zeroed thick	Eager-Zeroed Thick
+Hyperviseur KVM (Proxmox, OpenStack) : stockage par tests locaux, onglet Storage	KVM hypervisor (Proxmox, OpenStack): storage via local tests, Storage tab	Hipervisor KVM (Proxmox, OpenStack): almacenamiento con pruebas locales, pestaña Storage	Hypervisor KVM (Proxmox, OpenStack): storage con test locali, scheda Storage	Hiperwizor KVM (Proxmox, OpenStack): dyski przez testy lokalne, karta Storage	KVM-Hypervisor (Proxmox, OpenStack): Speicher über lokale Tests, Reiter Storage
+Mode live (ISO) : rien n'est conservé au redémarrage.	Live mode (ISO): nothing is kept after a restart.	Modo live (ISO): no se conserva nada al reiniciar.	Modalità live (ISO): nulla viene conservato al riavvio.	Tryb live (ISO): nic nie zostaje zachowane po restarcie.	Live-Modus (ISO): nach einem Neustart bleibt nichts erhalten.
+Dans l'hyperviseur (Proxmox, OpenStack, KVM) : ajouter à la VM un disque vierge, puis :	In the hypervisor (Proxmox, OpenStack, KVM): add a blank disk to the VM, then:	En el hipervisor (Proxmox, OpenStack, KVM): añada a la VM un disco vacío, y luego:	Nell'hypervisor (Proxmox, OpenStack, KVM): aggiungi alla VM un disco vuoto, poi:	W hiperwizorze (Proxmox, OpenStack, KVM): dodaj do VM pusty dysk, następnie:	Im Hypervisor (Proxmox, OpenStack, KVM): der VM einen leeren Disk hinzufügen, dann:
+le stockage à mesurer	the storage to measure	el almacenamiento a medir	lo storage da misurare	magazyn do zmierzenia	der zu messende Speicher
+SCSI (VirtIO SCSI) ; un disque VirtIO Block (vdX) n'est pas pris en charge.	SCSI (VirtIO SCSI); a VirtIO Block disk (vdX) is not supported.	SCSI (VirtIO SCSI); un disco VirtIO Block (vdX) no es compatible.	SCSI (VirtIO SCSI); un disco VirtIO Block (vdX) non è supportato.	SCSI (VirtIO SCSI); dysk VirtIO Block (vdX) nie jest obsługiwany.	SCSI (VirtIO SCSI); ein VirtIO-Block-Disk (vdX) wird nicht unterstützt.
+Cache	Cache	Caché	Cache	Cache	Cache
+aucun (cache=none) : sinon on mesure la RAM de l'hôte, pas le stockage.	none (cache=none): otherwise you measure the host's RAM, not the storage.	ninguna (cache=none): si no, se mide la RAM del host y no el almacenamiento.	nessuna (cache=none): altrimenti si misura la RAM dell'host, non lo storage.	brak (cache=none): inaczej mierzysz RAM hosta, a nie magazyn.	keiner (cache=none): sonst misst man den RAM des Hosts, nicht den Speicher.
+pas de snapshot pendant les tests.	no snapshot during tests.	sin snapshot durante las pruebas.	nessuno snapshot durante i test.	bez snapshotu podczas testów.	kein Snapshot während der Tests.
+Ajout à chaud possible. Seul un disque neuf, apparu après votre demande et dont vous retapez le nom, sera utilisé ; ses données seront détruites.	Hot add is possible. Only a new disk, appearing after your request and whose name you retype, will be used; its data will be destroyed.	Se puede añadir en caliente. Solo se usará un disco nuevo, aparecido tras su solicitud y cuyo nombre vuelva a escribir; sus datos se destruirán.	Aggiunta a caldo possibile. Verrà usato solo un disco nuovo, comparso dopo la richiesta e di cui ridigiti il nome; i suoi dati saranno distrutti.	Możliwe dodanie na gorąco. Użyty zostanie tylko nowy dysk, który pojawił się po prośbie i którego nazwę wpiszesz; jego dane zostaną zniszczone.	Hot-Add möglich. Nur ein neuer Disk, der nach Ihrer Anfrage erscheint und dessen Namen Sie erneut eingeben, wird verwendet; seine Daten werden zerstört.
+Ajoutez maintenant le disque dans l'hyperviseur :	Now add the disk in the hypervisor:	Añada ahora el disco en el hipervisor:	Ora aggiungi il disco nell'hypervisor:	Teraz dodaj dysk w hiperwizorze:	Fügen Sie jetzt den Disk im Hypervisor hinzu:
+Mémoriser le mot de passe (chiffré dans /data) pour la reconnexion automatique et la surveillance continue	Remember the password (encrypted in /data) for automatic reconnection and continuous monitoring	Recordar la contraseña (cifrada en /data) para la reconexión automática y la supervisión continua	Memorizza la password (cifrata in /data) per la riconnessione automatica e il monitoraggio continuo	Zapamiętaj hasło (zaszyfrowane w /data) do automatycznego ponownego połączenia i ciągłego monitorowania	Passwort merken (verschlüsselt in /data) für automatische Wiederverbindung und Dauerüberwachung
+Un test court toutes les N minutes sur l'hôte courant ; les mesures alimentent les tendances (onglet Historique).	A short test every N minutes on the current host; the measurements feed the trends (History tab).	Una prueba corta cada N minutos en el host actual; las mediciones alimentan las tendencias (pestaña Historial).	Un test breve ogni N minuti sull'host corrente; le misure alimentano le tendenze (scheda Cronologia).	Krótki test co N minut na bieżącym hoście; pomiary zasilają trendy (karta Historia).	Ein kurzer Test alle N Minuten auf dem aktuellen Host; die Messungen speisen die Trends (Registerkarte Verlauf).
+Test	Test	Prueba	Test	Test	Test
+standard (vCenter)	standard (vCenter)	estándar (vCenter)	standard (vCenter)	standardowy (vCenter)	Standard (vCenter)
+local (sans vCenter)	local (without vCenter)	local (sin vCenter)	locale (senza vCenter)	lokalny (bez vCenter)	lokal (ohne vCenter)
+local (sans vCenter) · %s	local (without vCenter) · %s	local (sin vCenter) · %s	locale (senza vCenter) · %s	lokalny (bez vCenter) · %s	lokal (ohne vCenter) · %s
+Rétention des mesures (jours)	Measurement retention (days)	Retención de mediciones (días)	Conservazione delle misure (giorni)	Przechowywanie pomiarów (dni)	Aufbewahrung der Messungen (Tage)
+Activer la surveillance	Enable monitoring	Activar la supervisión	Attiva il monitoraggio	Włącz monitorowanie	Überwachung aktivieren
+Arrêter la surveillance	Stop monitoring	Detener la supervisión	Ferma il monitoraggio	Zatrzymaj monitorowanie	Überwachung beenden
+Tendances	Trends	Tendencias	Tendenze	Trendy	Trends
+Chaque test standard, avancé, local ou planifié ajoute une mesure par hôte et datastore. Les mesures plus anciennes que la rétention (Surveillance continue, étape 6) sont retirées.	Each standard, advanced, local or scheduled test adds one measurement per host and datastore. Measurements older than the retention (Continuous monitoring, step 6) are removed.	Cada prueba estándar, avanzada, local o programada añade una medición por host y datastore. Las mediciones más antiguas que la retención (Supervisión continua, paso 6) se eliminan.	Ogni test standard, avanzato, locale o pianificato aggiunge una misura per host e datastore. Le misure più vecchie della conservazione (Monitoraggio continuo, passo 6) vengono rimosse.	Każdy test standardowy, zaawansowany, lokalny lub zaplanowany dodaje jeden pomiar na host i datastore. Pomiary starsze niż okres przechowywania (Ciągłe monitorowanie, krok 6) są usuwane.	Jeder Standard-, erweiterte, lokale oder geplante Test fügt eine Messung pro Host und Datastore hinzu. Messungen, die älter als die Aufbewahrung sind (Dauerüberwachung, Schritt 6), werden entfernt.
+Hôte · datastore	Host · datastore	Host · datastore	Host · datastore	Host · datastore	Host · Datastore
+24 h	24 h	24 h	24 h	24 h	24 Std.
+30 jours	30 days	30 días	30 giorni	30 dni	30 Tage
+tout	all	todo	tutto	wszystko	alles
+Mesures	Measurements	Mediciones	Misure	Pomiary	Messungen
+toutes	all	todas	tutte	wszystkie	alle
+planifiées seulement	scheduled only	solo programadas	solo pianificate	tylko zaplanowane	nur geplante
+manuelles seulement	manual only	solo manuales	solo manuali	tylko ręczne	nur manuelle
+Exporter	Export	Exportar	Esporta	Eksport	Exportieren
+CSV	CSV	CSV	CSV	CSV	CSV
+JSON	JSON	JSON	JSON	JSON	JSON
+ms	ms	ms	ms	ms	ms
+15 min	15 min	15 min	15 min	15 min	15 Min.
+30 min	30 min	30 min	30 min	30 min	30 Min.
+1 h	1 h	1 h	1 h	1 h	1 Std.
+2 h	2 h	2 h	2 h	2 h	2 Std.
+4 h	4 h	4 h	4 h	4 h	4 Std.
+6 h	6 h	6 h	6 h	6 h	6 Std.
+12 h	12 h	12 h	12 h	12 h	12 Std.
+Seuils en vigueur par préréglage. Une modification s'applique aux tests suivants (manuels, planifiés, par l'API) et est conservée dans /data.	Thresholds in force per preset. A change applies to the following tests (manual, scheduled, via the API) and is kept in /data.	Umbrales vigentes por ajuste. Un cambio se aplica a las pruebas siguientes (manuales, programadas, por la API) y se conserva en /data.	Soglie in vigore per preimpostazione. Una modifica si applica ai test successivi (manuali, pianificati, tramite l'API) e viene conservata in /data.	Obowiązujące progi według zestawu. Zmiana dotyczy kolejnych testów (ręcznych, zaplanowanych, przez API) i jest zachowywana w /data.	Geltende Schwellen pro Voreinstellung. Eine Änderung gilt für die folgenden Tests (manuell, geplant, über die API) und wird in /data gespeichert.
+Modifier	Edit	Modificar	Modifica	Edytuj	Bearbeiten
+Préréglage	Preset	Ajuste	Preimpostazione	Zestaw	Voreinstellung
+Revenir aux valeurs fournies	Restore the supplied values	Volver a los valores suministrados	Ripristina i valori forniti	Przywróć wartości domyślne	Mitgelieferte Werte wiederherstellen
+Revenir aux valeurs fournies pour le préréglage %s ?	Restore the supplied values for preset %s?	¿Volver a los valores suministrados para el ajuste %s?	Ripristinare i valori forniti per la preimpostazione %s?	Przywrócić wartości domyślne zestawu %s?	Mitgelieferte Werte für die Voreinstellung %s wiederherstellen?
+Valeurs fournies rétablies.	Supplied values restored.	Valores suministrados restablecidos.	Valori forniti ripristinati.	Przywrócono wartości domyślne.	Mitgelieferte Werte wiederhergestellt.
+%s (modifié)	%s (modified)	%s (modificado)	%s (modificato)	%s (zmieniony)	%s (geändert)
+Profil : écriture puis lecture séquentielles, bloc 1 Mio, QD 4, %s s chacune sans chauffe, sur toute la zone du disque de test, O_DIRECT+O_SYNC, données aléatoires incompressibles renouvelées à chaque passe ; sans vCenter : ni ratio TX/écrit ni compteurs de l'hôte.	Profile: sequential write then read, 1 MiB block, QD 4, %s s each without warm-up, over the whole test disk area, O_DIRECT+O_SYNC, incompressible random data renewed on each pass; without vCenter: no TX/written ratio and no host counters.	Perfil: escritura y luego lectura secuenciales, bloque 1 MiB, QD 4, %s s cada una sin calentamiento, en toda la zona del disco de prueba, O_DIRECT+O_SYNC, datos aleatorios incompresibles renovados en cada pasada; sin vCenter: ni ratio TX/escrito ni contadores del host.	Profilo: scrittura poi lettura sequenziali, blocco 1 MiB, QD 4, %s s ciascuna senza riscaldamento, su tutta la zona del disco di test, O_DIRECT+O_SYNC, dati casuali incomprimibili rinnovati a ogni passata; senza vCenter: né rapporto TX/scritto né contatori dell'host.	Profil: zapis, potem odczyt sekwencyjny, blok 1 MiB, QD 4, po %s s bez rozgrzewki, na całym obszarze dysku testowego, O_DIRECT+O_SYNC, losowe nieskompresowalne dane odnawiane przy każdym przebiegu; bez vCenter: brak współczynnika TX/zapis i liczników hosta.	Profil: sequenzielles Schreiben, dann Lesen, Block 1 MiB, QD 4, je %s s ohne Aufwärmen, über den gesamten Bereich der Testplatte, O_DIRECT+O_SYNC, inkompressible Zufallsdaten, bei jedem Durchlauf erneuert; ohne vCenter: kein TX/Schreib-Verhältnis und keine Host-Zähler.
+Surveillance active : prochain test %s.	Monitoring enabled: next test %s.	Supervisión activa: próxima prueba %s.	Monitoraggio attivo: prossimo test %s.	Monitorowanie aktywne: następny test %s.	Überwachung aktiv: nächster Test %s.
+Surveillance arrêtée.	Monitoring stopped.	Supervisión detenida.	Monitoraggio fermato.	Monitorowanie zatrzymane.	Überwachung beendet.
+Dernier test planifié : %s.	Last scheduled test: %s.	Última prueba programada: %s.	Ultimo test pianificato: %s.	Ostatni zaplanowany test: %s.	Letzter geplanter Test: %s.
+Test sauté le %s : %s.	Test skipped on %s: %s.	Prueba omitida el %s: %s.	Test saltato il %s: %s.	Test pominięty %s: %s.	Test übersprungen am %s: %s.
+Mot de passe vCenter mémorisé : reconnexion automatique après un redémarrage.	vCenter password remembered: automatic reconnection after a restart.	Contraseña de vCenter recordada: reconexión automática tras un reinicio.	Password vCenter memorizzata: riconnessione automatica dopo un riavvio.	Hasło vCenter zapamiętane: automatyczne ponowne połączenie po restarcie.	vCenter-Passwort gespeichert: automatische Wiederverbindung nach einem Neustart.
+Mot de passe vCenter non mémorisé : après un redémarrage, les tests standard planifiés seront sautés jusqu'à la reconnexion (étape 1).	vCenter password not remembered: after a restart, scheduled standard tests will be skipped until you reconnect (step 1).	Contraseña de vCenter no recordada: tras un reinicio, las pruebas estándar programadas se omitirán hasta la reconexión (paso 1).	Password vCenter non memorizzata: dopo un riavvio, i test standard pianificati saranno saltati fino alla riconnessione (passo 1).	Hasło vCenter niezapamiętane: po restarcie zaplanowane testy standardowe będą pomijane do ponownego połączenia (krok 1).	vCenter-Passwort nicht gespeichert: nach einem Neustart werden geplante Standardtests bis zur Wiederverbindung übersprungen (Schritt 1).
+surveillance active	monitoring enabled	supervisión activa	monitoraggio attivo	monitorowanie aktywne	Überwachung aktiv
+vCenter non connecté (mot de passe non mémorisé)	vCenter not connected (password not remembered)	vCenter no conectado (contraseña no recordada)	vCenter non connesso (password non memorizzata)	vCenter niepołączony (hasło niezapamiętane)	vCenter nicht verbunden (Passwort nicht gespeichert)
+reconnexion à vCenter : %s	reconnecting to vCenter: %s	reconexión a vCenter: %s	riconnessione a vCenter: %s	ponowne łączenie z vCenter: %s	Wiederverbindung mit vCenter: %s
+Débit séquentiel (1 Mio QD4)	Sequential throughput (1 MiB QD4)	Rendimiento secuencial (1 MiB QD4)	Throughput sequenziale (1 MiB QD4)	Przepustowość sekwencyjna (1 MiB QD4)	Sequenzieller Durchsatz (1 MiB QD4)
+Latence p99 (1 Mio QD4)	p99 latency (1 MiB QD4)	Latencia p99 (1 MiB QD4)	Latenza p99 (1 MiB QD4)	Opóźnienie p99 (1 MiB QD4)	p99-Latenz (1 MiB QD4)
+ratio	ratio	ratio	rapporto	współczynnik	Verhältnis
+%s mesure(s), dont %s ATTENTION et %s ALERTE.	%s measurement(s), including %s WARNING and %s ALERT.	%s medición(es), de ellas %s AVISO y %s ALERTA.	%s misura/e, di cui %s ATTENZIONE e %s ALLARME.	%s pomiar(ów), w tym %s UWAGA i %s ALARM.	%s Messung(en), davon %s WARNUNG und %s ALARM.
+Profil de la dernière mesure (%s) :	Profile of the last measurement (%s):	Perfil de la última medición (%s):	Profilo dell'ultima misura (%s):	Profil ostatniego pomiaru (%s):	Profil der letzten Messung (%s):
+Débit d'écriture (Mo/s, en dessous)	Write throughput (MB/s, below)	Rendimiento de escritura (MB/s, por debajo)	Throughput di scrittura (MB/s, al di sotto)	Przepustowość zapisu (MB/s, poniżej)	Schreibdurchsatz (MB/s, unterhalb)
+Latence d'écriture datastore (ms)	Datastore write latency (ms)	Latencia de escritura del datastore (ms)	Latenza di scrittura del datastore (ms)	Opóźnienie zapisu datastore (ms)	Datastore-Schreiblatenz (ms)
+Latence 4 Kio QD1 p99 (ms)	4 KiB QD1 p99 latency (ms)	Latencia 4 KiB QD1 p99 (ms)	Latenza 4 KiB QD1 p99 (ms)	Opóźnienie 4 KiB QD1 p99 (ms)	4-KiB-QD1-p99-Latenz (ms)
+Avertissements NFS (lignes)	NFS warnings (lines)	Avisos NFS (líneas)	Avvisi NFS (righe)	Ostrzeżenia NFS (wiersze)	NFS-Warnungen (Zeilen)
+Écart entre hôtes (×)	Spread between hosts (×)	Diferencia entre hosts (×)	Scarto tra host (×)	Rozrzut między hostami (×)	Abweichung zwischen Hosts (×)
+Erreurs NIC (au-dessus de)	NIC errors (above)	Errores NIC (por encima de)	Errori NIC (al di sopra di)	Błędy NIC (powyżej)	NIC-Fehler (oberhalb)
+Changements d'état de lien (au-dessus de)	Link state changes (above)	Cambios de estado de enlace (por encima de)	Cambi di stato del link (al di sopra di)	Zmiany stanu łącza (powyżej)	Link-Statuswechsel (oberhalb)
+Écart IOPS appliance / vSphere (%%)	Appliance / vSphere IOPS gap (%%)	Diferencia IOPS appliance / vSphere (%%)	Scarto IOPS appliance / vSphere (%%)	Różnica IOPS appliance / vSphere (%%)	IOPS-Abweichung Appliance / vSphere (%%)
+CPU du worker (%%)	Worker CPU (%%)	CPU del worker (%%)	CPU del worker (%%)	CPU workera (%%)	Worker-CPU (%%)
+planificateur	scheduler	planificador	pianificatore	harmonogram	Planer
+Erreurs physiques en réception (CRC, trame, longueur)	Physical receive errors (CRC, frame, length)	Errores físicos de recepción (CRC, trama, longitud)	Errori fisici in ricezione (CRC, frame, lunghezza)	Błędy fizyczne odbioru (CRC, ramka, długość)	Physische Empfangsfehler (CRC, Frame, Länge)
+Trames manquées par la carte (anneau RX plein)	Frames missed by the NIC (RX ring full)	Tramas perdidas por la tarjeta (anillo RX lleno)	Frame persi dalla scheda (anello RX pieno)	Ramki pominięte przez kartę (pełny pierścień RX)	Von der Karte verpasste Frames (RX-Ring voll)
+esxcli non autorisé ou indisponible	esxcli not permitted or unavailable	esxcli no autorizado o no disponible	esxcli non autorizzato o non disponibile	esxcli niedozwolone lub niedostępne	esxcli nicht erlaubt oder nicht verfügbar
+%s pendant le test (seuil %s)	%s during the test (threshold %s)	%s durante la prueba (umbral %s)	%s durante il test (soglia %s)	%s podczas testu (próg %s)	%s während des Tests (Schwelle %s)
+aucune annonce CDP/LLDP reçue sur les uplinks (écoute désactivée sur le vSwitch ou switch silencieux)	no CDP/LLDP announcement received on the uplinks (listening disabled on the vSwitch or silent switch)	no se recibió ningún anuncio CDP/LLDP en los uplinks (escucha desactivada en el vSwitch o switch silencioso)	nessun annuncio CDP/LLDP ricevuto sugli uplink (ascolto disattivato sul vSwitch o switch silenzioso)	nie odebrano ogłoszeń CDP/LLDP na uplinkach (nasłuch wyłączony na vSwitchu lub przełącznik milczy)	keine CDP/LLDP-Ankündigung auf den Uplinks empfangen (Empfang am vSwitch deaktiviert oder Switch sendet nicht)
+%s : le switch annonce un MTU %s, inférieur au MTU %s du %s	%s: the switch announces MTU %s, lower than MTU %s of %s	%s: el switch anuncia un MTU %s, inferior al MTU %s de %s	%s: lo switch annuncia un MTU %s, inferiore all'MTU %s di %s	%s: przełącznik ogłasza MTU %s, niższe niż MTU %s interfejsu %s	%s: der Switch meldet MTU %s, kleiner als MTU %s von %s
+voisins CDP/LLDP non lus : %s	CDP/LLDP neighbours not read: %s	vecinos CDP/LLDP no leídos: %s	vicini CDP/LLDP non letti: %s	nie odczytano sąsiadów CDP/LLDP: %s	CDP/LLDP-Nachbarn nicht gelesen: %s
+compteurs détaillés des vmnic (esxcli) : %s	detailed vmnic counters (esxcli): %s	contadores detallados de vmnic (esxcli): %s	contatori dettagliati delle vmnic (esxcli): %s	szczegółowe liczniki vmnic (esxcli): %s	detaillierte vmnic-Zähler (esxcli): %s
+compteurs détaillés des vmnic (esxcli) après la mesure : %s	detailed vmnic counters (esxcli) after the measurement: %s	contadores detallados de vmnic (esxcli) tras la medición: %s	contatori dettagliati delle vmnic (esxcli) dopo la misura: %s	szczegółowe liczniki vmnic (esxcli) po pomiarze: %s	detaillierte vmnic-Zähler (esxcli) nach der Messung: %s
+CRC/trame/longueur	CRC/frame/length	CRC/trama/longitud	CRC/frame/lunghezza	CRC/ramka/długość	CRC/Frame/Länge
+manquées RX	RX missed	perdidas RX	persi RX	pominięte RX	RX verpasst
+Erreurs CRC, trame, longueur (au-dessus de)	CRC, frame, length errors (above)	Errores CRC, trama, longitud (por encima de)	Errori CRC, frame, lunghezza (al di sopra di)	Błędy CRC, ramki, długości (powyżej)	CRC-, Frame-, Längenfehler (oberhalb)
+Trames manquées par la carte (au-dessus de)	Frames missed by the NIC (above)	Tramas perdidas por la tarjeta (por encima de)	Frame persi dalla scheda (al di sopra di)	Ramki pominięte przez kartę (powyżej)	Von der Karte verpasste Frames (oberhalb)
+Les erreurs d'émission de l'hôte se voient côté switch, que l'appliance n'interroge pas : seules les erreurs de réception des vmnics (dont CRC, trame et longueur via esxcli) sont mesurées.	The host's transmit errors are seen on the switch side, which the appliance does not query: only the vmnics' receive errors (including CRC, frame and length via esxcli) are measured.	Los errores de emisión del host se ven en el lado del switch, que el appliance no consulta: solo se miden los errores de recepción de las vmnic (incluidos CRC, trama y longitud mediante esxcli).	Gli errori di trasmissione dell'host si vedono lato switch, che l'appliance non interroga: si misurano solo gli errori di ricezione delle vmnic (compresi CRC, frame e lunghezza tramite esxcli).	Błędy nadawania hosta widać po stronie przełącznika, którego appliance nie odpytuje: mierzone są tylko błędy odbioru vmnic (w tym CRC, ramki i długości przez esxcli).	Sendefehler des Hosts sind nur auf Switch-Seite sichtbar, die die Appliance nicht abfragt: gemessen werden nur die Empfangsfehler der vmnics (einschließlich CRC, Frame und Länge über esxcli).

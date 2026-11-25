@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>vigie — diagnostic réseau et datastore</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="vendor/uPlot.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="login" class="login hidden">
+  <form id="login-form" class="card login-card" autocomplete="on">
+    <h1>vigie</h1>
+    <p class="muted">Appliance de diagnostic pour vSphere</p>
+    <ul class="small muted login-list">
+      <li><b>Network</b> : ping et latence, surveillance continue façon smokeping, traceroute, table ARP, débit iperf3 entre appliances</li>
+      <li><b>Datastore performance</b> : test standard (santé du chemin hôte → NFS) et test avancé (IOPS et latences)</li>
+    </ul>
+    <label>Mot de passe de l'appliance
+      <input id="login-password" type="password" autocomplete="current-password" required autofocus>
+    </label>
+    <p class="muted small">Le mot de passe initial est affiché sur la console VMware de l'appliance.</p>
+    <button type="submit" class="primary">Se connecter</button>
+    <label class="inline small">Langue <select class="lang" aria-label="Langue"></select></label>
+    <p id="login-error" class="error" role="alert"></p>
+  </form>
+</div>
+
+<div id="app" class="hidden">
+  <header class="topbar">
+    <div class="brand"><img src="favicon.svg" alt="" width="22" height="22"> vigie</div>
+    <nav class="tabs" role="tablist">
+      <button data-tab="network" class="tab active">Network</button>
+      <button data-tab="measure" class="tab">Datastore performance</button>
+      <button data-tab="history" class="tab">Historique</button>
+      <button data-tab="settings" class="tab">Réglages</button>
+      <button data-tab="about" class="tab">À propos</button>
+    </nav>
+    <div class="topright">
+      <span id="vs-chip" class="chip">vSphere : déconnecté</span>
+      <span id="job-chip" class="chip hidden"></span>
+      <select class="lang" aria-label="Langue"></select>
+      <button id="theme" class="ghost" title="Thème clair / sombre" aria-label="Thème">◐</button>
+      <button id="logout" class="ghost">Déconnexion</button>
+    </div>
+  </header>
+
+  <main>
+  <section id="tab-measure" class="tabpane hidden">
+    <article class="card step" id="step-connect">
+      <h2><span class="stepnum">1</span> Connexion vSphere <span class="badge" id="b-connect"></span></h2>
+      <div id="connect-form">
+        <div class="grid3">
+          <label>URL du vCenter (ou de l'ESXi)<input id="vs-url" placeholder="https://vcenter.lab.local" autocomplete="url"></label>
+          <label>Utilisateur<input id="vs-user" autocomplete="username"></label>
+          <label>Mot de passe<input id="vs-pass" type="password" autocomplete="current-password"></label>
+        </div>
+        <label class="inline mt"><input id="vs-remember" type="checkbox"> Mémoriser le mot de passe (chiffré dans /data) pour la reconnexion automatique et la surveillance continue</label>
+        <div class="row"><button id="vs-thumb" class="primary">Lire le certificat</button></div>
+        <div id="vs-cert" class="certbox hidden">
+          <p>Empreinte SHA-256 du certificat présenté par <b id="cert-host"></b> :</p>
+          <code id="cert-sha" class="fp"></code>
+          <p class="small"><span id="cert-subject"></span> — <span id="cert-trust"></span></p>
+          <p class="small muted">Comparez-la à celle du serveur avant de confirmer. Elle est mémorisée pour les connexions suivantes.</p>
+          <div class="row"><button id="vs-connect" class="primary">Confirmer l'empreinte et se connecter</button></div>
+        </div>
+      </div>
+      <div id="connect-done" class="hidden">
+        <p id="vs-summary"></p>
+        <div class="row"><button id="vs-disconnect">Se déconnecter</button><button id="vs-forget" class="ghost">Oublier l'URL et l'empreinte</button></div>
+      </div>
+      <p id="connect-error" class="error" role="alert"></p>
+    </article>
+
+    <article class="card step" id="step-self">
+      <h2><span class="stepnum">2</span> Auto-identification <span class="badge" id="b-self"></span></h2>
+      <p id="self-text" class="muted">Disponible après la connexion.</p>
+      <div id="priv" class="small"></div>
+    </article>
+
+    <article class="card step" id="step-ds">
+      <h2><span class="stepnum">3</span> Datastore <span class="badge" id="b-ds"></span></h2>
+      <div class="tablewrap"><table id="ds-table" class="table"><thead><tr><th></th><th>Nom</th><th>Type</th><th>Serveur : export</th><th class="r">Libre</th><th class="r">Hôtes</th></tr></thead><tbody></tbody></table></div>
+      <div id="path" class="pathbox hidden"></div>
+    </article>
+
+    <article class="card step" id="step-disk">
+      <h2><span class="stepnum">4</span> Disque de test <span class="badge" id="b-disk"></span></h2>
+      <div id="disk-none">
+        <div class="row">
+          <label class="inline">Taille <select id="disk-size"><option value="1">1 Go</option><option value="4" selected>4 Go</option><option value="8">8 Go</option><option value="16">16 Go</option><option value="32">32 Go</option><option value="64">64 Go</option></select></label>
+          <button id="disk-create" class="primary">Créer le disque de test</button><span id="disk-why" class="small muted"></span>
+        </div>
+        <p class="small muted">Créé dans <code>[datastore] vigie-&lt;vm&gt;/testdisk.vmdk</code>, thick eager zeroed si VAAI-NAS est disponible, sinon thin. Il est prérempli de données incompressibles au premier test.</p>
+      </div>
+      <div id="disk-some" class="hidden">
+        <p id="disk-text"></p>
+        <details><summary>Contrôles de sécurité</summary><ul id="disk-checks" class="checks"></ul></details>
+      </div>
+    </article>
+
+    <article class="card step" id="step-hosts">
+      <h2><span class="stepnum">5</span> Hôtes <span class="badge" id="b-hosts"></span></h2>
+      <p class="small muted">Le test porte sur l'hôte où tourne l'appliance. On peut la déplacer (vMotion de l'appliance seule) ou lancer une tournée de comparaison en alternance A/B/A/B.</p>
+      <p id="drs-info" class="small"></p>
+      <div class="tablewrap"><table id="hosts-table" class="table"><thead><tr><th>Tournée</th><th>Hôte</th><th>vMotion</th><th></th></tr></thead><tbody></tbody></table></div>
+      <div class="grid4">
+        <label>Cycles<select id="tour-cycles"><option>1</option><option selected>2</option><option>3</option></select></label>
+        <label>Override DRS (appliance seule)<select id="tour-drs"><option value="1" selected>oui, pendant la tournée</option><option value="0">non</option></select></label>
+        <label>À la fin<select id="tour-home"><option value="1" selected>revenir sur l'hôte de départ</option><option value="0">rester sur le dernier hôte</option></select></label>
+        <label>&nbsp;<button id="tour-run" class="primary">Lancer la tournée</button></label>
+      </div>
+      <p id="tour-estimate" class="small muted"></p>
+      <p id="tour-why" class="small muted"></p>
+    </article>
+
+    <article class="card step" id="step-test">
+      <h2><span class="stepnum">6</span> Type de test</h2>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="kind" value="standard" checked><b>Standard</b><span class="small muted">Le chemin hôte → datastore est-il sain ? Ligne de base, écriture et lecture séquentielles, ratio TX/écrit, erreurs, latence.</span></label>
+        <label class="choice"><input type="radio" name="kind" value="advanced"><b>Avancé</b><span class="small muted">Que vaut ce datastore pour des VMs ? Le test standard, puis IOPS et latences en 4 Kio aléatoire (lecture, écriture, mixte 70/30) à QD 1, 4, 16 et 32.</span></label>
+        <label class="choice"><input type="radio" name="kind" value="monitor"><b>Surveillance continue</b><span class="small muted">Un test court toutes les N minutes sur l'hôte courant ; les mesures alimentent les tendances (onglet Historique).</span></label>
+      </div>
+      <div id="mon-opts" class="hidden">
+        <div class="grid4">
+          <label>Intervalle<select id="m-interval"><option value="15">15 min</option><option value="30">30 min</option><option value="60" selected>1 h</option><option value="120">2 h</option><option value="240">4 h</option><option value="360">6 h</option><option value="720">12 h</option><option value="1440">24 h</option></select></label>
+          <label>Test<select id="m-profile"><option value="standard">standard (vCenter)</option><option value="local">local (sans vCenter)</option></select></label>
+          <label>Préréglage des seuils<select id="m-preset"></select></label>
+          <label>Rétention des mesures (jours)<input id="m-retention" type="number" min="1" max="3650" value="30"></label>
+          <label>Ligne de base (s)<input id="m-base" type="number" min="0" max="600" value="30"></label>
+          <label>Écriture / lecture (s)<input id="m-dur" type="number" min="10" max="600" value="30"></label>
+        </div>
+        <p id="m-profile-text" class="profile small"></p>
+        <p id="m-status" class="small"></p>
+        <div class="row"><button id="m-save" class="primary big">Activer la surveillance</button><button id="m-stop" class="danger hidden">Arrêter la surveillance</button></div>
+        <p id="m-error" class="error" role="alert"></p>
+      </div>
+      <div class="grid4">
+        <label>Répétitions<select id="t-reps"><option value="1">1</option><option value="3">3</option></select></label>
+        <label>Préréglage des seuils<select id="t-preset"></select></label>
+        <label>Ligne de base (s)<input id="t-base" type="number" min="40" max="600" value="60"></label>
+        <label>Écriture / lecture (s)<input id="t-dur" type="number" min="60" max="600" value="80"></label>
+      </div>
+      <div id="adv-opts" class="grid4 hidden">
+        <label class="choice-inline"><span>Option « complet »</span><select id="t-full"><option value="0">4 Kio seulement</option><option value="1">4, 8 et 64 Kio</option></select></label>
+        <label>Plafond de latence p99 des IOPS utiles (ms)<input id="t-ceiling" type="number" min="0.5" max="200" step="0.5"></label>
+      </div>
+      <div id="run-opts">
+      <p id="t-profile" class="profile small"></p>
+      <p id="t-estimate" class="small muted"></p>
+      <div class="row"><button id="t-run" class="primary big">Lancer le test</button><span id="t-why" class="small muted"></span></div>
+      </div>
+      <p id="run-error" class="error" role="alert"></p>
+    </article>
+
+    <article class="card step" id="step-run">
+      <h2><span class="stepnum">7</span> Exécution <span class="badge" id="b-run"></span></h2>
+      <div class="progress"><div id="run-bar" class="bar"></div><span id="run-pct">0 %</span></div>
+      <p id="run-step" class="small"></p>
+      <div id="live-chart" class="chart"></div>
+      <details open><summary>Journal</summary><pre id="run-log" class="log"></pre></details>
+      <div class="row"><button id="run-cancel" class="danger hidden">Annuler</button></div>
+    </article>
+
+    <article class="card step" id="step-result">
+      <h2><span class="stepnum">8</span> Résultats <span class="badge" id="b-result"></span></h2>
+      <div id="result"><p class="muted">Aucun résultat pour l'instant.</p></div>
+    </article>
+
+    <article class="card step" id="step-clean">
+      <h2><span class="stepnum">9</span> Nettoyage</h2>
+      <div class="row">
+        <button id="clean-disk" class="danger">Supprimer le disque de test</button>
+        <button id="clean-forget">Se déconnecter et oublier l'URL</button>
+      </div>
+    </article>
+  </section>
+
+
+  <section id="tab-network" class="tabpane">
+    <article class="card">
+      <h2>Cette appliance</h2>
+      <div class="tablewrap"><table id="nl-table" class="table"><thead><tr><th>Interface</th><th>Adresse</th><th>MAC</th><th class="r">MTU</th></tr></thead><tbody></tbody></table></div>
+      <p id="nl-extra" class="small muted"></p>
+    </article>
+
+    <article class="card">
+      <h2>Tester une cible</h2>
+      <div class="grid4">
+        <label>Adresse IP ou nom<input id="nt-target" placeholder="192.168.0.1" autocomplete="off"></label>
+        <label>Nombre de pings<select id="nt-count"><option>10</option><option selected>20</option><option>50</option><option>100</option><option>1000</option><option value="0">continu (bouton Arrêter)</option></select></label>
+        <label>Intervalle<select id="nt-interval"><option value="200">200 ms</option><option value="500">500 ms</option><option value="1000" selected>1 s</option></select></label>
+        <label>Libellé (surveillance)<input id="nt-label" placeholder="facultatif"></label>
+      </div>
+      <div class="row">
+        <button id="nt-ping" class="primary">Ping</button>
+        <button id="nt-stop" class="danger hidden">Arrêter</button>
+        <button id="nt-trace">Traceroute</button>
+        <button id="nt-watch">Surveiller en continu</button>
+        <span id="nt-why" class="small muted"></span>
+      </div>
+      <p id="nt-error" class="error" role="alert"></p>
+      <div id="nt-result"></div>
+      <div id="nt-trace-result"></div>
+    </article>
+
+    <article class="card">
+      <h2>Surveillance continue <span class="badge">20 pings par minute et par cible</span></h2>
+      <div class="tablewrap"><table id="nm-table" class="table"><thead><tr><th>Cible</th><th>IP</th><th class="r">Perte</th><th class="r">Médiane</th><th class="r">p90</th><th>État</th><th></th></tr></thead><tbody></tbody></table></div>
+      <div id="nm-graph" class="hidden">
+        <div class="row"><b id="nm-title"></b>
+          <label class="inline">Période <select id="nm-range"><option value="3h">3 h</option><option value="12h">12 h</option><option value="48h">48 h</option><option value="7d">7 jours</option><option value="14d">14 jours</option><option value="1y">1 an</option></select></label>
+          <span id="nm-step" class="small muted"></span></div>
+        <div id="nm-chart" class="chart"></div>
+        <p class="small muted">Médiane en trait plein ; fumée claire p10–p90, foncée p25–p75 ; barres : perte en % (axe de droite).</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Table ARP</h2>
+      <div class="row"><button id="arp-refresh">Rafraîchir</button><button id="arp-flush" class="danger">Vider la table</button></div>
+      <div class="tablewrap"><table id="arp-table" class="table"><thead><tr><th>IP</th><th>MAC</th><th>Interface</th><th>État</th><th></th></tr></thead><tbody></tbody></table></div>
+    </article>
+
+    <article class="card">
+      <h2>Débit (iperf3)</h2>
+      <h3>Serveur iperf3 de cette appliance</h3>
+      <div class="row"><span id="ip-srv" class="small"></span><button id="ip-srv-start">Ouvrir 10 min</button><button id="ip-srv-stop" class="ghost">Fermer</button></div>
+      <h3>Appliances pairs</h3>
+      <p class="small muted">Une autre appliance vigie : son adresse et un jeton d'API créé dans ses Réglages. Elle ouvre son serveur iperf3 le temps du test.</p>
+      <div class="tablewrap"><table id="peer-table" class="table"><thead><tr><th>Nom</th><th>Adresse</th><th>Empreinte</th><th></th></tr></thead><tbody></tbody></table></div>
+      <div class="grid4">
+        <label>Adresse du pair<input id="peer-url" placeholder="https://192.168.0.120"></label>
+        <label>Jeton d'API du pair<input id="peer-token" placeholder="vg_…" autocomplete="off"></label>
+        <label>Nom (facultatif)<input id="peer-name"></label>
+        <label>&nbsp;<button id="peer-fp">Lire le certificat</button></label>
+      </div>
+      <div id="peer-cert" class="certbox hidden"><p>Empreinte SHA-256 du pair :</p><code id="peer-sha" class="fp"></code>
+        <p class="small muted">Comparez-la à celle affichée sur la console du pair.</p><div class="row"><button id="peer-add" class="primary">Confirmer et ajouter</button></div></div>
+      <p id="peer-error" class="error" role="alert"></p>
+      <h3>Test de débit</h3>
+      <div class="grid4">
+        <label>Vers<select id="ip-target"></select></label>
+        <label id="ip-host-l" class="hidden">Serveur iperf3 (IP)<input id="ip-host" placeholder="192.168.0.50"></label>
+        <label>Protocole<select id="ip-proto"><option value="tcp">TCP</option><option value="udp">UDP</option></select></label>
+        <label>Sens<select id="ip-rev"><option value="0">cette appliance émet</option><option value="1">le serveur émet (-R)</option></select></label>
+        <label>Durée (s)<input id="ip-dur" type="number" min="1" max="600" value="10"></label>
+        <label>Flux parallèles<input id="ip-streams" type="number" min="1" max="32" value="1"></label>
+        <label id="ip-bw-l" class="hidden">Débit cible UDP<input id="ip-bw" value="1G"></label>
+      </div>
+      <div class="row"><button id="ip-run" class="primary">Lancer le test</button><span id="ip-why" class="small muted"></span></div>
+      <p id="ip-error" class="error" role="alert"></p>
+      <div class="progress hidden" id="ip-prog"><div id="ip-bar" class="bar"></div><span id="ip-pct"></span></div>
+      <div id="ip-chart" class="chart"></div>
+      <div id="ip-result"></div>
+    </article>
+  </section>
+  <section id="tab-history" class="tabpane hidden">
+    <article class="card">
+      <h2>Tendances <span class="badge" id="b-trend"></span></h2>
+      <p class="small muted">Chaque test standard, avancé, local ou planifié ajoute une mesure par hôte et datastore. Les mesures plus anciennes que la rétention (Surveillance continue, étape 6) sont retirées.</p>
+      <div class="grid4">
+        <label>Hôte · datastore<select id="tr-series"></select></label>
+        <label>Période<select id="tr-period"><option value="24h">24 h</option><option value="7d" selected>7 jours</option><option value="30d">30 jours</option><option value="3650d">tout</option></select></label>
+        <label>Mesures<select id="tr-sched"><option value="">toutes</option><option value="1">planifiées seulement</option><option value="0">manuelles seulement</option></select></label>
+        <label>Exporter<span class="row"><a id="tr-csv" class="btn" href="#">CSV</a><a id="tr-json" class="btn" href="#">JSON</a></span></label>
+      </div>
+      <div id="tr-charts"></div>
+      <p id="tr-profile" class="profile small"></p>
+    </article>
+    <article class="card">
+      <h2>Historique des jobs</h2>
+      <p class="small muted">Rapport client : version imprimable (A4) et autonome de chaque test standard, avancé ou tournée. Pour un avant/après, cochez deux tests puis « Rapport avant / après ».</p>
+      <div class="row"><button id="cmp-open" class="primary" disabled>Rapport avant / après</button><span id="cmp-hint" class="small muted">Cochez deux tests.</span></div>
+      <div class="tablewrap"><table id="hist-table" class="table"><thead><tr><th title="avant / après">A/A</th><th>Date</th><th>Profil</th><th>État</th><th>Hôte</th><th>Verdict</th><th>Résultat</th><th>Rapport</th><th>Par</th></tr></thead><tbody></tbody></table></div>
+    </article>
+    <article class="card hidden" id="hist-detail"><h2 id="hist-title"></h2><div id="hist-result"></div></article>
+  </section>
+
+  <section id="tab-settings" class="tabpane hidden">
+    <article class="card">
+      <h2>Jetons d'API</h2>
+      <p class="small muted">Pour lancer des tests par script : <code>Authorization: Bearer vg_…</code>. Le secret n'est affiché qu'une fois.</p>
+      <div class="row"><input id="tok-name" placeholder="nom du jeton (ex. qa-ci)"><button id="tok-create" class="primary">Créer</button></div>
+      <p id="tok-secret" class="certbox hidden"></p>
+      <div class="tablewrap"><table id="tok-table" class="table"><thead><tr><th>Nom</th><th>Créé</th><th>Dernier usage</th><th></th></tr></thead><tbody></tbody></table></div>
+    </article>
+    <article class="card">
+      <h2>Rapport client</h2>
+      <p class="small muted">Repris en tête de chaque rapport. Logo PNG ou SVG, 200 Kio au maximum ; un SVG contenant un script, un gestionnaire d'événement ou une référence externe est refusé.</p>
+      <div class="form">
+        <label>Client <input id="br-client" maxlength="120"></label>
+        <label>Site <input id="br-site" maxlength="120"></label>
+        <label>Intervenant <input id="br-author" maxlength="120"></label>
+        <label>Commentaire en tête de rapport <textarea id="br-comment" rows="4" maxlength="4000"></textarea></label>
+        <label>Logo <input id="br-logo-file" type="file" accept="image/png,image/svg+xml"></label>
+        <div class="row"><img id="br-logo" class="logo-preview hidden" alt="logo"><button id="br-logo-rm" class="hidden">Retirer le logo</button></div>
+        <div class="row"><button id="br-save" class="primary">Enregistrer</button><span id="br-msg" class="small"></span></div>
+      </div>
+    </article>
+    <article class="card">
+      <h2>Seuils (§7)</h2>
+      <p class="small muted">Seuils en vigueur par préréglage. Une modification s'applique aux tests suivants (manuels, planifiés, par l'API) et est conservée dans /data.</p>
+      <div class="tablewrap"><table id="th-table" class="table"></table></div>
+      <h3>Modifier</h3>
+      <div class="grid4"><label>Préréglage<select id="th-preset"></select></label></div>
+      <div class="tablewrap"><table id="th-edit" class="table"><thead><tr><th>Indicateur</th><th>ATTENTION</th><th>ALERTE</th></tr></thead><tbody></tbody></table></div>
+      <div class="row"><button id="th-save" class="primary">Enregistrer</button><button id="th-reset">Revenir aux valeurs fournies</button><span id="th-msg" class="small"></span></div>
+    </article>
+  </section>
+
+  <section id="tab-about" class="tabpane hidden">
+    <article class="card">
+      <h2>À propos</h2>
+      <p>vigie est une appliance de diagnostic pour vSphere, pilotable entièrement par l'interface web et par l'API (jetons dans Réglages). On en déploie une ou plusieurs.</p>
+      <ul>
+        <li><b>Network</b> : ping et latence vers une adresse ou un nom, surveillance continue façon smokeping (20 pings par minute, historique d'un an), traceroute automatique hors du sous-réseau, table ARP de l'appliance, tests de débit iperf3 TCP et UDP vers une autre appliance.</li>
+        <li><b>Console de la VM</b> (console VMware, clavier seul) : les mêmes tests réseau, et des tests de stockage sans vCenter sur un disque ajouté à la main, adopté après contrôles et confirmation.</li>
+        <li><b>Datastore performance</b> : mesure du datastore depuis l'hôte où tourne l'appliance, sans SSH sur les ESXi. Test standard (débit séquentiel, ratio TX/écrit, erreurs NIC, latence vue par l'hôte) et test avancé (IOPS et latences 4 Kio par profondeur de file, IOPS utiles sous plafond).</li>
+      </ul>
+      <p id="about-text"></p>
+      <h3>Limites assumées</h3>
+      <ul>
+        <li>Pas de compteur de retransmissions TCP du vmkernel : le ratio TX/écrit corrigé est un indicateur indirect, sensible au trafic des autres VMs sur la même vmnic.</li>
+        <li>Comparaison séquentielle et non simultanée entre hôtes : l'alternance réduit, sans l'annuler, l'effet d'une charge serveur variable.</li>
+        <li>Granularité de 20 s du PerformanceManager : les micro-coupures plus courtes sont lissées.</li>
+        <li>Les débits et IOPS incluent l'effet du cache du serveur NFS tant que la zone de test y tient : c'est ce que voit une VM, pas une mesure des disques du serveur.</li>
+        <li>Les erreurs d'émission de l'hôte se voient côté switch, que l'appliance n'interroge pas : seules les erreurs de réception des vmnics (dont CRC, trame et longueur via esxcli) sont mesurées.</li>
+        <li>L'appliance teste le chemin de l'hôte où elle tourne.</li>
+      </ul>
+      <h3>Unités</h3>
+      <p class="small">Mo/s = 10⁶ octets par seconde. Kio et Mio (2¹⁰, 2²⁰ octets) pour les tailles de bloc.</p>
+    </article>
+  </section>
+  </main>
+</div>
+<script src="vendor/uPlot.iife.min.js"></script>
+<script src="i18n.js"></script>
+</body>
+</html>

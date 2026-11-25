@@ -1,0 +1,98 @@
+# Release : à chaque tag vX.Y.Z. Mêmes contrôles que la CI, puis publication de l'OVA, de l'ISO et
+# du qcow2 avec SHA256SUMS signé par Sigstore (cosign, sans clé : identité de ce workflow) et une
+# attestation de provenance GitHub (SLSA) pour chaque image.
+name: Release
+
+on:
+  push:
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    permissions:
+      contents: write      # création de la release
+      id-token: write      # identité OIDC pour Sigstore et les attestations
+      attestations: write  # attestations de provenance
+    env:
+      TAG: ${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Version
+        run: |
+          v=$(scripts/version.sh)
+          [ "$v" = "$TAG" ] || { echo "version $v différente du tag $TAG"; exit 1; }
+          echo "VERSION=$TAG" >> "$GITHUB_ENV"
+      - name: Outils QEMU et KVM
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq qemu-system-x86 qemu-utils ovmf sshpass xorriso >/dev/null
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm.rules >/dev/null
+          sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
+          if [ -w /dev/kvm ]; then echo "QEMU_ACCEL=kvm:tcg" >> "$GITHUB_ENV"; fi
+      - name: Tests Go
+        run: make fmt-check vet test
+      - name: OVA, ISO, qcow2 et contrôle de taille
+        env:
+          VIGIE_APK_KEY: ${{ secrets.VIGIE_APK_KEY }}  # facultatif : sinon clé éphémère
+        run: make release
+      - name: Démarrage des formats sous QEMU
+        run: make ci-qemu
+      - name: Interface (Chromium headless)
+        run: make ci-ui
+      - name: Sommes de contrôle
+        run: make checksums
+      - uses: sigstore/cosign-installer@756fe2d284c7292c4e9b62c8a28f1e5629c59532 # v4.1.3
+      - name: Signature de SHA256SUMS (Sigstore)
+        run: |
+          cd dist
+          cosign sign-blob --yes --bundle SHA256SUMS.sigstore.json SHA256SUMS
+          cosign verify-blob --bundle SHA256SUMS.sigstore.json \
+            --certificate-identity "https://github.com/${GITHUB_REPOSITORY}/.github/workflows/release.yml@refs/tags/${TAG}" \
+            --certificate-oidc-issuer https://token.actions.githubusercontent.com SHA256SUMS
+      - name: Attestation de provenance
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: |
+            dist/vigie-${{ github.ref_name }}.ova
+            dist/vigie-${{ github.ref_name }}.iso
+            dist/vigie-${{ github.ref_name }}.qcow2
+      - name: Publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat > dist/notes.md <<NOTES
+          Images de Vigie ${TAG} : OVA (vSphere), qcow2 (Proxmox, OpenStack, KVM), ISO live (BIOS/UEFI).
+
+          **Vérifier avant de déployer** (détails dans le README, section « Vérifier une release ») :
+
+          \`\`\`sh
+          sha256sum -c SHA256SUMS --ignore-missing
+          cosign verify-blob --bundle SHA256SUMS.sigstore.json \\
+            --certificate-identity https://github.com/${GITHUB_REPOSITORY}/.github/workflows/release.yml@refs/tags/${TAG} \\
+            --certificate-oidc-issuer https://token.actions.githubusercontent.com SHA256SUMS
+          gh attestation verify vigie-${TAG}.ova --repo ${GITHUB_REPOSITORY}
+          \`\`\`
+
+          Sommes SHA-256 :
+
+          \`\`\`
+          $(cat dist/SHA256SUMS)
+          \`\`\`
+
+          Nouveautés : docs/RELEASE-NOTES.md.
+          NOTES
+          gh release create "$TAG" --verify-tag --title "Vigie $TAG" --notes-file dist/notes.md \
+            "dist/vigie-$TAG.ova" "dist/vigie-$TAG.iso" "dist/vigie-$TAG.qcow2" \
+            dist/SHA256SUMS dist/SHA256SUMS.sigstore.json

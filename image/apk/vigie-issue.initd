@@ -1,0 +1,13 @@
+#!/sbin/openrc-run
+description="vigie : affiche l'adresse IP sur la console (/etc/issue) et dans le motd"
+
+depend() {
+	need net
+	after networking vigie-init
+}
+
+start() {
+	ebegin "vigie : mise à jour de la console"
+	/usr/lib/vigie/update-issue
+	eend $?
+}

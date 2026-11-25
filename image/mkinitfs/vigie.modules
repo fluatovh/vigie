@@ -1,0 +1,7 @@
+kernel/fs/fat
+kernel/fs/nls/nls_cp437.ko*
+kernel/fs/nls/nls_iso8859-1.ko*
+kernel/fs/nls/nls_utf8.ko*
+kernel/drivers/block/virtio_blk.ko*
+kernel/drivers/scsi/virtio_scsi.ko*
+kernel/drivers/net/virtio_net.ko*

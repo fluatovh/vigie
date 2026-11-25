@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+description="vigie : configuration initiale (propriétés OVF, persistance /data, mot de passe)"
+
+depend() {
+	need localmount
+	after modules hwdrivers
+	before hostname networking dropbear ntpd vigie
+}
+
+start() {
+	ebegin "vigie : configuration initiale"
+	/usr/lib/vigie/init
+	eend $?
+}

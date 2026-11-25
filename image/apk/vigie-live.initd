@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+description="vigie : mode live (ISO) — /data n'est jamais monté, rien n'est conservé"
+
+depend() {
+	before localmount
+}
+
+start() {
+	grep -qw vigie.live /proc/cmdline || return 0
+	ebegin "vigie : mode live, rien ne sera conservé au redémarrage"
+	sed -i '/vigie-data/d' /etc/fstab
+	mkdir -p /run/vigie && : > /run/vigie/live
+	eend 0
+}

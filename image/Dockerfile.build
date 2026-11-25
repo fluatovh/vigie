@@ -1,0 +1,11 @@
+# Conteneur d'assemblage de l'image vigie. Tout s'exécute sans privilège (uid de l'appelant).
+ARG ALPINE_VERSION=3.24.4
+FROM alpine:${ALPINE_VERSION}
+RUN apk add --no-cache \
+      abuild build-base \
+      syslinux mtools dosfstools e2fsprogs sfdisk \
+      squashfs-tools kmod mkinitfs \
+      qemu-img xorriso grub-efi \
+      curl tar gzip xz zstd jq grep libfaketime \
+    && mkdir -p /var/cache/distfiles \
+    && chmod -R a+rwX /var/cache/distfiles /etc/apk /lib/apk /var/cache/apk

@@ -1,0 +1,14 @@
+# /etc/inittab de l'appliance vigie (apkovl)
+
+::sysinit:/sbin/openrc sysinit
+::sysinit:/sbin/openrc boot
+::wait:/sbin/openrc default
+
+# tty1 : console vigie (TUI au clavier : Network, Storage, Accès), relancée si elle s'arrête.
+tty1::respawn:/usr/bin/vigie tui
+# tty2 : shell root sans mot de passe (accès console = accès physique ; SSH demande toujours le
+# mot de passe). Alt+F2, puis Alt+F1 pour revenir à la console vigie.
+tty2::respawn:/sbin/getty -n -l /usr/lib/vigie/console-login 38400 tty2
+
+::ctrlaltdel:/sbin/reboot
+::shutdown:/sbin/openrc shutdown

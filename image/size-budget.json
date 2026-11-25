@@ -1,0 +1,14 @@
+{
+  "hard_limit_mb": 100,
+  "warn_mb": 60,
+  "baseline_tolerance_mb": 2,
+  "components_mb": {
+    "kernel": 14,
+    "initramfs": 11,
+    "modloop": 6,
+    "apks": 24,
+    "apks_ovt": 5,
+    "vigie_bin": 25,
+    "apkovl": 0.1
+  }
+}

@@ -1,0 +1,1 @@
+LABEL=vigie-data  /data  ext4  rw,noatime,nofail  0 0

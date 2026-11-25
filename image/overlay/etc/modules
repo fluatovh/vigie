@@ -1,0 +1,6 @@
+vmw_vmci
+vsock
+vmw_vsock_vmci_transport
+vmw_balloon
+# console graphique en UEFI (framebuffer du firmware) ; sans effet en BIOS (console VGA)
+simpledrm

@@ -1,0 +1,12 @@
+dist/
+cache/
+*.ova
+*.vmdk
+*.raw
+*.apk
+.env*
+lab.env
+version.env
+remote.env
+CLAUDE.local.md
+image/keys/

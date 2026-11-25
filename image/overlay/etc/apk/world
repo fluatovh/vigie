@@ -1,0 +1,14 @@
+alpine-base
+dropbear
+iperf3
+open-vm-tools
+open-vm-tools-guestinfo
+open-vm-tools-openrc
+vigie
+nmap
+tcpdump
+qemu-guest-agent
+qemu-guest-agent-openrc
+ethtool
+smartmontools
+ipmitool

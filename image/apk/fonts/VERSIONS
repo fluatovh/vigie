@@ -1,0 +1,7 @@
+Polices de la console (langues) — tirées du paquet Alpine 3.24 kbd-misc-2.8.0-r0
+(usr/share/consolefonts), décompressées. Licences : Terminus (SIL OFL 1.1) et kbd (GPL).
+- lat2-terminus16.psfu  256 glyphes 8x16, ISO-8859-2 + graphiques de boîte : chargée pour le polonais
+  (256 glyphes : les couleurs vives de la console sont conservées, contrairement à une police de 512)
+  sha256 d7a58804e295fbec90fc2cda89eb395767c2eb85aaea75f9a6a9036cf6620522
+- default8x16.psfu      256 glyphes 8x16 (CP437) : rétablie pour les autres langues
+  sha256 27c671292282a42ebb442100a37cc77712d5abebe087ac29b016e523e913fcfd
