@@ -8,5 +8,6 @@ cache/
 lab.env
 version.env
 remote.env
+CLAUDE.md
 CLAUDE.local.md
 image/keys/
