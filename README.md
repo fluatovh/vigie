@@ -198,8 +198,7 @@ On a Linux machine with Docker: `make release` builds the OVA, ISO and qcow2 in 
 
 GitHub CI runs them on every push and pull request; a `vX.Y.Z` tag also triggers the signed release.
 Tests against a real vSphere (`image/lab-qa-*.sh`) are run by hand with a local `lab.env`. Pinned
-versions: `image/versions.mk`, `go.mod`, `web/vendor/`. Design notes (in French):
-[docs/PLAN.md](docs/PLAN.md), [docs/STATUS.md](docs/STATUS.md); release notes:
+versions: `image/versions.mk`, `go.mod`, `web/vendor/`. Release notes:
 [docs/RELEASE-NOTES.md](docs/RELEASE-NOTES.md).
 
 ## License
