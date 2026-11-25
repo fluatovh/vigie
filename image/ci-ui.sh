@@ -18,5 +18,7 @@ for i in $(seq 1 60); do
 done
 [ -n "$PW" ] || { echo "mot de passe introuvable sur la console série"; tail -40 "$R/serial.log"; exit 1; }
 docker build -q -t vigie-ui-qa test/ui >/dev/null
-docker run --rm --network host -u "$(id -u):$(id -g)" -v "$PWD/$R:/out" --entrypoint node \
+# HOME inscriptible : l'uid du runner n'existe pas dans l'image, et Chromium (crashpad) refuse de
+# démarrer sans répertoire personnel.
+docker run --rm --network host -u "$(id -u):$(id -g)" -v "$PWD/$R:/out" --entrypoint node -e HOME=/tmp \
 	-e VIGIE_URL=https://127.0.0.1:8443/ -e VIGIE_PASSWORD="$PW" -e OUT=/out vigie-ui-qa ci.mjs
