@@ -18,7 +18,7 @@ contient :
   public Rekor ;
 - une attestation de provenance (SLSA) par image, enregistrée par GitHub.
 
-La procédure de vérification est dans le [README](README.md#vérifier-une-release). Une image dont la
+La procédure de vérification est dans le [README](README.md#verifying-a-release). Une image dont la
 somme ou la signature ne se vérifie pas ne doit pas être déployée.
 
 ## Dans l'appliance

@@ -1,207 +1,207 @@
 # Vigie
 
-Appliance de diagnostic pour vSphere : **performances d'un datastore** mesurées depuis l'hôte ESXi où
-elle tourne, et **diagnostic réseau** (ping, surveillance façon smokeping, traceroute, ARP, iperf3).
-Une seule petite VM Alpine Linux (≈ 45 Mo), pilotée par une interface web embarquée, par l'API ou
-au clavier depuis la console de la VM.
+Diagnostic appliance for vSphere: **datastore performance** measured from the ESXi host it runs on,
+and **network diagnostics** (ping, smokeping-style monitoring, traceroute, ARP, iperf3). A single
+small Alpine Linux VM (≈ 45 MB), driven by an embedded web interface, by its API, or from the VM
+console with the keyboard.
 
-- Aucun SSH vers les ESXi : tout passe par l'API vSphere (vCenter de préférence, ESXi seul possible).
-- Aucune dépendance réseau : interface, graphiques et polices sont dans le binaire ; fonctionne sur
-  un réseau isolé.
-- Lecture seule côté infrastructure, à l'exception d'opérations explicites (voir « Ce que l'appliance
-  modifie »).
-- Interface et console en anglais (défaut), français, espagnol, italien, polonais et allemand.
+- No SSH to the ESXi hosts: everything goes through the vSphere API (vCenter preferred, a standalone
+  ESXi works too).
+- No network dependency: interface, charts and fonts are built into the binary; works on an isolated
+  network.
+- Read-only on the infrastructure, except for explicit operations (see "What the appliance changes").
+- Interface and console in English (default), French, Spanish, Italian, Polish and German.
 
 ## Formats
 
-| Fichier | Taille | Pour |
+| File | Size | For |
 |---|---|---|
-| `vigie-<version>.ova` | ≈ 45 Mo | vSphere (vCenter ou ESXi) |
-| `vigie-<version>.qcow2` | ≈ 45 Mo | Proxmox, OpenStack, KVM |
-| `vigie-<version>.iso` | ≈ 50 Mo | ISO live BIOS/UEFI, rien n'est conservé |
+| `vigie-<version>.ova` | ≈ 45 MB | vSphere (vCenter or ESXi) |
+| `vigie-<version>.qcow2` | ≈ 45 MB | Proxmox, OpenStack, KVM |
+| `vigie-<version>.iso` | ≈ 50 MB | Live ISO, BIOS/UEFI, nothing is kept |
 
-Proxmox, OpenStack et l'ISO live sont décrits dans [docs/formats.md](docs/formats.md). La suite de ce
-document traite du déploiement sur vSphere.
+Proxmox, OpenStack and the live ISO are covered in [docs/formats.md](docs/formats.md) (in French).
+The rest of this document covers deployment on vSphere.
 
-## Vérifier une release
+## Verifying a release
 
-Les images se téléchargent depuis les [releases GitHub](https://github.com/fluatovh/vigie/releases),
-avec `SHA256SUMS` et sa signature `SHA256SUMS.sigstore.json`. Avant de déployer :
+Images are downloaded from the [GitHub releases](https://github.com/fluatovh/vigie/releases), along
+with `SHA256SUMS` and its signature `SHA256SUMS.sigstore.json`. Before deploying:
 
 ```sh
-# 1. intégrité : les fichiers téléchargés correspondent aux sommes publiées
-sha256sum -c SHA256SUMS --ignore-missing          # macOS : shasum -a 256 -c SHA256SUMS --ignore-missing
+# 1. integrity: the downloaded files match the published checksums
+sha256sum -c SHA256SUMS --ignore-missing          # macOS: shasum -a 256 -c SHA256SUMS --ignore-missing
 
-# 2. authenticité : SHA256SUMS a été signé par le workflow de release de ce dépôt, pour ce tag
+# 2. authenticity: SHA256SUMS was signed by this repository's release workflow, for this tag
 cosign verify-blob --bundle SHA256SUMS.sigstore.json \
   --certificate-identity https://github.com/fluatovh/vigie/.github/workflows/release.yml@refs/tags/vX.Y.Z \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com SHA256SUMS
 
-# 3. provenance (facultatif) : l'image a été construite par GitHub Actions depuis ce dépôt
+# 3. provenance (optional): the image was built by GitHub Actions from this repository
 gh attestation verify vigie-vX.Y.Z.ova --repo fluatovh/vigie
 ```
 
-[cosign](https://docs.sigstore.dev/cosign/system_config/installation/) et la [CLI GitHub](https://cli.github.com/)
-s'installent en un binaire. La somme seule (étape 1) détecte un téléchargement corrompu ; la
-signature (étape 2) garantit en plus que les sommes viennent bien de ce dépôt. MD5 n'est pas
-fourni : il ne protège plus contre une falsification volontaire.
+[cosign](https://docs.sigstore.dev/cosign/system_config/installation/) and the
+[GitHub CLI](https://cli.github.com/) are single binaries. The checksum alone (step 1) detects a
+corrupted download; the signature (step 2) also proves the checksums come from this repository. No
+MD5 is provided: it no longer protects against deliberate tampering.
 
-## Déployer sur vSphere
+## Deploying on vSphere
 
-### Import de l'OVA
+### Importing the OVA
 
-vSphere Client : *Déployer un modèle OVF* → fichier `vigie-<version>.ova` → choisir l'hôte et le
-réseau. **Placez l'appliance sur l'hôte que vous voulez mesurer** : elle teste le chemin de l'hôte où
-elle tourne (elle sait ensuite se déplacer par vMotion, voir plus bas).
+vSphere Client: *Deploy OVF Template* → `vigie-<version>.ova` → choose the host and the network.
+**Place the appliance on the host you want to measure**: it tests the path of the host it runs on
+(it can then move itself with vMotion, see below).
 
-Matériel de la VM : 2 vCPU, 1 Go de RAM, disque système PVSCSI, carte vmxnet3, CD-ROM SATA (porte la
-configuration OVF), matériel virtuel `vmx-14` (ESXi 6.7 et plus récents).
+VM hardware: 2 vCPU, 1 GB RAM, PVSCSI system disk, vmxnet3 NIC, SATA CD-ROM (carries the OVF
+configuration), virtual hardware `vmx-14` (ESXi 6.7 and later).
 
-### Propriétés OVF
+### OVF properties
 
-Toutes facultatives. Sans adresse IP, l'appliance prend une adresse en DHCP.
+All optional. Without an IP address, the appliance uses DHCP.
 
-| Propriété | Rôle |
+| Property | Purpose |
 |---|---|
-| `hostname` | Nom d'hôte de l'appliance |
-| `ip`, `netmask`, `gateway` | Adresse IPv4 statique ; vide : DHCP |
-| `dns` | Serveurs DNS, séparés par des virgules (IP statique) |
-| `ntp` | Serveurs NTP, séparés par des virgules ; vide : pool.ntp.org |
-| `ui_password` | Mot de passe root (SSH) et de l'interface web ; vide : généré au premier démarrage |
+| `hostname` | Appliance host name |
+| `ip`, `netmask`, `gateway` | Static IPv4 address; empty: DHCP |
+| `dns` | DNS servers, comma-separated (static IP) |
+| `ntp` | NTP servers, comma-separated; empty: pool.ntp.org |
+| `ui_password` | Root (SSH) and web interface password; empty: generated at first boot |
 
-En ligne de commande avec govc :
+From the command line with govc:
 
 ```sh
-govc import.spec vigie-<version>.ova > vigie.json      # puis renseigner PropertyMapping et NetworkMapping
+govc import.spec vigie-<version>.ova > vigie.json      # then fill in PropertyMapping and NetworkMapping
 govc import.ova -name vigie -options vigie.json vigie-<version>.ova
 govc vm.power -on vigie
 ```
 
-Le réseau et le mot de passe choisis ensuite dans la console de l'appliance priment sur les
-propriétés OVF.
+Network settings and the password chosen later in the appliance console take precedence over the OVF
+properties.
 
-## Premier accès
+## First access
 
-Ouvrez la console de la VM. L'écran d'accueil (façon DCUI) affiche en permanence :
+Open the VM console. The home screen (DCUI-style) always shows:
 
-- l'adresse IP et l'URL de l'interface web ;
-- le **mot de passe** (fourni par OVF ou généré au premier démarrage) ;
-- l'empreinte SHA-256 du **certificat HTTPS**. Ce certificat auto-signé est généré au premier
-  démarrage et propre à chaque appliance : comparez l'empreinte à celle que montre le navigateur.
+- the IP address and the web interface URL;
+- the **password** (from OVF or generated at first boot);
+- the SHA-256 fingerprint of the **HTTPS certificate**. This self-signed certificate is generated at
+  first boot and unique to each appliance: compare it with the fingerprint your browser shows.
 
-Ensuite :
+Then:
 
-- **Interface web** : `https://<ip>/` (le port 80 redirige vers HTTPS), avec le mot de passe affiché.
-- **Console** : Entrée ouvre l'interface texte au clavier (tests réseau, tests de stockage sans
-  vCenter, configuration réseau, mot de passe, langue). F12 : arrêt ou redémarrage. Alt+F2 : shell
-  root sans mot de passe (l'accès à la console de la VM vaut un accès physique).
-- **SSH** : `ssh root@<ip>`, avec le mot de passe.
+- **Web interface**: `https://<ip>/` (port 80 redirects to HTTPS), with the password shown.
+- **Console**: Enter opens the keyboard text interface (network tests, storage tests without
+  vCenter, network settings, password, language). F12: shutdown or restart. Alt+F2: root shell
+  without password (access to the VM console is equivalent to physical access).
+- **SSH**: `ssh root@<ip>`, with the password.
 
-## Mesurer un datastore
+## Measuring a datastore
 
-Onglet **Datastore performance** de l'interface web, en étapes :
+**Datastore performance** tab of the web interface, step by step:
 
-1. **Connexion vSphere** : URL du vCenter (ou de l'ESXi), compte, mot de passe. L'empreinte du
-   certificat du serveur est affichée et doit être confirmée. Cochez « Mémoriser le mot de passe »
-   pour la reconnexion automatique après un redémarrage (chiffré dans le disque de l'appliance).
-2. **Identification** : l'appliance se retrouve dans l'inventaire (VM, hôte, cluster). La page
-   indique les privilèges vSphere manquants pour le compte utilisé.
-3. **Datastore** : choix du datastore et affichage du chemin NFS (vmk, vSwitch, uplinks, voisin
-   CDP/LLDP quand le switch s'annonce).
-4. **Disque de test** : l'appliance crée son propre VMDK (1 à 64 Go) sur le datastore, le vérifie
-   avant toute écriture (§6.3 du plan : jamais d'écriture sur un disque non vérifié), puis le
-   préremplit de données incompressibles au premier test.
-5. **Hôtes** : déplacer l'appliance par vMotion, ou lancer une tournée de comparaison entre hôtes.
-6. **Type de test** :
-   - *standard* : ligne de base, écriture puis lecture séquentielles (1 Mio, QD 4), ratio TX/écrit,
-     erreurs des vmnics (dont CRC, trame et longueur via esxcli), latence vue par l'hôte, verdict ;
-   - *avancé* : le standard, puis IOPS et latences en 4 Kio aléatoire à QD 1, 4, 16 et 32 ;
-   - *surveillance continue* : un test court toutes les N minutes.
-7. **Exécution** en direct, 8. **Résultats** avec verdict et profil d'I/O complet,
-   9. **Nettoyage** (suppression du disque de test).
+1. **vSphere connection**: URL of the vCenter (or ESXi), account, password. The server certificate
+   fingerprint is shown and must be confirmed. Tick "Remember the password" for automatic
+   reconnection after a restart (encrypted on the appliance disk).
+2. **Identification**: the appliance finds itself in the inventory (VM, host, cluster). The page
+   lists the vSphere privileges the account is missing.
+3. **Datastore**: datastore selection and NFS path (vmk, vSwitch, uplinks, CDP/LLDP neighbour when
+   the switch announces itself).
+4. **Test disk**: the appliance creates its own VMDK (1 to 64 GB) on the datastore, verifies it
+   before any write (it never writes to an unverified disk), then prefills it with incompressible
+   data on the first test.
+5. **Hosts**: move the appliance with vMotion, or run a comparison tour across hosts.
+6. **Test type**:
+   - *standard*: baseline, sequential write then read (1 MiB, QD 4), TX/written ratio, vmnic errors
+     (including CRC, frame and length via esxcli), latency seen by the host, verdict;
+   - *advanced*: the standard test, then IOPS and latencies in 4 KiB random I/O at QD 1, 4, 16
+     and 32;
+   - *continuous monitoring*: a short test every N minutes.
+7. **Execution**, live; 8. **Results** with verdict and full I/O profile; 9. **Cleanup** (test
+   disk removal).
 
-Chaque test standard, avancé ou tournée produit un **rapport client** HTML autonome, imprimable en A4,
-avec avant/après entre deux tests (onglet Historique). Les seuils des verdicts se règlent par
-préréglage (all-flash, hybride, disques) dans Réglages.
+Each standard, advanced or tour test produces a self-contained HTML **customer report**, printable
+on A4, with before/after comparison of two tests (History tab). Verdict thresholds are set per preset
+(all-flash, hybrid, disks) in Settings.
 
-### Sans vCenter (mode local)
+### Without vCenter (local mode)
 
-Depuis la console de l'appliance, onglet Storage : l'appliance explique comment ajouter un disque à
-sa VM dans vSphere (taille, contrôleur), puis adopte ce disque après des contrôles stricts (apparu
-après la demande, vierge, nom retapé). Les tests locaux mesurent le débit et la latence sans les
-compteurs de l'hôte. L'appliance ne retire ni n'efface jamais ce disque.
+From the appliance console, Storage tab: the appliance explains how to add a disk to its VM in
+vSphere (size, controller), then adopts that disk after strict checks (appeared after the request,
+blank, name typed back). Local tests measure throughput and latency without the host counters. The
+appliance never removes or wipes this disk.
 
-## Diagnostic réseau
+## Network diagnostics
 
-Onglet **Network** : interfaces de l'appliance, ping et traceroute en direct, surveillance continue de
-cibles (20 pings par minute, historique d'un an), table ARP, débit iperf3 TCP ou UDP vers une autre
-appliance Vigie. Outils disponibles en SSH : nmap, tcpdump, ethtool, smartctl, ipmitool, iperf3.
+**Network** tab: appliance interfaces, live ping and traceroute, continuous target monitoring
+(20 pings per minute, one year of history), ARP table, iperf3 TCP or UDP throughput to another Vigie
+appliance. Tools available over SSH: nmap, tcpdump, ethtool, smartctl, ipmitool, iperf3.
 
-## Surveillance continue et tendances
+## Continuous monitoring and trends
 
-Étape 6, « Surveillance continue » : un test standard (ou local) toutes les 15 minutes à 24 heures sur
-l'hôte courant. Un test est sauté, avec la raison affichée, si un autre job tourne ou si vCenter
-n'est pas joignable. Les mesures alimentent la carte **Tendances** de l'onglet Historique (débit,
-latence p99, ratio TX/écrit par hôte et datastore), exportable en CSV ou JSON. Rétention réglable
-(30 jours par défaut).
+Step 6, "Continuous monitoring": a standard (or local) test every 15 minutes to 24 hours on the
+current host. A test is skipped, with the reason shown, if another job is running or vCenter is
+unreachable. Measurements feed the **Trends** card of the History tab (throughput, p99 latency,
+TX/written ratio per host and datastore), exportable as CSV or JSON. Adjustable retention (30 days
+by default).
 
 ## API
 
-Toute l'interface repose sur une API JSON. Créez un jeton dans **Réglages → Jetons d'API**, puis :
+The whole interface runs on a JSON API. Create a token in **Settings → API tokens**, then:
 
 ```sh
 V=https://<ip>/api; T="Authorization: Bearer vg_..."
 curl -k -H "$T" $V/vsphere/status
 curl -k -H "$T" -H 'Content-Type: application/json' -X POST $V/jobs -d '{"profile":"standard"}'
-curl -k -H "$T" $V/jobs/<id>                  # état et résultat
-curl -k -H "$T" -N $V/jobs/<id>/events        # progression en direct (Server-Sent Events)
-curl -k -H "$T" $V/reports/<id> > rapport.html
-curl -k -H "$T" "$V/results?period=7d&format=csv" > mesures.csv
+curl -k -H "$T" $V/jobs/<id>                  # state and result
+curl -k -H "$T" -N $V/jobs/<id>/events        # live progress (Server-Sent Events)
+curl -k -H "$T" $V/reports/<id> > report.html
+curl -k -H "$T" "$V/results?period=7d&format=csv" > results.csv
 ```
 
-Profils de job : `standard`, `advanced`, `local`, `tour`, `move`, `net.iperf`, `testdisk.create`,
-`testdisk.delete`. Un seul job à la fois (HTTP 409 sinon).
+Job profiles: `standard`, `advanced`, `local`, `tour`, `move`, `net.iperf`, `testdisk.create`,
+`testdisk.delete`. One job at a time (HTTP 409 otherwise).
 
-## Ce que l'appliance modifie
+## What the appliance changes
 
-Tout le reste est en lecture seule. Ces opérations sont toujours déclenchées par l'utilisateur :
+Everything else is read-only. These operations are always triggered by the user:
 
-- création et suppression de **son** disque de test (sur sa propre VM) ;
-- vMotion de **l'appliance elle-même** ;
-- en option, un override DRS sur **l'appliance elle-même** pendant une tournée.
+- creating and deleting **its own** test disk (on its own VM);
+- vMotion of **the appliance itself**;
+- optionally, a DRS override on **the appliance itself** during a tour.
 
-Les commandes esxcli passent par l'API vSphere et sont limitées à une liste blanche en lecture
+esxcli commands go through the vSphere API and are limited to a read-only allowlist
 (`network nic stats get`, `network nic list`, `network nic get`).
 
-## Limites
+## Limitations
 
-- Pas de compteur de retransmissions TCP du vmkernel : le ratio TX/écrit est un indicateur
-  indirect, sensible au trafic des autres VMs sur la même vmnic.
-- Granularité de 20 s des compteurs vSphere : les micro-coupures plus courtes sont lissées ; un test
-  trop court rend le ratio TX/écrit non concluant.
-- Les IOPS du test avancé incluent l'effet du cache du serveur NFS : c'est ce que voit une VM, pas la
-  mesure des disques du serveur.
-- Les erreurs d'émission de l'hôte ne se voient que côté switch, que l'appliance n'interroge pas.
-- L'appliance mesure l'hôte où elle tourne : il faut la déplacer (ou en déployer une autre) pour un
-  autre hôte.
+- No vmkernel TCP retransmission counter: the TX/written ratio is an indirect indicator, sensitive
+  to traffic from other VMs on the same vmnic.
+- 20 s granularity of vSphere counters: shorter micro-outages are smoothed out; a test that is too
+  short makes the TX/written ratio inconclusive.
+- Advanced test IOPS include the effect of the NFS server cache: this is what a VM sees, not a
+  measurement of the server's disks.
+- Host transmit errors are only visible on the switch side, which the appliance does not query.
+- The appliance measures the host it runs on: move it (or deploy another one) to test another host.
 
-## Construire et tester
+## Building and testing
 
-Sur une machine Linux avec Docker : `make release` produit l'OVA, l'ISO et le qcow2 dans `dist/`.
+On a Linux machine with Docker: `make release` builds the OVA, ISO and qcow2 in `dist/`.
 
-| Cible | Contrôle |
+| Target | Checks |
 |---|---|
-| `make fmt-check vet test` | formatage, analyse statique, tests Go (dont le simulateur vcsim et le catalogue des langues) |
-| `make release` | construction des trois formats et contrôle des budgets de taille |
-| `make ci-qemu` | démarrage de l'ISO (BIOS, UEFI, avec un disque présent) et du qcow2 (NoCloud, config-drive) sous QEMU |
-| `make ci-ui` | interface dans Chromium headless contre le qcow2 démarré : connexion, onglets, ping, jeton d'API, seuils, langues, CSP, aucune requête externe |
+| `make fmt-check vet test` | formatting, static analysis, Go tests (including the vcsim simulator and the language catalog) |
+| `make release` | builds the three formats and checks the size budgets |
+| `make ci-qemu` | boots the ISO (BIOS, UEFI, with a disk present) and the qcow2 (NoCloud, config-drive) under QEMU |
+| `make ci-ui` | interface in headless Chromium against the booted qcow2: login, tabs, ping, API token, thresholds, languages, CSP, no external request |
 
-La CI GitHub les rejoue à chaque push et pull request ; un tag `vX.Y.Z` déclenche en plus la
-publication signée de la release. Les tests contre un vrai vSphere (`image/lab-qa-*.sh`) se lancent à
-la main avec un `lab.env` local. Versions figées : `image/versions.mk`, `go.mod`, `web/vendor/`. Plan et décisions :
-[docs/PLAN.md](docs/PLAN.md), [docs/STATUS.md](docs/STATUS.md), notes de version :
+GitHub CI runs them on every push and pull request; a `vX.Y.Z` tag also triggers the signed release.
+Tests against a real vSphere (`image/lab-qa-*.sh`) are run by hand with a local `lab.env`. Pinned
+versions: `image/versions.mk`, `go.mod`, `web/vendor/`. Design notes (in French):
+[docs/PLAN.md](docs/PLAN.md), [docs/STATUS.md](docs/STATUS.md); release notes:
 [docs/RELEASE-NOTES.md](docs/RELEASE-NOTES.md).
 
-## Licence
+## License
 
 [Apache 2.0](LICENSE).

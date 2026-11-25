@@ -75,7 +75,7 @@ jobs:
           cat > dist/notes.md <<NOTES
           Images de Vigie ${TAG} : OVA (vSphere), qcow2 (Proxmox, OpenStack, KVM), ISO live (BIOS/UEFI).
 
-          **Vérifier avant de déployer** (détails dans le README, section « Vérifier une release ») :
+          **Vérifier avant de déployer** (détails dans le README, section « Verifying a release ») :
 
           \`\`\`sh
           sha256sum -c SHA256SUMS --ignore-missing
