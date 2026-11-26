@@ -15,7 +15,7 @@ scripts/version.sh
 ver=$(sed -n 's/^VERSION=//p' version.env)
 
 rsync -az --delete \
-  --exclude .git --exclude dist/ --exclude cache/ --exclude '.env*' --exclude lab.env --exclude remote.env --exclude CLAUDE.local.md \
+  --exclude .git --exclude dist/ --exclude cache/ --exclude '.env*' --exclude lab.env --exclude docs-redact.json --exclude remote.env --exclude CLAUDE.local.md \
   -e "ssh -p $PORT -o BatchMode=yes" \
   ./ "$REMOTE:$DEST/"
 echo "sync -> $REMOTE:$DEST ($ver)"

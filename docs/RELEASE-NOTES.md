@@ -1,8 +1,29 @@
 # Notes de version
 
-## v1.0.2 — à venir
+## v1.1.0 — 26/11/2026
 
-- Notes de version : titres alignés sur les tags publiés.
+### Corrections
+- **Session vCenter expirée** : après un redémarrage du vCenter, l'appliance gardait une session que
+  le serveur ne reconnaissait plus et se croyait connectée ; chaque test planifié échouait
+  (« The session is not authenticated »). La session est maintenant vérifiée toutes les 5 minutes et
+  avant chaque test planifié, puis rétablie avec le mot de passe mémorisé.
+- **Traductions de l'interface web** : environ 300 textes produits par le serveur (étapes et journal
+  des jobs, détails des verdicts, erreurs, ping) restaient en français dans les autres langues. Ils
+  sont au catalogue dans les 6 langues ; les nombres venus du serveur suivent le format de la langue.
+- Moteur de traduction (console et web) : « %% » suivi d'une lettre n'est plus pris pour une variable
+  (« at most 6,2 % over s step(s) ») ; à préfixe égal, le gabarit le plus précis l'emporte ; les
+  gabarits imbriqués sur plus de trois niveaux sont traduits.
+- Onglet Datastore performance : une déconnexion pendant la prévalidation des hôtes affichait
+  « Cannot read properties of null (reading 'host') ».
+
+### Documentation
+- `docs/` : guide illustré de chaque fonction (mesure de datastore, surveillance et historique,
+  réseau, réglages, console), captures prises sur un lab vSphere 8.
+- Notes de conception (PLAN, STATUS) retirées du dépôt public.
+
+### Tests
+- Test Go : tout texte français du serveur doit figurer au catalogue (`TestServerTextsInCatalog`).
+- Test d'interface de la CI : échec si un texte reste en français dans une autre langue.
 
 ## v1.0.1 — 25/11/2026
 

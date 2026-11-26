@@ -12,6 +12,8 @@ console with the keyboard.
 - Read-only on the infrastructure, except for explicit operations (see "What the appliance changes").
 - Interface and console in English (default), French, Spanish, Italian, Polish and German.
 
+Feature guides with screenshots: [docs/](docs/README.md).
+
 ## Formats
 
 | File | Size | For |

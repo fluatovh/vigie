@@ -6,6 +6,7 @@ cache/
 *.apk
 .env*
 lab.env
+docs-redact.json
 version.env
 remote.env
 CLAUDE.md
@@ -13,3 +14,4 @@ CLAUDE.local.md
 image/keys/
 docs/PLAN.md
 docs/STATUS.md
+.claude/settings.local.json
