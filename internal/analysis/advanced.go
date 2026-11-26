@@ -144,14 +144,14 @@ func EvaluateAdvanced(v *Verdict, points []Point, th Thresholds) {
 			Why: fr("au plus %.1f %% sur %d palier(s) (seuil %.0f %%)", worst, measured, th.IOPSMismatchWarnPct)}
 		if bad > 0 {
 			ind.Level = Warning
-			ind.Why += " — mesure à vérifier : " + strings.Join(badSteps, ", ")
+			ind.Why = fmt.Sprintf("%s — mesure à vérifier : %s", ind.Why, strings.Join(badSteps, ", "))
 		}
 		add(ind)
 	}
 	ind := Indicator{Key: "worker_cpu", Label: "CPU du worker", Reliable: true, Level: OK, Why: fr("sous %.0f %% sur tous les paliers", th.WorkerCPUWarnPct)}
 	if cpuBad > 0 {
 		ind.Level = Warning
-		ind.Why = fr("au-delà de %.0f %% sur ", th.WorkerCPUWarnPct) + strings.Join(cpuSteps, ", ") + " : résultat limité par l'appliance, passer la VM à 4 vCPU"
+		ind.Why = fr("au-delà de %.0f %% sur %s : résultat limité par l'appliance, passer la VM à 4 vCPU", th.WorkerCPUWarnPct, strings.Join(cpuSteps, ", "))
 	}
 	add(ind)
 }

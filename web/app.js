@@ -176,7 +176,8 @@
   }
   async function refreshHosts(ds) {
     const tb = clear($('hosts-table').tBodies[0]);
-    if (!ds || !state.self) return;
+    const self = state.self; // figé : une déconnexion pendant la requête remet state.self à null
+    if (!ds || !self) return;
     tb.append(el('tr', {}, el('td', { colspan: '4', class: 'small muted', text: 'prévalidation du vMotion vers chaque hôte…' })));
     try {
       const r = await api('GET', '/migrate/check?datastore=' + encodeURIComponent(ds.ref));
@@ -191,7 +192,8 @@
         tb.append(el('tr', { class: c.current ? 'sel' : '' }, el('td', {}, cb), el('td', { text: c.host }), el('td', { class: 'small', text: status }),
           el('td', {}, c.current || !c.ok ? '' : el('button', { text: 'Déplacer ici', onclick: () => { if (confirm('Déplacer l\'appliance vers ' + c.host + ' (vMotion) ?')) submitJob({ profile: 'move', target_host: c.host_ref }); } }))));
       }
-      setBadge('b-hosts', state.self.host.name, true);
+      if (state.self !== self) return; // identité changée entre-temps : un autre rafraîchissement suit
+      setBadge('b-hosts', self.host.name, true);
     } catch (e) { tb.append(el('tr', {}, el('td', { colspan: '4', class: 'error', text: e.message }))); }
     updateTour();
   }
@@ -307,7 +309,7 @@
     const es = new EventSource('/api/jobs/' + encodeURIComponent(id) + '/events');
     state.es = es;
     es.addEventListener('progress', (m) => { const e = JSON.parse(m.data); $('run-bar').style.width = e.progress + '%'; $('run-pct').textContent = nf0.format(e.progress) + ' %'; $('run-step').textContent = e.step; });
-    es.addEventListener('log', (m) => { const e = JSON.parse(m.data); const log = $('run-log'); log.append(e.msg + '\n'); log.scrollTop = log.scrollHeight; });
+    es.addEventListener('log', (m) => { const e = JSON.parse(m.data); const log = $('run-log'); log.append(T(e.msg) + '\n'); log.scrollTop = log.scrollHeight; });
     es.addEventListener('second', (m) => {
       const e = JSON.parse(m.data); const d = e.data || {};
       if (d.t === undefined || d.t <= 0) return;
@@ -554,7 +556,7 @@
       while (data[0].length < r.seq) { data[0].push(data[0].length + 1); data[1].push(null); }
       data[1][r.seq - 1] = r.rtt_ms >= 0 ? r.rtt_ms : null;
       plot.setData(data);
-      logEl.append(r.rtt_ms >= 0 ? 'réponse de ' + info.ip + ' : seq=' + r.seq + ' temps=' + rtt(r.rtt_ms) + '\n' : 'seq=' + r.seq + ' : pas de réponse (délai dépassé)\n');
+      logEl.append(T(r.rtt_ms >= 0 ? 'réponse de ' + info.ip + ' : seq=' + r.seq + ' temps=' + rtt(r.rtt_ms) : 'seq=' + r.seq + ' : pas de réponse (délai dépassé)') + '\n');
       logEl.scrollTop = logEl.scrollHeight;
       render();
     });
@@ -562,7 +564,7 @@
       if (ended) return; ended = true;
       stopPing();
       const st = pingStats(rtts);
-      logEl.append('--- ' + st.sent + ' émis, ' + st.recv + ' reçus, ' + nf1.format(st.loss) + ' % de perte' + (st.recv ? ', min/méd/max ' + rtt(st.min) + ' / ' + rtt(st.med) + ' / ' + rtt(st.max) : '') + (stopped ? ' (arrêté)' : '') + '\n');
+      logEl.append(T('--- ' + st.sent + ' émis, ' + st.recv + ' reçus, ' + nf1.format(st.loss) + ' % de perte') + (st.recv ? T(', min/méd/max ' + rtt(st.min) + ' / ' + rtt(st.med) + ' / ' + rtt(st.max)) : '') + (stopped ? ' ' + T('(arrêté)') : '') + '\n');
       $('nt-why').textContent = '';
       if (info && !info.on_link && !stopped) { $('nt-why').textContent = 'cible hors du sous-réseau : traceroute automatique'; traceroute(t); }
     };

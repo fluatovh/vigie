@@ -167,7 +167,7 @@ func Run(ctx context.Context, d Deps, opt Options) (*Report, error) {
 	rep.Verdict = verdict(rep, opt)
 	rep.Warnings = append(rep.Warnings, "Mode local : sans vCenter, ni le ratio TX/écrit, ni les erreurs NIC, ni les journaux de l'hôte ne sont mesurés ; seul ce que voit la VM est évalué.")
 	rep.Ended = time.Now()
-	prog(100, "terminé — verdict : "+string(rep.Verdict.Level))
+	prog(100, fmt.Sprintf("terminé — verdict : %s", rep.Verdict.Level))
 	return rep, nil
 }
 

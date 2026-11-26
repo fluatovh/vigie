@@ -33,29 +33,30 @@
         continue;
       }
       verbRe.lastIndex = 0;
-      let re = '^', src = f[0], prefix = null, m;
+      let re = '^', src = f[0].replace(/%%/g, '\u0001'), prefix = null, m; // « %% sur » n'est pas un verbe « % s »
       while (true) {
         verbRe.lastIndex = 0;
         m = verbRe.exec(src);
-        const lit = (m ? src.slice(0, m.index) : src).replace(/%%/g, '%');
+        const lit = (m ? src.slice(0, m.index) : src).replace(/\u0001/g, '%');
         if (prefix === null) prefix = lit;
         re += esc(lit);
         if (!m) break;
         re += '(.+?)';
         src = src.slice(m.index + m[0].length);
       }
-      patterns.push({ re: new RegExp(re + '$'), prefix, out: f.map((x) => x.replace(/%%/g, '\u0000')) });
+      patterns.push({ re: new RegExp(re + '$'), prefix, lit: f[0].replace(/%%/g, '%').replace(verbRe, '').length, out: f.map((x) => x.replace(/%%/g, '\u0000')) });
     }
   }
   // du plus précis au plus général (texte fixe initial le plus long d'abord)
-  function sortPatterns() { patterns.sort((a, b) => b.prefix.length - a.prefix.length); }
+  // à préfixe égal, le gabarit au texte fixe le plus long (le plus précis) d'abord : « %s — %s Gio %s sur %s — prérempli %s Gio » avant « %s — %s »
+  function sortPatterns() { patterns.sort((a, b) => b.prefix.length - a.prefix.length || b.lit - a.lit); }
   function fill(fmt, args) {
     let i = 0;
     return fmt.replace(/%(\[(\d+)\])?[-+# 0-9.]*[a-zA-Z]/g, (_, __, n) => String(n ? args[n - 1] : args[i++])).replace(/\u0000/g, '%');
   }
   function lookup(s, depth) {
     if (exact.has(s)) return exact.get(s)[col];
-    if (depth >= 3) return null;
+    if (depth >= 6) return null; // gabarits imbriqués : verdict > indicateur > valeur
     for (const p of patterns) {
       if (!s.startsWith(p.prefix)) continue;
       const m = p.re.exec(s);
@@ -64,9 +65,23 @@
     }
     return null;
   }
+  // nombre décimal à la française produit par le serveur (« 1,09 ») : remis au format de la langue
+  // (« 1,09 », « 1 258 », « 12 345,6 »)
+  const frNum = /^(-?\d{1,3}(?:[\u00a0\u202f ]\d{3})+|-?\d+)(?:,(\d+))?$/;
+  function number(s) {
+    const m = frNum.exec(s);
+    if (!m || (!m[2] && !/[\u00a0\u202f ]/.test(m[1]))) return null; // entier simple : inchangé
+    const d = m[2] ? m[2].length : 0;
+    const v = Number(m[1].replace(/[\u00a0\u202f ]/g, '') + (d ? '.' + m[2] : ''));
+    return new Intl.NumberFormat(LOCALES[lang], { minimumFractionDigits: d, maximumFractionDigits: d }).format(v);
+  }
   function translate(s, depth) {
+    const num = number(s);
+    if (num !== null) return num;
     let out = lookup(s, depth);
     if (out !== null) return out;
+    // texte du rapport (espaces insécables avant les unités) : même gabarit qu'avec des espaces
+    if (s.includes('\u00a0')) { out = lookup(s.replace(/\u00a0/g, ' '), depth); if (out !== null) return out; }
     const t = s.trim();
     if (t && t !== s) {
       out = lookup(t, depth);

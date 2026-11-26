@@ -2,6 +2,7 @@ package web
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"time"
 
@@ -45,7 +46,7 @@ func (s *Server) localBusy(w http.ResponseWriter) bool {
 		return true
 	}
 	if j := s.jobs.Current(); j != nil {
-		writeError(w, http.StatusConflict, "un job est en cours ("+j.Profile+")")
+		writeError(w, http.StatusConflict, fmt.Sprintf("un job est en cours (%s)", j.Profile))
 		return true
 	}
 	return false

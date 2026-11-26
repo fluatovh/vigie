@@ -226,7 +226,7 @@ func (c *Config) Apply(t Target) []string {
 			if t.SetHostname != nil {
 				_ = t.SetHostname(c.Hostname)
 			}
-			done = append(done, "nom d'hôte "+c.Hostname)
+			done = append(done, fmt.Sprintf("nom d'hôte %s", c.Hostname))
 		}
 	}
 	if len(c.SSHKeys) > 0 {

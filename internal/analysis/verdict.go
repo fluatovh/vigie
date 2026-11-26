@@ -153,7 +153,7 @@ func Evaluate(f Facts, th Thresholds) Verdict {
 		add(Indicator{Key: "tx_ratio", Label: "Ratio TX/écrit corrigé", Level: Unknown, Why: "non mesurable"})
 	} else if f.TxRatio.Samples < MinSamples {
 		add(Indicator{Key: "tx_ratio", Label: "Ratio TX/écrit corrigé", Value: f.TxRatio.Value, Level: Unknown,
-			Why: fr("%.2f", f.TxRatio.Value) + fmt.Sprintf(" non concluant : %d échantillon de 20 s complet, écriture trop courte", f.TxRatio.Samples)})
+			Why: fmt.Sprintf("%s non concluant : %d échantillon de 20 s complet, écriture trop courte", fr("%.2f", f.TxRatio.Value), f.TxRatio.Samples)})
 	} else {
 		r := f.TxRatio
 		ind := Indicator{Key: "tx_ratio", Label: "Ratio TX/écrit corrigé", Value: r.Value, Unit: "", Reliable: r.Reliable, Level: OK,

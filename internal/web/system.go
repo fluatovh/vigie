@@ -1,6 +1,7 @@
 package web
 
 import (
+	"fmt"
 	"net/http"
 	"os"
 	"strings"
@@ -91,7 +92,7 @@ func (s *Server) systemPower(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if j := s.jobs.Current(); j != nil && r.URL.Query().Get("force") != "1" {
-		writeError(w, http.StatusConflict, "un job est en cours ("+j.Profile+") : l'annuler d'abord")
+		writeError(w, http.StatusConflict, fmt.Sprintf("un job est en cours (%s) : l'annuler d'abord", j.Profile))
 		return
 	}
 	if err := s.sys.Power(req.Action); err != nil {

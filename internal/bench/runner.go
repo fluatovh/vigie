@@ -100,7 +100,7 @@ func (r *Runner) Run(ctx context.Context, req Request, onEvent func(Event)) (*Re
 	case ctx.Err() != nil:
 		rep.Error = "annulé"
 	case waitErr != nil && !rep.Finished:
-		rep.Error = "worker terminé anormalement : " + waitErr.Error()
+		rep.Error = fmt.Sprintf("worker terminé anormalement : %v", waitErr)
 	}
 	if rep.Error != "" {
 		return rep, errors.New(rep.Error)

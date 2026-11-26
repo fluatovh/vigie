@@ -34,6 +34,7 @@ var col = map[string]int{"fr": 0, "en": 1, "es": 2, "it": 3, "pl": 4, "de": 5}
 type pattern struct {
 	re     *regexp.Regexp
 	prefix string // texte littéral avant la première variable (filtre rapide)
+	lit    int    // longueur du texte fixe : départage les gabarits de même préfixe
 	out    [6]string
 }
 
@@ -77,7 +78,7 @@ func loadCatalog(tsv string) *catalogT {
 		// gabarit : variables → groupes de capture ; sorties normalisées en %s
 		var re strings.Builder
 		re.WriteString("^")
-		src := row[0]
+		src := strings.ReplaceAll(row[0], "%%", "\x00") // « %% sur » n'est pas un verbe « % s »
 		prefix, first := "", true
 		for {
 			loc := verbRe.FindStringIndex(src)
@@ -85,7 +86,7 @@ func loadCatalog(tsv string) *catalogT {
 			if loc != nil {
 				lit = src[:loc[0]]
 			}
-			lit = strings.ReplaceAll(lit, "%%", "%")
+			lit = strings.ReplaceAll(lit, "\x00", "%")
 			if first {
 				prefix, first = lit, false
 			}
@@ -97,19 +98,26 @@ func loadCatalog(tsv string) *catalogT {
 			src = src[loc[1]:]
 		}
 		re.WriteString("$")
-		p := pattern{re: regexp.MustCompile(re.String()), prefix: prefix}
+		p := pattern{re: regexp.MustCompile(re.String()), prefix: prefix, lit: len(verbRe.ReplaceAllString(strings.ReplaceAll(row[0], "%%", "%"), ""))}
 		for i, s := range row {
-			p.out[i] = verbRe.ReplaceAllStringFunc(s, func(v string) string {
+			p.out[i] = strings.ReplaceAll(verbRe.ReplaceAllStringFunc(strings.ReplaceAll(s, "%%", "\x00"), func(v string) string {
 				if m := regexp.MustCompile(`^%(\[\d+\])`).FindStringSubmatch(v); m != nil {
 					return "%" + m[1] + "s"
 				}
 				return "%s"
-			})
+			}), "\x00", "%%")
 		}
 		c.patterns = append(c.patterns, p)
 	}
 	// du plus précis au plus général : « Profil écriture : %s » avant « %s %s, bloc… »
-	sort.SliceStable(c.patterns, func(i, j int) bool { return len(c.patterns[i].prefix) > len(c.patterns[j].prefix) })
+	// à préfixe égal, le texte fixe le plus long (le gabarit le plus précis) d'abord
+	sort.SliceStable(c.patterns, func(i, j int) bool {
+		pi, pj := c.patterns[i], c.patterns[j]
+		if len(pi.prefix) != len(pj.prefix) {
+			return len(pi.prefix) > len(pj.prefix)
+		}
+		return pi.lit > pj.lit
+	})
 	return c
 }
 
@@ -184,7 +192,7 @@ func lookup(s string, c, depth int) (string, bool) {
 	if row, ok := cat.exact[s]; ok {
 		return row[c], true
 	}
-	if depth >= 3 {
+	if depth >= 6 { // gabarits imbriqués : verdict > indicateur > valeur
 		return "", false
 	}
 	for _, p := range cat.patterns {

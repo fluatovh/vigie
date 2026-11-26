@@ -101,6 +101,12 @@ for (const l of ['en', 'de', 'pl']) {
   });
 }
 writeFileSync(`${OUT}/i18n-missing.json`, JSON.stringify(missing, null, 1));
+// texte resté en français dans une autre langue : échec (même heuristique que la console)
+const frWord = /\b(le|la|les|des|du|une?|et|ou|pour|avec|sans|dans|sur|par|est|sont|aucun|aucune)\b|[éèêàùçô]/i;
+for (const [l, list] of Object.entries(missing)) {
+  const fr = list.filter((s) => frWord.test(s));
+  if (fr.length) problems.push(`langue ${l} : ${fr.length} texte(s) non traduit(s) : ` + fr.slice(0, 5).join(' | '));
+}
 await browser.close();
 log(problems.length ? `${problems.length} problème(s) :\n  ` + problems.join('\n  ') : 'aucun problème');
 process.exit(problems.length ? 1 : 0);

@@ -89,7 +89,7 @@ func (s *Server) jobsSubmit(w http.ResponseWriter, r *http.Request) {
 	}
 	var req jobRequest
 	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 1<<16)).Decode(&req); err != nil {
-		writeError(w, http.StatusBadRequest, "corps JSON invalide : "+err.Error())
+		writeError(w, http.StatusBadRequest, fmt.Sprintf("corps JSON invalide : %v", err))
 		return
 	}
 	fn, err := s.jobFunc(&req)
@@ -346,21 +346,23 @@ func (s *Server) standardJob(opt standard.Options, reps int) jobs.Func {
 		res := &StandardResult{}
 		for i := 0; i < reps; i++ {
 			base, span := float64(i)*100/float64(reps), 100/float64(reps)
-			prefix := ""
-			if reps > 1 {
-				prefix = fmt.Sprintf("répétition %d/%d : ", i+1, reps)
+			say := func(msg string) string { // « répétition 2/3 : … » : gabarit complet pour la traduction
+				if reps > 1 && msg != "" {
+					return fmt.Sprintf("répétition %d/%d : %s", i+1, reps, msg)
+				}
+				return msg
 			}
 			self, err := s.freshIdentify(ctx, sess)
 			if err != nil {
 				return res, err
 			}
-			rep.Logf("%sVM %s sur l'hôte %s", prefix, self.VM.Name, self.Host.Name)
+			rep.Logf("%s", say(fmt.Sprintf("VM %s sur l'hôte %s", self.VM.Name, self.Host.Name)))
 			o := opt
 			if i > 0 {
 				o.Prefill = false // déjà fait à la première répétition
 			}
 			r, err := standard.Run(ctx, standard.Deps{Session: sess, Self: self, Record: s.testdisk.Record(), Runner: &bench.Runner{}, Version: s.info.Version,
-				Progress: func(pct float64, msg string) { rep.Progress(base+pct*span/100, prefix+msg) },
+				Progress: func(pct float64, msg string) { rep.Progress(base+pct*span/100, say(msg)) },
 				OnSecond: func(kind bench.Kind, sec bench.Second) {
 					rep.Data("second", map[string]any{"kind": kind, "t": sec.T, "mbps": float64(sec.Bytes) / 1e6, "p99_ms": sec.P99US / 1000, "repetition": i + 1})
 				}}, o)
@@ -368,7 +370,7 @@ func (s *Server) standardJob(opt standard.Options, reps int) jobs.Func {
 				return res, err
 			}
 			res.Runs = append(res.Runs, r)
-			rep.Logf("%sverdict %s — écriture %.0f Mo/s, lecture %.0f Mo/s, ratio TX/écrit %s", prefix, r.Verdict.Level, r.Write.MBps, r.Read.MBps, ratioText(r.TxRatio))
+			rep.Logf("%s", say(fmt.Sprintf("verdict %s — écriture %.0f Mo/s, lecture %.0f Mo/s, ratio TX/écrit %s", r.Verdict.Level, r.Write.MBps, r.Read.MBps, ratioText(r.TxRatio))))
 		}
 		res.Summary = summarize(res.Runs)
 		if s.settings != nil {

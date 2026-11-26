@@ -99,7 +99,7 @@ func Run(ctx context.Context, d Deps, opt Options) (rep *Report, err error) {
 		if !ok {
 			return nil, fmt.Errorf("hôte %q invalide", h)
 		}
-		prog(float64(i)/float64(len(opt.Hosts)), "prévalidation du vMotion vers "+h)
+		prog(float64(i)/float64(len(opt.Hosts)), fmt.Sprintf("prévalidation du vMotion vers %s", h))
 		c := vsphere.CheckMigration(ctx, s, vmRef, ref, &dsRef)
 		if !c.OK {
 			return nil, fmt.Errorf("vMotion vers %s impossible : %v", c.Host, c.Errors)
@@ -189,13 +189,13 @@ func Run(ctx context.Context, d Deps, opt Options) (rep *Report, err error) {
 	if opt.ReturnHome {
 		cur, err := d.Identify(ctx)
 		if err == nil && cur.Host.Ref != home.String() {
-			prog(98, "retour sur l'hôte de départ "+rep.HomeHost)
+			prog(98, fmt.Sprintf("retour sur l'hôte de départ %s", rep.HomeHost))
 			if err := vsphere.MigrateSelf(ctx, s, cur, home, nil); err != nil {
 				warn("retour sur l'hôte de départ : %v", err)
 			}
 		}
 	}
 	rep.Ended = time.Now()
-	prog(100, "terminé — "+rep.Comparison.Sentence)
+	prog(100, fmt.Sprintf("terminé — %s", rep.Comparison.Sentence))
 	return rep, nil
 }

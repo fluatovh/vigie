@@ -309,7 +309,7 @@ func RunIperf(ctx context.Context, o IperfOptions, onInterval func(Interval)) (*
 		return res, ctx.Err()
 	}
 	if res.Error != "" {
-		return res, errors.New("iperf3 : " + res.Error)
+		return res, fmt.Errorf("iperf3 : %s", res.Error)
 	}
 	if werr != nil {
 		return res, fmt.Errorf("iperf3 : %w", werr)

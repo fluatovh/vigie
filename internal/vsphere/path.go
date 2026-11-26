@@ -99,7 +99,7 @@ func attachPeers(ctx context.Context, s *Session, hostRef types.ManagedObjectRef
 	}
 	peers, err := Peers(ctx, s, hostRef, devs)
 	if err != nil {
-		p.Notes = append(p.Notes, "voisins CDP/LLDP non lus : "+err.Error())
+		p.Notes = append(p.Notes, fmt.Sprintf("voisins CDP/LLDP non lus : %v", err))
 		return
 	}
 	ApplyPeers(p, peers)

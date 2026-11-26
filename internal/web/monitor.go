@@ -181,7 +181,7 @@ func (s *Server) thresholdsPut(w http.ResponseWriter, r *http.Request) {
 	}
 	var req thresholdsRequest
 	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 1<<16)).Decode(&req); err != nil {
-		writeError(w, http.StatusBadRequest, "corps JSON invalide : "+err.Error())
+		writeError(w, http.StatusBadRequest, fmt.Sprintf("corps JSON invalide : %v", err))
 		return
 	}
 	if _, ok := analysis.BuiltinPresets()[req.Preset]; !ok {
@@ -264,7 +264,7 @@ func (s *Server) resultsQuery(w http.ResponseWriter, r *http.Request) {
 	for k, dst := range map[string]*time.Time{"from": &f.From, "to": &f.To} {
 		if v := q.Get(k); v != "" {
 			if *dst, err = time.Parse(time.RFC3339, v); err != nil {
-				writeError(w, http.StatusBadRequest, k+" : date RFC 3339 attendue")
+				writeError(w, http.StatusBadRequest, fmt.Sprintf("%s : date RFC 3339 attendue", k))
 				return
 			}
 		}
@@ -398,7 +398,7 @@ func (s *Server) scheduleGet(w http.ResponseWriter, r *http.Request) {
 func (s *Server) schedulePut(w http.ResponseWriter, r *http.Request) {
 	c := defaultSchedule()
 	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 1<<16)).Decode(&c); err != nil {
-		writeError(w, http.StatusBadRequest, "corps JSON invalide : "+err.Error())
+		writeError(w, http.StatusBadRequest, fmt.Sprintf("corps JSON invalide : %v", err))
 		return
 	}
 	if err := c.validate(); err != nil {

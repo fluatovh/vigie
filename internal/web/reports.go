@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"net/http"
 
 	"vigie/internal/jobs"
@@ -34,7 +35,7 @@ func (s *Server) brandingPut(w http.ResponseWriter, r *http.Request) {
 	}
 	var b report.Branding
 	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 400<<10)).Decode(&b); err != nil {
-		writeError(w, http.StatusBadRequest, "corps JSON invalide (logo de 200 Kio au maximum) : "+err.Error())
+		writeError(w, http.StatusBadRequest, fmt.Sprintf("corps JSON invalide (logo de 200 Kio au maximum) : %v", err))
 		return
 	}
 	if err := b.Validate(); err != nil {
@@ -72,7 +73,7 @@ func (s *Server) reportCompare(w http.ResponseWriter, r *http.Request) {
 	for i, k := range []string{"a", "b"} {
 		j, ok := s.jobs.Get(q.Get(k))
 		if !ok {
-			writeError(w, http.StatusNotFound, "job inconnu : "+q.Get(k))
+			writeError(w, http.StatusNotFound, fmt.Sprintf("job inconnu : %s", q.Get(k)))
 			return
 		}
 		js[i] = j
@@ -93,7 +94,7 @@ func (s *Server) serveReport(w http.ResponseWriter, r *http.Request, p *report.P
 	var buf bytes.Buffer
 	nonce, err := report.Render(&buf, p)
 	if err != nil {
-		writeError(w, http.StatusInternalServerError, "rendu du rapport : "+err.Error())
+		writeError(w, http.StatusInternalServerError, fmt.Sprintf("rendu du rapport : %v", err))
 		return
 	}
 	h := w.Header()

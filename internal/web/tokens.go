@@ -2,6 +2,7 @@ package web
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
@@ -27,7 +28,7 @@ func (s *Server) tokensCreate(w http.ResponseWriter, r *http.Request) {
 		Name string `json:"name"`
 	}
 	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 1<<10)).Decode(&req); err != nil {
-		writeError(w, http.StatusBadRequest, "corps JSON invalide : "+err.Error())
+		writeError(w, http.StatusBadRequest, fmt.Sprintf("corps JSON invalide : %v", err))
 		return
 	}
 	tok, secret, err := s.tokens.Create(req.Name)

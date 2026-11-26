@@ -17,7 +17,7 @@ import (
 
 func decode(w http.ResponseWriter, r *http.Request, v any) bool {
 	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 1<<14)).Decode(v); err != nil {
-		writeError(w, http.StatusBadRequest, "corps JSON invalide : "+err.Error())
+		writeError(w, http.StatusBadRequest, fmt.Sprintf("corps JSON invalide : %v", err))
 		return false
 	}
 	return true
@@ -258,7 +258,7 @@ func (s *Server) iperfJob(req *jobRequest) (jobs.Func, error) {
 		target := o.Host
 		if peer != nil {
 			target = peer.Name + " (" + o.Host + ")"
-			rep.Progress(2, "ouverture du serveur iperf3 du pair "+peer.Name)
+			rep.Progress(2, fmt.Sprintf("ouverture du serveur iperf3 du pair %s", peer.Name))
 			var st netdiag.ServerStatus
 			if err := peer.Call(ctx, http.MethodPost, "/api/net/iperf/server", map[string]int{"duration_s": o.Duration + 30}, &st); err != nil {
 				return nil, fmt.Errorf("le pair n'a pas ouvert son serveur iperf3 : %w", err)

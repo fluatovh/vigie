@@ -131,7 +131,7 @@ func Run(ctx context.Context, d standard.Deps, opt Options) (*Report, error) {
 
 	// 1. Test standard (débit séquentiel, ratio TX/écrit, santé du chemin).
 	sd := d
-	sd.Progress = func(p float64, m string) { prog(p*stdShare/100, "standard : "+m) }
+	sd.Progress = func(p float64, m string) { prog(p*stdShare/100, fmt.Sprintf("standard : %s", m)) }
 	std, err := standard.Run(ctx, sd, opt.Standard)
 	if err != nil {
 		return nil, fmt.Errorf("test standard : %w", err)
@@ -249,7 +249,7 @@ func Run(ctx context.Context, d standard.Deps, opt Options) (*Report, error) {
 	analysis.EvaluateAdvanced(&rep.Verdict, rep.Points, opt.Standard.Thresholds)
 	rep.Headline = headline(rep, opt.CeilingMs)
 	rep.Ended = time.Now()
-	prog(100, "terminé — verdict : "+string(rep.Verdict.Level))
+	prog(100, fmt.Sprintf("terminé — verdict : %s", rep.Verdict.Level))
 	return rep, nil
 }
 

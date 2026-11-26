@@ -383,7 +383,7 @@ func Run(ctx context.Context, d Deps, opt Options) (*Report, error) {
 	}
 	rep.Verdict = analysis.Evaluate(facts, opt.Thresholds)
 	rep.Ended = time.Now()
-	prog(100, "terminé — verdict : "+string(rep.Verdict.Level))
+	prog(100, fmt.Sprintf("terminé — verdict : %s", rep.Verdict.Level))
 	return rep, nil
 }
 

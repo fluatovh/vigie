@@ -3,7 +3,7 @@ package web
 import (
 	"context"
 	"encoding/json"
-	"errors"
+	"fmt"
 	"net/http"
 	"time"
 
@@ -52,7 +52,7 @@ type connectRequest struct {
 func (s *Server) vsphereConnect(w http.ResponseWriter, r *http.Request) {
 	var req connectRequest
 	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 1<<16)).Decode(&req); err != nil {
-		writeError(w, http.StatusBadRequest, "corps JSON invalide : "+err.Error())
+		writeError(w, http.StatusBadRequest, fmt.Sprintf("corps JSON invalide : %v", err))
 		return
 	}
 	if req.URL == "" || req.Username == "" || req.Password == "" {
@@ -132,7 +132,7 @@ func refParam(r *http.Request, name string) (types.ManagedObjectReference, bool,
 	}
 	ref, ok := vsphere.Ref(v)
 	if !ok {
-		return ref, false, errors.New("paramètre " + name + " invalide (attendu type:valeur)")
+		return ref, false, fmt.Errorf("paramètre %s invalide (attendu type:valeur)", name)
 	}
 	return ref, true, nil
 }

@@ -169,7 +169,7 @@ func (s *Service) localCheck(d Device, e *Expect) Candidate {
 	add := func(name string, ok bool, detail string) { local = append(local, Check{name, ok, detail}) }
 	blank, detail := s.blank(d)
 	add("disque vierge", blank, detail)
-	add("apparu après la demande", true, "absent de l'instantané du "+e.At.Format("02/01 15:04:05")+" UTC")
+	add("apparu après la demande", true, fmt.Sprintf("absent de l'instantané du %s UTC", e.At.Format("02/01 15:04:05")))
 	add("taille suffisante", d.SizeBytes >= LocalMinBytes, fmt.Sprintf("%d Gio (minimum %d Gio, conseillé %d Gio)", d.SizeBytes>>30, LocalMinBytes>>30, LocalAdviseGiB))
 	add("identifiant unique (disk.EnableUUID)", d.UUID != "", d.WWID)
 	v.Checks = append(local, v.Checks...)
@@ -186,7 +186,7 @@ func (s *Service) blank(d Device) (bool, string) {
 		f, err = os.OpenFile(d.Path, os.O_RDONLY, 0) // fichier ordinaire (tests)
 	}
 	if err != nil {
-		return false, "lecture impossible : " + err.Error()
+		return false, fmt.Sprintf("lecture impossible : %v", err)
 	}
 	defer f.Close()
 	if d.SizeBytes < 2*localProbeBytes {
@@ -194,22 +194,22 @@ func (s *Service) blank(d Device) (bool, string) {
 	}
 	head := alignedBuffer(localProbeBytes)
 	if _, err := f.ReadAt(head, 0); err != nil {
-		return false, "lecture du début : " + err.Error()
+		return false, fmt.Sprintf("lecture du début : %v", err)
 	}
 	tail := alignedBuffer(localProbeBytes)
 	if _, err := f.ReadAt(tail, d.SizeBytes-localProbeBytes); err != nil {
-		return false, "lecture de la fin : " + err.Error()
+		return false, fmt.Sprintf("lecture de la fin : %v", err)
 	}
 	if sig, err := Decode(head[:SignatureSize]); err == nil {
 		if strings.EqualFold(sig.UUID, d.UUID) && d.UUID != "" {
 			return true, "signature vigie de ce disque déjà présente (réadoption)"
 		}
-		return false, "signature vigie d'un autre disque (" + sig.UUID + ")"
+		return false, fmt.Sprintf("signature vigie d'un autre disque (%s)", sig.UUID)
 	}
 	if allZero(head[SignatureSize:]) && allZero(head[:SignatureSize]) && allZero(tail) {
 		return true, "premier et dernier Mio à zéro"
 	}
-	return false, "données présentes : " + whatIs(head, tail) + " ; l'appliance n'écrit que sur un disque neuf"
+	return false, fmt.Sprintf("données présentes : %s ; l'appliance n'écrit que sur un disque neuf", whatIs(head, tail))
 }
 
 func allZero(b []byte) bool {

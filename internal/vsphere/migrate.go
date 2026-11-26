@@ -46,7 +46,7 @@ func CheckMigration(ctx context.Context, s *Session, vmRef, hostRef types.Manage
 		return c
 	}
 	if h.Runtime.ConnectionState != types.HostSystemConnectionStateConnected {
-		c.Errors = append(c.Errors, "hôte "+string(h.Runtime.ConnectionState))
+		c.Errors = append(c.Errors, fmt.Sprintf("hôte %s", h.Runtime.ConnectionState))
 	}
 	if h.Runtime.InMaintenanceMode {
 		c.Errors = append(c.Errors, "hôte en maintenance")
@@ -73,12 +73,12 @@ func CheckMigration(ctx context.Context, s *Session, vmRef, hostRef types.Manage
 			if pc.RetrieveOne(ctx, d, []string{"name"}, &ds) == nil {
 				name = ds.Name
 			}
-			c.Errors = append(c.Errors, "datastore "+name+" non monté sur l'hôte")
+			c.Errors = append(c.Errors, fmt.Sprintf("datastore %s non monté sur l'hôte", name))
 		}
 	}
 	for _, n := range vm.Network {
 		if !has(h.Network, n) {
-			c.Errors = append(c.Errors, "réseau "+n.Value+" absent de l'hôte")
+			c.Errors = append(c.Errors, fmt.Sprintf("réseau %s absent de l'hôte", n.Value))
 		}
 	}
 	if len(c.Errors) == 0 {
@@ -88,7 +88,7 @@ func CheckMigration(ctx context.Context, s *Session, vmRef, hostRef types.Manage
 		}
 		task, err := object.NewVmProvisioningChecker(s.Client).CheckRelocate(ctx, vmRef, spec)
 		if err != nil {
-			c.Warnings = append(c.Warnings, "CheckRelocate indisponible : "+err.Error())
+			c.Warnings = append(c.Warnings, fmt.Sprintf("CheckRelocate indisponible : %v", err))
 		} else {
 			for _, r := range task {
 				for _, e := range r.Error {

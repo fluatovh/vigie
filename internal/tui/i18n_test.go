@@ -109,3 +109,23 @@ func TestNoFrenchLeft(t *testing.T) {
 		}
 	}
 }
+
+// « %% sur » n'est pas une variable « % s » : le gabarit garde ses variables et son « % ».
+func TestPercentLiteralInPattern(t *testing.T) {
+	defer SetLang(DefaultLang)
+	SetLang("en")
+	got := T("au plus 6,2 % sur 4 palier(s) (seuil 9 %)")
+	if want := "at most 6.2 % over 4 step(s) (threshold 9 %)"; got != want && got != "at most 6,2 % over 4 step(s) (threshold 9 %)" {
+		t.Fatalf("got %q, want %q", got, want)
+	}
+}
+
+// À préfixe égal, le gabarit le plus précis l'emporte sur un gabarit générique (« %s — %s »).
+func TestSpecificPatternFirst(t *testing.T) {
+	defer SetLang(DefaultLang)
+	SetLang("en")
+	got := T("[ds] vm/testdisk.vmdk — 4 Gio thin sur ds — prérempli 4 Gio")
+	if want := "[ds] vm/testdisk.vmdk — 4 GiB thin on ds — prefilled 4 GiB"; got != want {
+		t.Fatalf("got %q, want %q", got, want)
+	}
+}

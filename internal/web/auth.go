@@ -2,6 +2,7 @@ package web
 
 import (
 	"context"
+	"fmt"
 	"net"
 	"net/http"
 	"strings"
@@ -59,7 +60,7 @@ func (s *Server) requireAuth(next http.Handler) http.Handler {
 		}
 		if c, err := r.Cookie(sessionCookie); err == nil && s.sess.valid(c.Value) {
 			if r.Method != http.MethodGet && r.Method != http.MethodHead && r.Header.Get(csrfHeader) != "1" {
-				writeError(w, http.StatusForbidden, "en-tête "+csrfHeader+" requis")
+				writeError(w, http.StatusForbidden, fmt.Sprintf("en-tête %s requis", csrfHeader))
 				return
 			}
 			next.ServeHTTP(w, r.WithContext(context.WithValue(r.Context(), principalKey, Principal{Name: "ui"})))
