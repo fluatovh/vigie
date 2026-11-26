@@ -170,6 +170,13 @@ func Tf(format string, a ...any) string {
 }
 
 func translate(s string, c, depth int) string {
+	// texte exact entouré d'espaces : avant les gabarits génériques (« %s : %s »)
+	if trimmed := strings.TrimSpace(s); trimmed != s && trimmed != "" {
+		if row, ok := cat.exact[trimmed]; ok {
+			i := strings.Index(s, trimmed)
+			return s[:i] + row[c] + s[i+len(trimmed):]
+		}
+	}
 	if out, ok := lookup(s, c, depth); ok {
 		return out
 	}

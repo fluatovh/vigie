@@ -351,7 +351,7 @@
   function renderStandard(root, job) {
     const res = job.result, sum = res.summary, runs = res.runs || [];
     root.append(el('div', { class: 'verdict lvl-' + sum.level }, el('span', { class: 'lvl', text: sum.level }),
-      el('span', { text: 'Hôte ' + sum.host + ', datastore ' + sum.datastore + (sum.repetitions > 1 ? ', médiane de ' + sum.repetitions + ' répétitions' : '') + '. ' + (sum.triggered && sum.triggered.length ? sum.triggered.join(' · ') : 'Aucun indicateur déclenché.') })));
+      el('span', { text: 'Hôte ' + sum.host + ', datastore ' + sum.datastore + (sum.repetitions > 1 ? ', médiane de ' + sum.repetitions + ' répétitions' : '') + '. ' + (sum.triggered && sum.triggered.length ? sum.triggered.map((x) => T(x)).join(' · ') : 'Aucun indicateur déclenché.') })));
     root.append(el('div', { class: 'tiles' }, tile(mbps(sum.write_mbps_median), 'écriture séquentielle'), tile(mbps(sum.read_mbps_median), 'lecture séquentielle'),
       tile(ms(sum.write_p99_ms_median), 'latence p99 en écriture'), tile(sum.tx_ratio_median ? nf3.format(sum.tx_ratio_median) : 'n/d', 'ratio TX/écrit corrigé')));
     root.append(el('p', { class: 'profile small', text: 'Profil écriture : ' + sum.write_profile }), el('p', { class: 'profile small', text: 'Profil lecture : ' + sum.read_profile }));
@@ -388,7 +388,7 @@
   function renderAdvanced(root, r) {
     const h = r.headline, v = r.verdict, std = r.standard;
     root.append(el('div', { class: 'verdict lvl-' + v.level }, el('span', { class: 'lvl', text: v.level }),
-      el('span', { text: 'Hôte ' + std.host.name + ', datastore ' + std.datastore.name + ', préréglage ' + v.preset + '. ' + (v.triggered && v.triggered.length ? v.triggered.join(' · ') : 'Aucun indicateur déclenché.') })));
+      el('span', { text: 'Hôte ' + std.host.name + ', datastore ' + std.datastore.name + ', préréglage ' + v.preset + '. ' + (v.triggered && v.triggered.length ? v.triggered.map((x) => T(x)).join(' · ') : 'Aucun indicateur déclenché.') })));
     root.append(el('div', { class: 'tiles' },
       tile(mbps(h.write_mbps) + ' / ' + mbps(h.read_mbps), 'débit séquentiel écriture / lecture (1 Mio QD4)'),
       tile(h.useful_iops ? iops(h.useful_iops) : 'aucun palier', 'IOPS utiles 4 Kio mixte 70/30, p99 < ' + nf1.format(h.ceiling_ms) + ' ms' + (h.useful_qd ? ' (QD' + h.useful_qd + ')' : '')),
@@ -451,7 +451,7 @@
   }
   function renderTour(root, r) {
     const c = r.comparison;
-    root.append(el('div', { class: 'verdict lvl-' + c.level }, el('span', { class: 'lvl', text: c.level }), el('span', { text: c.sentence + (c.triggered && c.triggered.length ? ' ' + c.triggered.join(' · ') : '') })));
+    root.append(el('div', { class: 'verdict lvl-' + c.level }, el('span', { class: 'lvl', text: c.level }), el('span', { text: c.sentence + (c.triggered && c.triggered.length ? ' ' + c.triggered.map((x) => T(x)).join(' · ') : '') })));
     const first = r.legs[0] && r.legs[0].report;
     if (first) root.append(el('p', { class: 'profile small', text: 'Profil de chaque passage : ' + first.write.profile.text + ' ; puis ' + first.read.profile.text + ' ; ligne de base ' + first.options.baseline_s + ' s. Tournée : ' + r.options.cycles + ' cycle(s) en alternance, override DRS ' + (r.drs ? 'posé puis restauré' : 'non utilisé') + ', hôte de départ ' + r.home_host + '.' }));
     const t = el('table', { class: 'table' }, el('thead', {}, el('tr', {}, ...['Hôte', 'Passages', 'Écriture (médiane)', 'Lecture (médiane)', 'Ratio TX/écrit', 'p99 écriture', 'vs meilleur', 'Verdict'].map((x, i) => el('th', { class: i > 0 && i < 7 ? 'r' : '', text: x })))));

@@ -22,7 +22,7 @@ page.on('pageerror', (e) => problems.push('erreur JS : ' + e.message));
 page.on('request', (r) => { const u = r.url(); if (!u.startsWith(origin) && !u.startsWith('data:') && !u.startsWith('blob:')) problems.push('requête externe : ' + u); });
 await page.evaluateOnNewDocument(() => {
   document.addEventListener('securitypolicyviolation', (e) => console.error('CSP : ' + e.violatedDirective + ' ' + e.blockedURI));
-  try { localStorage.setItem('vigie-lang', 'fr'); } catch (_) { /* */ }
+  try { if (!localStorage.getItem('vigie-lang')) localStorage.setItem('vigie-lang', 'fr'); } catch (_) { /* */ } // sans écraser la langue choisie par le test
 });
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const shot = (n) => page.screenshot({ path: `${OUT}/${n}.png`, fullPage: true }).catch(() => {});
@@ -95,14 +95,19 @@ for (const l of ['en', 'de', 'pl']) {
   await step('langue ' + l, async () => {
     await page.evaluate((x) => localStorage.setItem('vigie-lang', x), l);
     await page.reload({ waitUntil: 'networkidle0' }); await sleep(1500);
-    for (const t of ['network', 'measure', 'history', 'settings', 'about']) await tab(t);
-    missing[l] = await page.evaluate(() => [...(window.__i18nMissing || [])].sort());
+    const seen = new Set();
+    for (const t of ['network', 'measure', 'history', 'settings', 'about']) {
+      await tab(t);
+      // texte réellement affiché : attrape aussi les phrases à moitié traduites par un gabarit générique
+      for (const line of await page.evaluate(() => document.querySelector('.tabpane:not(.hidden)').innerText.split('\n'))) seen.add(line.trim());
+    }
+    missing[l] = [...new Set([...await page.evaluate(() => [...(window.__i18nMissing || [])]), ...seen])].sort();
     await shot('05-' + l);
   });
 }
 writeFileSync(`${OUT}/i18n-missing.json`, JSON.stringify(missing, null, 1));
 // texte resté en français dans une autre langue : échec (même heuristique que la console)
-const frWord = /\b(le|la|les|des|du|une?|et|ou|pour|avec|sans|dans|sur|par|est|sont|aucun|aucune)\b|[éèêàùçô]/i;
+const frWord = /\b(le|la|les|du|une?|et|ou|pour|avec|sans|dans|sur|par|est|sont|aucun|aucune)\b|[éèêàùçô]/i; // « des » : aussi allemand
 for (const [l, list] of Object.entries(missing)) {
   const fr = list.filter((s) => frWord.test(s));
   if (fr.length) problems.push(`langue ${l} : ${fr.length} texte(s) non traduit(s) : ` + fr.slice(0, 5).join(' | '));

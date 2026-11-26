@@ -72,12 +72,17 @@
     const m = frNum.exec(s);
     if (!m || (!m[2] && !/[\u00a0\u202f ]/.test(m[1]))) return null; // entier simple : inchangé
     const d = m[2] ? m[2].length : 0;
+    // « 1,091 » : décimal français ou milliers déjà formatés par le navigateur (en) ? Ambigu : inchangé
+    if (d === 3 && !/^-?0$/.test(m[1])) return null;
     const v = Number(m[1].replace(/[\u00a0\u202f ]/g, '') + (d ? '.' + m[2] : ''));
     return new Intl.NumberFormat(LOCALES[lang], { minimumFractionDigits: d, maximumFractionDigits: d }).format(v);
   }
   function translate(s, depth) {
     const num = number(s);
     if (num !== null) return num;
+    // texte exact entouré d'espaces : avant les gabarits génériques (« %s : %s »)
+    const tr = s.trim();
+    if (tr !== s && exact.has(tr)) { const i = s.indexOf(tr); return s.slice(0, i) + exact.get(tr)[col] + s.slice(i + tr.length); }
     let out = lookup(s, depth);
     if (out !== null) return out;
     // texte du rapport (espaces insécables avant les unités) : même gabarit qu'avec des espaces
