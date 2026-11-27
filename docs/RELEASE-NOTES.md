@@ -1,5 +1,15 @@
 # Notes de version
 
+## v1.1.1 — 27/11/2026
+
+- **OVA refusée par le client vSphere** (« Deploy OVF Template ») : « Value 'VirtualSCSI' of
+  ResourceSubType element not found in [lsilogic, lsilogicsas] ». Le type d'OS invité déclaré
+  (`otherLinux64Guest`) n'admet ni PVSCSI, ni SATA, ni vmxnet3 ; il devient `other4xLinux64Guest`
+  (« Other 4.x or later Linux 64-bit », ESXi 6.7 et plus). `govc import.ova` ne faisait pas ce
+  contrôle. Le build de l'OVA vérifie désormais le type d'OS. Les VM déjà déployées peuvent garder
+  leur type ou passer à « Other 4.x or later Linux (64-bit) » (VM éteinte, Edit Settings → VM Options).
+- Dépendance : golang.org/x/net 0.63.0.
+
 ## v1.1.0 — 26/11/2026
 
 ### Corrections

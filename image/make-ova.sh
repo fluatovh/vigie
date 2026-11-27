@@ -16,6 +16,10 @@ VMDK_SIZE=$(stat -c %s "$O/vigie-disk1.vmdk")
 POPULATED=$(du -b "$D/disk.raw" | cut -f1)
 sed -e "s|@VERSION@|$VERSION|g" -e "s|@VMDK_SIZE@|$VMDK_SIZE|g" -e "s|@POPULATED@|$POPULATED|g" \
 	image/vigie.ovf.tmpl > "$O/vigie.ovf"
+# Le client vSphere refuse l'OVA si le type d'OS invité n'admet pas nos contrôleurs : avec
+# « otherLinux64Guest », seuls LSI Logic, IDE et E1000 sont permis (PVSCSI, SATA et vmxnet3 refusés).
+grep -Eq 'vmw:osType="other[456]xLinux64Guest"' "$O/vigie.ovf" ||
+	{ echo "[make-ova] type d'OS invité incompatible avec PVSCSI/SATA/vmxnet3 (other4xLinux64Guest attendu)" >&2; exit 1; }
 (cd "$O" && for f in vigie.ovf vigie-disk1.vmdk; do
 	echo "SHA256($f)= $(sha256sum "$f" | cut -d' ' -f1)"
 done > vigie.mf)
